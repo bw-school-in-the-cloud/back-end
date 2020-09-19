@@ -8,10 +8,10 @@ https://eschoolinthecloud.herokuapp.com/
 <summary> :arrow_down: </summary>
 
 ### GET Requests
-Note: *Data for React I MVP Only* <br/>
+Note: *Data for React I MVP Only*   
 
 
-**List Terms Of Service --** https://eschoolinthecloud.herokuapp.com/terms/terms <br/>
+**List Terms Of Service --** https://eschoolinthecloud.herokuapp.com/terms/terms   
 Example Output:
 
 <details> 
@@ -21,21 +21,29 @@ Example Output:
 [
     {
         "tosid": 11,
-        "paragraph": "All changes are intended to describe, in plain English, the nature and scope of the corresponding source code."
+        "paragraph": "You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions."
     },
     {
         "tosid": 12,
-        "paragraph": "Internet or similar exemptions of copyright (separated by comma, not as a whole which is a work based on (or derived from) the Work and, in such a way for the licensee would be to refrain entirely from distribution"
+        "paragraph": "If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must discontinue use immediately.\n"
     },
     {
         "tosid": 13,
-        "paragraph": "Hereinafter in this Agreement. Article 5 (Governing Law) 1. IPA may publish new versions (including revisions) of this License either on the Internet using the software, and you want it, that you receive from any Contributor."
+        "paragraph": "Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference."
+    },
+    {
+        "tosid": 14,
+        "paragraph": "We reserve the right, in our sole discretion, to make changes or modifications to these Terms and Conditions at any time and for any reason.\n"
+    },
+    {
+        "tosid": 15,
+        "paragraph": "We will alert you about any changes by updating the “Last updated” date of these Terms and Conditions, and you waive any right to receive specific notice of each such change."
     }
 ]
 ```
 <br/>
 
-Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** or **AUTHORIZATION** for React I MVP purposes only* 
+Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
 
 </details>
 
@@ -47,7 +55,7 @@ Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** or **AUT
 
 ### GET Requests
 
-**List All Users --** https://eschoolinthecloud.herokuapp.com/users/users <br/>
+**List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
 Example Output:
 
 <details>

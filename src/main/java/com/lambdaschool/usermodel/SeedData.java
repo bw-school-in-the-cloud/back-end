@@ -109,17 +109,25 @@ public class SeedData
         userService.save(u3);
 
         long t1Id = 1000;
-        String t1Text = "All changes are intended to describe, in plain English, the nature and scope of the corresponding source code.";
+        String t1Text = "You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions.";
 
         long t2Id = 1001;
-        String t2Text = "Internet or similar exemptions of copyright (separated by comma, not as a whole which is a work based on (or derived from) the Work and, in such a way for the licensee would be to refrain entirely from distribution";
+        String t2Text = "If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must discontinue use immediately.\n";
 
         long t3Id = 1002;
-        String t3text = "Hereinafter in this Agreement. Article 5 (Governing Law) 1. IPA may publish new versions (including revisions) of this License either on the Internet using the software, and you want it, that you receive from any Contributor.";
+        String t3Text = "Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference.";
+
+        long t4Id = 1003;
+        String t4Text = "We reserve the right, in our sole discretion, to make changes or modifications to these Terms and Conditions at any time and for any reason.\n";
+
+        long t5Id = 1004;
+        String t5Text = "We will alert you about any changes by updating the “Last updated” date of these Terms and Conditions, and you waive any right to receive specific notice of each such change.";
 
         tosService.save(t1Id, t1Text);
         tosService.save(t2Id, t2Text);
-        tosService.save(t3Id, t3text);
+        tosService.save(t3Id, t3Text);
+        tosService.save(t4Id, t4Text);
+        tosService.save(t5Id, t5Text);
 
         if (false)
         {
