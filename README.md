@@ -3,11 +3,9 @@
 ### API URL 
 https://eschoolinthecloud.herokuapp.com/ 
 
-<details>
-<summary>
-
 ## User Http Requests
-</summary>
+<details>
+<summary> :arrow_down: </summary>
 
 ### GET Requests
 
