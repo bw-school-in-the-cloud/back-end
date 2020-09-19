@@ -3,11 +3,9 @@ package com.lambdaschool.usermodel;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import com.lambdaschool.usermodel.models.Role;
-import com.lambdaschool.usermodel.models.User;
-import com.lambdaschool.usermodel.models.UserRoles;
-import com.lambdaschool.usermodel.models.Useremail;
+import com.lambdaschool.usermodel.models.*;
 import com.lambdaschool.usermodel.services.RoleService;
+import com.lambdaschool.usermodel.services.TOSService;
 import com.lambdaschool.usermodel.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -38,6 +36,12 @@ public class SeedData
      */
     @Autowired
     UserService userService;
+
+    /**
+     * Connects the TOS service to this process
+     */
+    @Autowired
+    TOSService tosService;
 
     /**
      * Generates test, seed data for our application
@@ -103,6 +107,19 @@ public class SeedData
                 .add(new Useremail(u3,
                                    "volunteer@email.local"));
         userService.save(u3);
+
+        long t1Id = 1000;
+        String t1Text = "All changes are intended to describe, in plain English, the nature and scope of the corresponding source code.";
+
+        long t2Id = 1001;
+        String t2Text = "Internet or similar exemptions of copyright (separated by comma, not as a whole which is a work based on (or derived from) the Work and, in such a way for the licensee would be to refrain entirely from distribution";
+
+        long t3Id = 1002;
+        String t3text = "Hereinafter in this Agreement. Article 5 (Governing Law) 1. IPA may publish new versions (including revisions) of this License either on the Internet using the software, and you want it, that you receive from any Contributor.";
+
+        tosService.save(t1Id, t1Text);
+        tosService.save(t2Id, t2Text);
+        tosService.save(t3Id, t3text);
 
         if (false)
         {

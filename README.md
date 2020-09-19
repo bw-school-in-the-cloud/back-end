@@ -3,8 +3,11 @@
 ### API URL 
 https://eschoolinthecloud.herokuapp.com/ 
 
+<details>
+<summary>
 
 ## User Http Requests
+</summary>
 
 ### GET Requests
 
@@ -336,3 +339,6 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 *Status: 200 Okay*
 
 </details>
+
+</details>
+
