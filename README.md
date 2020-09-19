@@ -238,9 +238,9 @@ Example Output:
     ]
 }
 ```
-<br/>
+
 **OR**
-<br/>
+
 
 ```JSON
 {
