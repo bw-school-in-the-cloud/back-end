@@ -1,7 +1,45 @@
 # School In The Cloud 
 
 ### API URL 
-https://eschoolinthecloud.herokuapp.com/ 
+https://eschoolinthecloud.herokuapp.com/
+
+## Terms Of Servie Http Requests
+<details>
+<summary> :arrow_down: </summary>
+
+### GET Requests
+Note: *Data for React I MVP Only* <br/>
+
+
+**List Terms Of Service --** https://eschoolinthecloud.herokuapp.com/terms/terms <br/>
+Example Output:
+
+<details> 
+<summary>https://eschoolinthecloud.herokuapp.com/terms/terms</summary>
+
+```JSON
+[
+    {
+        "tosid": 11,
+        "paragraph": "All changes are intended to describe, in plain English, the nature and scope of the corresponding source code."
+    },
+    {
+        "tosid": 12,
+        "paragraph": "Internet or similar exemptions of copyright (separated by comma, not as a whole which is a work based on (or derived from) the Work and, in such a way for the licensee would be to refrain entirely from distribution"
+    },
+    {
+        "tosid": 13,
+        "paragraph": "Hereinafter in this Agreement. Article 5 (Governing Law) 1. IPA may publish new versions (including revisions) of this License either on the Internet using the software, and you want it, that you receive from any Contributor."
+    }
+]
+```
+<br/>
+
+Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** or **AUTHORIZATION** for React I MVP purposes only* 
+
+</details>
+
+</details>
 
 ## User Http Requests
 <details>
