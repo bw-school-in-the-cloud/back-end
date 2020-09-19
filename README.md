@@ -239,12 +239,12 @@ Example Output:
     ]
 }
 ```
-
+<br/>
 *Role ID's: [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
 </details>
 
 <details>
-<summary>Return</summary>
+<summary>Return</summary> <br/>
 
 **Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
 *Status: 201 Created*
