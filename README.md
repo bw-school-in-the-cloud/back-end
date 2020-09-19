@@ -240,14 +240,14 @@ Example Output:
 }
 ```
 
-**Role ID's: [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}**
+*Role ID's: [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
 </details>
 
 <details>
 <summary>Return</summary>
 
-**Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id}
-**Status: 201 Created**
+**Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
+*Status: 201 Created*
 
 </details>
 
@@ -276,9 +276,9 @@ Example Output:
 </details>
 
 <details>
-<summary>Return</summary>
+<summary>Http Status</summary> <br/>
 
-**Status: 200 Okay**
+*Status: 200 Okay*
 
 </details>
 
@@ -299,9 +299,9 @@ Example Output:
 </details>
 
 <details>
-<summary>Return</summary>
+<summary>Http Status</summary> <br/>
 
-**Status: 200 Okay**
+*Status: 200 Okay*
 
 </details>
 
@@ -311,8 +311,8 @@ Example Output:
 **Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
 
 <details>
-<summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary> <br/>
 
-**Status: 200 Okay**
+*Status: 200 Okay*
 
 </details>
