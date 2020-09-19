@@ -80,7 +80,6 @@ public class SeedData
                 .add(new Useremail(u1,
                                    "admin@mymail.local"));
 
-        u1.setUserid(1);
         userService.save(u1);
 
         // data, user

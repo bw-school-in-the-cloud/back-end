@@ -1,7 +1,7 @@
 # School In The Cloud 
+<br/><br/>
 
-
-### API URL
+### API URL 
 https://eschoolinthecloud.herokuapp.com/ 
 
 
@@ -9,7 +9,7 @@ https://eschoolinthecloud.herokuapp.com/
 
 ### GET Requests
 
-List All Users -- https://eschoolinthecloud.herokuapp.com/users/users
+**List All Users --** https://eschoolinthecloud.herokuapp.com/users/users <br/>
 Example Output:
 
 <details>
@@ -92,8 +92,10 @@ Example Output:
     }
 ]
 ```
+</details>
 
-Find User By ID -- https://eschoolinthecloud.herokuapp.com/users/user/{id}
+
+**Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
 Example Output: 
 
 <details>
@@ -138,7 +140,7 @@ Example Output:
 ```
 </details>
 
-Find By Username -- https://eschoolinthecloud.herokuapp.com/users/user/name/{username}
+**Find By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username} <br/>
 Example Output:
 
 <details>
@@ -183,8 +185,8 @@ Example Output:
 ```
 </details>
 
-Find Username Like (Similar) -- https://eschoolinthecloud.herokuapp.com/users/user/name/like/{userName}
-**FINDS USERNAMES CONTAINING THE QUERY STRING**
+**Find Username Like (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string} <br/>
+*Finds usernames containing the string* <br/>
 Example Output: 
 
 <details>
@@ -218,7 +220,7 @@ Example Output:
 ### POST Requests
 *Sign up and/or Admin access only*
 
-Add New User -- https://eschoolinthecloud.herokuapp.com/users/user
+**Add New User --** https://eschoolinthecloud.herokuapp.com/users/user <br/>
 
 <details>
 <summary>Minimum Body</summary>
@@ -243,16 +245,16 @@ Add New User -- https://eschoolinthecloud.herokuapp.com/users/user
 
 <details>
 <summary>Return</summary>
-```
-Headers: https://eschoolinthecloud.herokuapp.com/users/user/{id}
-Status: 201 Created
-```
+
+**Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id}
+**Status: 201 Created**
+
 </details>
 
 ### PUT Requests
 *Admin access only*
 
-Update User -- https://eschoolinthecloud.herokuapp.com/users/user/15
+**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15 <br/>
 
 <details>
 <summary>Minimum Body</summary>
@@ -275,15 +277,15 @@ Update User -- https://eschoolinthecloud.herokuapp.com/users/user/15
 
 <details>
 <summary>Return</summary>
-```
-Status: 200 Okay
-```
+
+**Status: 200 Okay**
+
 </details>
 
 ### PATCH Requests
 *Admin access only*
 
-Update User --
+**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15 <br/>
 
 <details>
 <summary>Minimum Body</summary>
@@ -298,19 +300,19 @@ Update User --
 
 <details>
 <summary>Return</summary>
-```
-Status: 200 Okay
-```
+
+**Status: 200 Okay**
+
 </details>
 
 ### DELETE Requests
 *Admin access only*
 
-Delete User By ID -- https://eschoolinthecloud.herokuapp.com/users/user/{id}
+**Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary>
-```
-Status: 200 Okay
-```
+
+**Status: 200 Okay**
+
 </details>
