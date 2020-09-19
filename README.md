@@ -185,7 +185,8 @@ Example Output:
 </details>
 
 **Find Username Like (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string} <br/>
-*Finds usernames containing the string* <br/>
+
+Note: *Finds usernames containing the string* <br/><br/>
 Example Output: 
 
 <details>
@@ -257,7 +258,9 @@ Example Output:
 }
 ```
 <br/>
+
 Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
+
 </details>
 
 <details>
