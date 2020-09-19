@@ -3,11 +3,9 @@ package com.lambdaschool.usermodel;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import com.lambdaschool.usermodel.models.Role;
-import com.lambdaschool.usermodel.models.User;
-import com.lambdaschool.usermodel.models.UserRoles;
-import com.lambdaschool.usermodel.models.Useremail;
+import com.lambdaschool.usermodel.models.*;
 import com.lambdaschool.usermodel.services.RoleService;
+import com.lambdaschool.usermodel.services.TOSService;
 import com.lambdaschool.usermodel.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -38,6 +36,12 @@ public class SeedData
      */
     @Autowired
     UserService userService;
+
+    /**
+     * Connects the TOS service to this process
+     */
+    @Autowired
+    TOSService tosService;
 
     /**
      * Generates test, seed data for our application
@@ -103,6 +107,27 @@ public class SeedData
                 .add(new Useremail(u3,
                                    "volunteer@email.local"));
         userService.save(u3);
+
+        long t1Id = 1000;
+        String t1Text = "You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions.";
+
+        long t2Id = 1001;
+        String t2Text = "If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must discontinue use immediately.\n";
+
+        long t3Id = 1002;
+        String t3Text = "Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference.";
+
+        long t4Id = 1003;
+        String t4Text = "We reserve the right, in our sole discretion, to make changes or modifications to these Terms and Conditions at any time and for any reason.\n";
+
+        long t5Id = 1004;
+        String t5Text = "We will alert you about any changes by updating the “Last updated” date of these Terms and Conditions, and you waive any right to receive specific notice of each such change.";
+
+        tosService.save(t1Id, t1Text);
+        tosService.save(t2Id, t2Text);
+        tosService.save(t3Id, t3Text);
+        tosService.save(t4Id, t4Text);
+        tosService.save(t5Id, t5Text);
 
         if (false)
         {

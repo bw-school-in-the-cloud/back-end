@@ -1,14 +1,61 @@
 # School In The Cloud 
 
 ### API URL 
-https://eschoolinthecloud.herokuapp.com/ 
+https://eschoolinthecloud.herokuapp.com/
 
+## Terms Of Servie Http Requests
+<details>
+<summary> :arrow_down: </summary>
+
+### GET Requests
+Note: *Data for React I MVP Only*   
+
+
+**List Terms Of Service --** https://eschoolinthecloud.herokuapp.com/terms/terms   
+Example Output:
+
+<details> 
+<summary>https://eschoolinthecloud.herokuapp.com/terms/terms</summary>
+
+```JSON
+[
+    {
+        "tosid": 11,
+        "paragraph": "You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions."
+    },
+    {
+        "tosid": 12,
+        "paragraph": "If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must discontinue use immediately.\n"
+    },
+    {
+        "tosid": 13,
+        "paragraph": "Supplemental terms and conditions or documents that may be posted on the Site from time to time are hereby expressly incorporated herein by reference."
+    },
+    {
+        "tosid": 14,
+        "paragraph": "We reserve the right, in our sole discretion, to make changes or modifications to these Terms and Conditions at any time and for any reason.\n"
+    },
+    {
+        "tosid": 15,
+        "paragraph": "We will alert you about any changes by updating the “Last updated” date of these Terms and Conditions, and you waive any right to receive specific notice of each such change."
+    }
+]
+```
+    
+
+Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
+
+</details>
+
+</details>
 
 ## User Http Requests
+<details>
+<summary> :arrow_down: </summary>
 
 ### GET Requests
 
-**List All Users --** https://eschoolinthecloud.herokuapp.com/users/users <br/>
+**List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
 Example Output:
 
 <details>
@@ -94,7 +141,7 @@ Example Output:
 </details>
 
 
-**Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
+**Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 Example Output: 
 
 <details>
@@ -139,7 +186,7 @@ Example Output:
 ```
 </details>
 
-**Find By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username} <br/>
+**Find By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
 Example Output:
 
 <details>
@@ -184,9 +231,9 @@ Example Output:
 ```
 </details>
 
-**Find Username Like (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string} <br/>
+**Find Username Like (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
 
-Note: *Finds usernames containing the string* <br/><br/>
+Note: *Finds usernames containing the string*     
 Example Output: 
 
 <details>
@@ -220,7 +267,7 @@ Example Output:
 ### POST Requests
 *Sign up and/or Admin access only*
 
-**Add New User --** https://eschoolinthecloud.herokuapp.com/users/user <br/>
+**Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
 
 <details>
 <summary>Minimum Body</summary>
@@ -257,16 +304,16 @@ Example Output:
     ]
 }
 ```
-<br/>
+     
 
 Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
 
 </details>
 
 <details>
-<summary>Return</summary> <br/>
+<summary>Return</summary>     
 
-**Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
+**Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 *Status: 201 Created*
 
 </details>
@@ -274,7 +321,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 ### PUT Requests
 *Admin access only*
 
-**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15 <br/>
+**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
 <details>
 <summary>Minimum Body</summary>
@@ -296,7 +343,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 <details>
-<summary>Http Status</summary> <br/>
+<summary>Http Status</summary>    
 
 *Status: 200 Okay*
 
@@ -305,7 +352,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 ### PATCH Requests
 *Admin access only*
 
-**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15 <br/>
+**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
 <details>
 <summary>Minimum Body</summary>
@@ -319,7 +366,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 <details>
-<summary>Http Status</summary> <br/>
+<summary>Http Status</summary>    
 
 *Status: 200 Okay*
 
@@ -328,11 +375,14 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 ### DELETE Requests
 *Admin access only*
 
-**Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id} <br/>
+**Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 
 <details>
-<summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary> <br/>
+<summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary>     
 
 *Status: 200 Okay*
 
 </details>
+
+</details>
+
