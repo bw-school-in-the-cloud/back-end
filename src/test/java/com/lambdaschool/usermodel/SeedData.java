@@ -56,8 +56,8 @@ public class SeedData
         userService.deleteAll();
         roleService.deleteAll();
         Role r1 = new Role("admin");
-        Role r2 = new Role("user");
-        Role r3 = new Role("data");
+        Role r2 = new Role("student");
+        Role r3 = new Role("volunteer");
 
         r1 = roleService.save(r1);
         r2 = roleService.save(r2);
@@ -83,33 +83,25 @@ public class SeedData
         userService.save(u1);
 
         // data, user
-        User u2 = new User("cinnamon",
-                           "1234567",
-                           "cinnamon@lambdaschool.local");
+        User u2 = new User("student",
+                           "student",
+                           "student@lambdaschool.local");
         u2.getRoles()
                 .add(new UserRoles(u2, r2));
-        u2.getRoles()
-                .add(new UserRoles(u2, r3));
         u2.getUseremails()
                 .add(new Useremail(u2,
-                                   "cinnamon@mymail.local"));
-        u2.getUseremails()
-                .add(new Useremail(u2,
-                                   "hops@mymail.local"));
-        u2.getUseremails()
-                .add(new Useremail(u2,
-                                   "bunny@email.local"));
+                                   "student@mymail.local"));
         userService.save(u2);
 
         // user
-        User u3 = new User("barnbarn",
-                           "ILuvM4th!",
-                           "barnbarn@lambdaschool.local");
+        User u3 = new User("volunteer",
+                           "volunteer",
+                           "volunteer@lambdaschool.local");
         u3.getRoles()
-                .add(new UserRoles(u3, r2));
+                .add(new UserRoles(u3, r3));
         u3.getUseremails()
                 .add(new Useremail(u3,
-                                   "barnbarn@email.local"));
+                                   "volunteer@email.local"));
         userService.save(u3);
 
         User u4 = new User("puttat",

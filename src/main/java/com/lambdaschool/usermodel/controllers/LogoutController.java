@@ -26,7 +26,7 @@ public class LogoutController
     /**
      * Removes the token for the signed on user. The signed user will lose access to the application. They would have to sign on again.
      *
-     * <br>Example: <a href="http://localhost:2019/logout">http://localhost:2019/logout</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/logout">https://eschoolinthecloud.herokuapp.com/logout</a>
      *
      * @param request the Http request from which we find the authorization header which includes the token to be removed
      */

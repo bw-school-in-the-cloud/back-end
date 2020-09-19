@@ -34,7 +34,7 @@ public class UseremailController
 
     /**
      * List of all users emails
-     * <br>Example: <a href="http://localhost:2019/useremails/useremails">http://localhost:2019/useremails/useremails</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/useremails/useremails">https://eschoolinthecloud.herokuapp.com/useremails/useremails</a>
      *
      * @return JSON list of all users emails
      */
@@ -49,7 +49,7 @@ public class UseremailController
 
     /**
      * Return the user email combination referenced by the given primary key
-     * <br>Example: <a href="http://localhost:2019/useremails/useremail/8">http://localhost:2019/useremails/useremail/8</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/useremails/useremail/8">https://eschoolinthecloud.herokuapp.com/useremails/useremail/8</a>
      *
      * @param useremailId the primary key of the user email combination you seek
      * @return JSON object of the user email combination you seek with a status of OK
@@ -67,7 +67,7 @@ public class UseremailController
 
     /**
      * Removes the given user email combination
-     * <br>Example: <a href="http://localhost:2019/useremails/useremail/8">http://localhost:2019/useremails/useremail/8</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/useremails/useremail/8">https://eschoolinthecloud.herokuapp.com/useremails/useremail/8</a>
      *
      * @param useremailid the primary key of the user email combination you wish to remove
      * @return Status of OK
@@ -83,7 +83,7 @@ public class UseremailController
 
     /**
      * Change the email associated with the given user email combination
-     * <br>Example: <a href="http://localhost:2019/useremails/useremail/9/email/favbun@hops.local">http://localhost:2019/useremails/useremail/9/email/favbun@hops.local</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/useremails/useremail/9/email/favbun@hops.local">https://eschoolinthecloud.herokuapp.com/useremails/useremail/9/email/favbun@hops.local</a>
      *
      * @param useremailid  The primary key of the user email combination you wish to change
      * @param emailaddress The new email (String)

@@ -39,7 +39,7 @@ public class RolesController
 
     /**
      * List of all roles
-     * <br>Example: <a href="http://localhost:2019/roles/roles">http://localhost:2019/roles/roles</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/roles/roles">https://eschoolinthecloud.herokuapp.com/roles/roles</a>
      *
      * @return JSON List of all the roles and their associated users
      * @see RoleService#findAll() RoleService.findAll()
@@ -55,7 +55,7 @@ public class RolesController
 
     /**
      * The Role referenced by the given primary key
-     * <br>Example: <a href="http://localhost:2019/roles/role/3">http://localhost:2019/roles/role/3</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/roles/role/3">https://eschoolinthecloud.herokuapp.com/roles/role/3</a>
      *
      * @param roleId The primary key (long) of the role you seek
      * @return JSON object of the role you seek
@@ -74,7 +74,7 @@ public class RolesController
 
     /**
      * The Role with the given name
-     * <br>Example: <a href="http://localhost:2019/roles/role/name/data">http://localhost:2019/roles/role/name/data</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/roles/role/name/data">https://eschoolinthecloud.herokuapp.com/roles/role/name/data</a>
      *
      * @param roleName The name of the role you seek
      * @return JSON object of the role you seek
@@ -93,7 +93,7 @@ public class RolesController
 
     /**
      * Given a complete Role object, create a new Role record
-     * <br>Example: <a href="http://localhost:2019/roles/role">http://localhost:2019/roles/role</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/roles/role">https://eschoolinthecloud.herokuapp.com/roles/role</a>
      *
      * @param newRole A complete new Role object
      * @return A location header with the URI to the newly created role and a status of CREATED
@@ -125,7 +125,7 @@ public class RolesController
 
     /**
      * The process allows you to update a role name only!
-     * <br>Example: <a href="http://localhost:2019/roles/role/3">http://localhost:2019/roles/role/3</a>
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/roles/role/3">https://eschoolinthecloud.herokuapp.com/roles/role/3</a>
      *
      * @param roleid  The primary key (long) of the role you wish to update
      * @param newRole The new name (String) for the role
