@@ -106,6 +106,22 @@ public class UserServiceImpl
             .clear();
         for (UserRoles ur : user.getRoles())
         {
+            if (ur.getRole()
+                .getName()
+                .equals("ADMIN"))
+            {
+                ur.getRole().setRoleid(1);
+            }else if (ur.getRole()
+                .getName()
+                .equals("STUDENT"))
+            {
+                ur.getRole().setRoleid(2);
+            }else if (ur.getRole()
+                .getName()
+                .equals("VOLUNTEER"))
+            {
+                ur.getRole().setRoleid(3);
+            }
             Role addRole = roleService.findRoleById(ur.getRole()
                 .getRoleid());
             newUser.getRoles()

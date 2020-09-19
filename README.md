@@ -239,7 +239,25 @@ Example Output:
 }
 ```
 <br/>
-*Role ID's: [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
+**OR**
+<br/>
+
+```JSON
+{
+    "username": "add-user",
+    "primaryemail": "new@lambdaschool.local",
+    "password": "password",
+    "roles": [
+        {
+            "role": {
+                "name": "ADMIN"
+            }
+        }
+    ]
+}
+```
+<br/>
+Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
 </details>
 
 <details>
