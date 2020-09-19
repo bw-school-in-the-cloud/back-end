@@ -1,5 +1,4 @@
 # School In The Cloud 
-<br/><br/>
 
 ### API URL 
 https://eschoolinthecloud.herokuapp.com/ 
