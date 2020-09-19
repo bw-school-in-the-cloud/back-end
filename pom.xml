@@ -112,7 +112,7 @@
 
     <build>
 
-        <finalName>zplambda-stumps</finalName>
+        <finalName>eschoolinthecloud</finalName>
 
         <plugins>
             <plugin>
