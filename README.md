@@ -956,8 +956,6 @@ Example Output:
 ```
 </details>
 
-</details>
-
 **Find Event Category By ID --** http://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
 Example Output:
 
@@ -1009,3 +1007,7 @@ Example Output:
 </details>
 
 </details>
+
+</details>
+
+
