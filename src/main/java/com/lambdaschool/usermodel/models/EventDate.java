@@ -1,131 +1,83 @@
 package com.lambdaschool.usermodel.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import java.util.Date;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name = "eventdates")
-public class EventDate
+@IdClass(EventDateId.class)
+public class EventDate extends Auditable implements Serializable
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long eventdateid;
+    @ManyToOne
+    @JoinColumn(name = "eventid")
+    @JsonIgnoreProperties(value = "edate")
+    private Event event;
 
-    @Column(nullable = false)
-    @Max(59)
-    private int eventminutes;
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "eventdateid")
+    @JsonIgnoreProperties(value = "events")
+    private EDate edate;
 
-    @Column(nullable = false)
-    private int eventhours;
-
-    @Column(nullable = false)
-    @Min(1)
-    @Max(12)
-    private int eventmonth;
-
-    private String eventmonthname;
-
-    @Column(nullable = false)
-    @Min(1)
-    @Max(31)
-    private int eventday;
-
-    @Column(nullable = false)
-    private int eventyear;
+    private String eventinfo;
+    private String eventdateday;
 
     public EventDate()
     {
     }
 
     public EventDate(
-        @Max(59) int eventminutes,
-        int eventhours,
-        @Min(1) @Max(12) int eventmonth,
-        @Min(1) @Max(31) int eventday,
-        int eventyear)
+        Event event,
+        EDate edate)
     {
-        this.eventminutes = eventminutes;
-        this.eventhours = eventhours;
-        this.eventmonth = eventmonth;
-        this.eventday = eventday;
-        this.eventyear = eventyear;
+        this.event = event;
+        this.edate = edate;
     }
 
-    public long getEventdateid()
+    public Event getEvent()
     {
-        return eventdateid;
+        return event;
     }
 
-    public void setEventdateid(long eventdateid)
+    public void setEvent(Event event)
     {
-        this.eventdateid = eventdateid;
+        this.event = event;
     }
 
-    public int getEventminutes()
+    public EDate getEdate()
     {
-        return eventminutes;
+        return edate;
     }
 
-    public void setEventminutes(int eventminutes)
+    public void setEdate(EDate edate)
     {
-        this.eventminutes = eventminutes;
-    }
-
-    public int getEventhours()
-    {
-        return eventhours;
-    }
-
-    public void setEventhours(int eventhours)
-    {
-        this.eventhours = eventhours;
-    }
-
-    public int getEventmonth()
-    {
-        return eventmonth;
-    }
-
-    public void setEventmonth(int eventmonth)
-    {
-        this.eventmonth = eventmonth;
-    }
-
-    public String getEventmonthname()
-    {
-        return eventmonthname;
-    }
-
-    public void setEventmonthname(String eventmonthname)
-    {
-        this.eventmonthname = eventmonthname;
-    }
-
-    public int getEventday()
-    {
-        return eventday;
-    }
-
-    public void setEventday(int eventday)
-    {
-        this.eventday = eventday;
-    }
-
-    public int getEventyear()
-    {
-        return eventyear;
-    }
-
-    public void setEventyear(int eventyear)
-    {
-        this.eventyear = eventyear;
+        this.edate = edate;
     }
 
     @Override
-    public String toString()
+    public boolean equals(Object obj)
     {
-        return eventmonth + "/" + eventday + "/" + eventyear + " @" + eventhours + ":" + eventminutes;
+        if (this == obj)
+        {
+            return true;
+        }
+        if (!(obj instanceof EventDate))
+        {
+            return false;
+        }
+        EventDate that = (EventDate) obj;
+        return ((event == null) ? 0 : event.getEventid()) == ((that.event == null) ? 0 : that.event.getEventid()) &&
+            ((edate == null) ? 0 : edate.getEventdateid()) == ((that.edate == null)? 0 : that.edate.getEventdateid());
+
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return 34;
     }
 }

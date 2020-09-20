@@ -4,15 +4,16 @@ import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
 import com.lambdaschool.usermodel.models.*;
-import com.lambdaschool.usermodel.services.RoleService;
-import com.lambdaschool.usermodel.services.TOSService;
-import com.lambdaschool.usermodel.services.UserService;
+import com.lambdaschool.usermodel.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Calendar;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 
 /**
  * SeedData puts both known and random data into the database. It implements CommandLineRunner.
@@ -42,6 +43,18 @@ public class SeedData
      */
     @Autowired
     TOSService tosService;
+
+    /**
+     * Connects the eDate service to this process
+     */
+    @Autowired
+    EDateService eDateService;
+
+    /**
+     * Connects the event service to this process
+     */
+    @Autowired
+    EventService eventService;
 
     /**
      * Generates test, seed data for our application
@@ -128,6 +141,53 @@ public class SeedData
         tosService.save(t3Id, t3Text);
         tosService.save(t4Id, t4Text);
         tosService.save(t5Id, t5Text);
+
+
+        EDate date2 = new EDate(0,2,6,24,2021);
+        EDate date3 = new EDate(30,1,10,24,2020);
+        EDate date4 = new EDate(30,2,12,4,2020);
+        EDate date5 = new EDate(0,1,12,14,2020);
+        EDate date6 = new EDate(0,1,11,24,2020);
+        EDate date7 = new EDate(30,4,9,30,2020);
+        EDate date8 = new EDate(30,2,6,11,2021);
+        EDate date9 = new EDate(0,1,2,28,2021);
+        EDate date10 = new EDate(30,0,3,19,2021);
+
+        eDateService.save(date2);
+        eDateService.save(date3);
+        eDateService.save(date4);
+        eDateService.save(date5);
+        eDateService.save(date6);
+        eDateService.save(date7);
+        eDateService.save(date8);
+        eDateService.save(date9);
+        eDateService.save(date10);
+
+        Event e1 = new Event("First Event", "Test Event", 1.5);
+        Event e2 = new Event("Second Event", "Test Event", 3.0);
+        Event e3 = new Event("Third Event", "Test Event", 0.5);
+        Event e4 = new Event("Fourth Event", "Test Event", 5.0);
+        Event e5 = new Event("Fifth Event", "Test Event", 3.5);
+
+        eventService.save(e1);
+        eventService.save(e2);
+        eventService.save(e3);
+        eventService.save(e4);
+        eventService.save(e5);
+
+
+
+        Set<EventDate> anEventDate = new HashSet<>();
+        anEventDate.add(new EventDate(e1,new EDate()));
+        EDate date1 = new EDate(30, 0, 1, 5, 2021);
+        date1.setEvents(anEventDate);
+
+
+        eDateService.save(date1);
+
+
+
+        eDateService.save(date1);
 
         if (false)
         {
