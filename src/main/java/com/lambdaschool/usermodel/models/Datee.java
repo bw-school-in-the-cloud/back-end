@@ -1,6 +1,7 @@
 package com.lambdaschool.usermodel.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
@@ -18,27 +19,35 @@ public class Datee
 
     @Column(nullable = false)
     @Max(59)
+    @JsonIgnore
     private int timeminute;
 
     @Column(nullable = false)
+    @JsonIgnore
     private int timedigital;
 
+    @JsonIgnore
     private int timeimperial;
+    @JsonIgnore
     private String timeimperialsuffix;
 
     @Column(nullable = false)
     @Min(1)
     @Max(12)
+    @JsonIgnore
     private int eventmonth;
 
+    @JsonIgnore
     private String eventmonthname;
 
     @Column(nullable = false)
     @Min(1)
     @Max(31)
+    @JsonIgnore
     private int eventday;
 
     @Column(nullable = false)
+    @JsonIgnore
     private int eventyear;
 
     @OneToMany(mappedBy = "datee",

@@ -7,6 +7,7 @@ import java.util.*;
 
 @Entity
 @Table(name = "event")
+@JsonIgnoreProperties(value = "lengthchange")
 public class Event
     extends Auditable
 {
@@ -16,6 +17,9 @@ public class Event
 
     private String title;
     private String description;
+
+    @Transient
+    public boolean lengthchange = false;
     private double length;
     private String lengthdesc;
 
@@ -82,6 +86,7 @@ public class Event
 
     public void setLength(double length)
     {
+        lengthchange = true;
         this.length = length;
     }
 
@@ -113,5 +118,15 @@ public class Event
     public void setLengthdesc(String lengthdesc)
     {
         this.lengthdesc = lengthdesc;
+    }
+
+    public boolean isLengthchange()
+    {
+        return lengthchange;
+    }
+
+    public void setLengthchange(boolean lengthchange)
+    {
+        this.lengthchange = lengthchange;
     }
 }

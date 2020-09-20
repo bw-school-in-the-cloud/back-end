@@ -184,23 +184,23 @@ public class SeedData
         c5 = categoryService.save(c5);
         c6 = categoryService.save(c6);
 
-        Event e1 = new Event("First Event", "Test Event", 1.5, c1);
+        Event e1 = new Event("First", "Test Event", 1.5, c1);
         e1.getEventdates().add(new EventDate(date2, new Event()));
         e1.getEventdates().add(new EventDate(date5, new Event()));
 
-        Event e2 = new Event("Second Event", "Test Event", 3.0, c2);
+        Event e2 = new Event("Second", "Test Event", 3.0, c2);
         e2.getEventdates().add(new EventDate(date2, new Event()));
         e2.getEventdates().add(new EventDate(date6, new Event()));
         e2.getEventdates().add(new EventDate(date5, new Event()));
 
-        Event e3 = new Event("Third Event", "Test Event", 0.5, c3);
+        Event e3 = new Event("Third", "Test Event", 0.5, c3);
         e3.getEventdates().add(new EventDate(date7, new Event()));
 
-        Event e4 = new Event("Fourth Event", "Test Event", 5.0, c4);
+        Event e4 = new Event("Fourth", "Test Event", 5.0, c4);
         e3.getEventdates().add(new EventDate(date7, new Event()));
         e3.getEventdates().add(new EventDate(date9, new Event()));
 
-        Event e5 = new Event("Fifth Event", "Test Event", 3.5, c5);
+        Event e5 = new Event("Fifth", "Test Event", 3.5, c5);
 
         Event e6 = new Event("Sixth Event", "Test Event", 2.5, c6);
         e6.getEventdates().add(new EventDate(date2, new Event()));

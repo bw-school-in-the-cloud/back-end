@@ -1,13 +1,12 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.exceptions.ResourceNotFoundException;
-import com.lambdaschool.usermodel.models.Datee;
-import com.lambdaschool.usermodel.models.Event;
-import com.lambdaschool.usermodel.models.EventDate;
+import com.lambdaschool.usermodel.models.*;
 import com.lambdaschool.usermodel.repository.DateeRepository;
 import com.lambdaschool.usermodel.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +23,9 @@ public class EventServiceImpl implements EventService
     @Autowired
     CategoryService categoryService;
 
+    @Autowired
+    private HelperFunctions helperFunctions;
+
     @Override
     public List<Event> findAll()
     {
@@ -38,6 +40,25 @@ public class EventServiceImpl implements EventService
         return list;
     }
 
+    @Override
+    public Event findEventById(Long eventId)
+    {
+        return eventRepository.findById(eventId)
+            .orElseThrow(() -> new ResourceNotFoundException("Event ID:" + eventId + " not found!"));
+    }
+
+    @Override
+    public Event findEventByName(String eventName)
+    {
+        Event ee = eventRepository.findByTitle(eventName);
+        if (ee == null)
+        {
+            throw new ResourceNotFoundException("Event name " + eventName + " not found!");
+        }
+        return ee;
+    }
+
+    @Transactional
     @Override
     public Event save(Event event)
     {
@@ -147,5 +168,139 @@ public class EventServiceImpl implements EventService
             addEvent.getEventdates().add(new EventDate(addEvent, adDate));
         }
         return eventRepository.save(addEvent);
+    }
+
+
+
+//    @Override
+//    public List<Event> findByNameContaining(String eventName)
+//    {
+//        return eventRepository.findByNameContainingIgnoreCase(eventName.toLowerCase());
+//    }
+
+    @Transactional
+    @Override
+    public Event update(
+        Event updateEvent,
+        long id)
+    {
+        Event currentEvent = findEventById(id);
+
+        if (updateEvent.getTitle() != null)
+        {
+            currentEvent.setTitle(updateEvent.getTitle());
+        }
+
+        if (updateEvent.getDescription() != null)
+        {
+           currentEvent.setDescription(updateEvent.getDescription());
+        }
+
+        if (updateEvent.lengthchange)
+        {
+            currentEvent.setLength(updateEvent.getLength());
+
+            if (updateEvent.getLength() == 0.5)
+            {
+                currentEvent.setLengthdesc("30 Minutes");
+            }else if (updateEvent.getLength() == 1.0)
+            {
+                currentEvent.setLengthdesc("One Hour");
+            }else if (updateEvent.getLength() == 1.5)
+            {
+                currentEvent.setLengthdesc("One and a Half Hours");
+            }else if (updateEvent.getLength() == 2.0)
+            {
+                currentEvent.setLengthdesc("Two Hours");
+            }else if (updateEvent.getLength() == 2.5)
+            {
+                currentEvent.setLengthdesc("Two and a Half Hours");
+            }else if (updateEvent.getLength() == 3.0)
+            {
+                currentEvent.setLengthdesc("Three Hours");
+            }else if (updateEvent.getLength() == 3.5)
+            {
+                currentEvent.setLengthdesc("Three and a Half Hours");
+            }else if (updateEvent.getLength() == 4.0)
+            {
+                currentEvent.setLengthdesc("Four Hours");
+            }else if (updateEvent.getLength() == 4.5)
+            {
+                currentEvent.setLengthdesc("Four and a Half Hours");
+            }else if (updateEvent.getLength() == 5.0)
+            {
+                currentEvent.setLengthdesc("Five Hours");
+            }else if (updateEvent.getLength() == 5.5)
+            {
+                currentEvent.setLengthdesc("Five and a Half Hours");
+            }else if (updateEvent.getLength() == 6.0)
+            {
+                currentEvent.setLengthdesc("Six Hours");
+            }else if (updateEvent.getLength() == 6.5)
+            {
+                currentEvent.setLengthdesc("Six and a Half Hours");
+            }else if (updateEvent.getLength() == 7.0)
+            {
+                currentEvent.setLengthdesc("Seven Hours");
+            }else if (updateEvent.getLength() == 7.5)
+            {
+                currentEvent.setLengthdesc("Seven and a Half Hours");
+            }else if (updateEvent.getLength() == 8.0)
+            {
+                currentEvent.setLengthdesc("Eight Hours");
+            }else if (updateEvent.getLength() == 8.5)
+            {
+                currentEvent.setLengthdesc("Eight and a Half Hours");
+            }else if (updateEvent.getLength() == 9.0)
+            {
+                currentEvent.setLengthdesc("Nine Hours");
+            }else if (updateEvent.getLength() == 9.5)
+            {
+                currentEvent.setLengthdesc("Nine and a Half Hours");
+            }else if (updateEvent.getLength() == 10.0)
+            {
+                currentEvent.setLengthdesc("Ten Hours");
+            }else if (updateEvent.getLength() == 10.5)
+            {
+                currentEvent.setLengthdesc("Ten and a Half Hours");
+            }else if (updateEvent.getLength() == 11.0)
+            {
+                currentEvent.setLengthdesc("Eleven Hours");
+            }else if (updateEvent.getLength() == 11.5)
+            {
+                currentEvent.setLengthdesc("Eleven and a Half Hours");
+            }else if (updateEvent.getLength() == 12.0)
+            {
+                currentEvent.setLengthdesc("Twelve Hours");
+            }else if (updateEvent.getLength() == 12.5)
+            {
+                currentEvent.setLengthdesc("Twelve and a Half Hours");
+            }else if (updateEvent.getLength() == 13.0)
+            {
+                currentEvent.setLengthdesc("One and a Half Hours");
+            }
+        }
+
+        if (updateEvent.getCategory() != null)
+        {
+            currentEvent.setCategory(categoryService.findCategoryById(updateEvent.getCategory().getCategoryid()));
+        }
+
+        currentEvent.getEventdates().clear();
+        for (EventDate e : updateEvent.getEventdates())
+        {
+            Datee adDate = dateeRepository.findById(e.getdatee().getEventdateid())
+                .orElseThrow(() -> new ResourceNotFoundException("Event Date ID:" + e.getdatee()
+                    .getEventdateid() + " could not be found!"));
+            currentEvent.getEventdates().add(new EventDate(currentEvent, adDate));
+        }
+
+        return eventRepository.save(currentEvent);
+    }
+
+    @Override
+    public void delete(long id)
+    {
+
     }
 }
