@@ -1,16 +1,17 @@
 package com.lambdaschool.usermodel.services;
 
-import com.lambdaschool.usermodel.models.EDate;
+
+import com.lambdaschool.usermodel.models.Datee;
 import com.lambdaschool.usermodel.models.Event;
 import com.lambdaschool.usermodel.models.TOS;
 
 import java.util.List;
 
-public interface EDateService
+public interface DateeService
 {
-    EDate save(EDate edate);
+    Datee save(Datee datee);
 
-    List<EDate> findAll();
+    List<Datee> findAll();
 
-    EDate findEDateById(long id);
+    Datee finddateeById(long id);
 }

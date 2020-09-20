@@ -1,11 +1,12 @@
 package com.lambdaschool.usermodel.controllers;
 
 import com.lambdaschool.usermodel.models.Category;
-import com.lambdaschool.usermodel.models.EDate;
+
+import com.lambdaschool.usermodel.models.Datee;
 import com.lambdaschool.usermodel.models.TOS;
-import com.lambdaschool.usermodel.repository.EDateRepository;
 import com.lambdaschool.usermodel.services.CategoryService;
-import com.lambdaschool.usermodel.services.EDateService;
+
+import com.lambdaschool.usermodel.services.DateeService;
 import com.lambdaschool.usermodel.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,10 +20,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/events")
-public class EDateController
+public class DateeController
 {
     @Autowired
-    private EDateService eDateService;
+    private DateeService dateeService;
 
     /**
      * Returns a list of terms of service
@@ -35,7 +36,7 @@ public class EDateController
         produces = "application/json")
     public ResponseEntity<?> findAll()
     {
-        List<EDate> eventdates = eDateService.findAll();
+        List<Datee> eventdates = dateeService.findAll();
         return new ResponseEntity<>(eventdates,
             HttpStatus.OK);
     }
@@ -44,17 +45,17 @@ public class EDateController
      * Returns a single user based off a user id number
      * <br>Example: https://eschoolinthecloud.herokuapp.com/users/user/7
      *
-     * @param edateId The primary key of the user you seek
+     * @param dateeId The primary key of the user you seek
      * @return JSON object of the user you seek
-     * @see EDateService#findEDateById(long) (long) EDateService.findEDateById(long)
+     * @see DateeService#finddateeById(long) (long) dateeService.finddateeById(long)
      */
-    @GetMapping(value = "/date/{edateId}",
+    @GetMapping(value = "/date/{dateeId}",
         produces = "application/json")
     public ResponseEntity<?> getUserById(
         @PathVariable
-            Long edateId)
+            Long dateeId)
     {
-        EDate e = eDateService.findEDateById(edateId);
+        Datee e = dateeService.finddateeById(dateeId);
         return new ResponseEntity<>(e,
             HttpStatus.OK);
     }

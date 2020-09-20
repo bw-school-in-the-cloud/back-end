@@ -26,7 +26,7 @@ public class Event
 
     @OneToMany(mappedBy = "event",
         cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "edate", allowSetters = true)
+    @JsonIgnoreProperties(value = "event", allowSetters = true)
     private Set<EventDate> eventdates = new HashSet<>();
 
     public Event()

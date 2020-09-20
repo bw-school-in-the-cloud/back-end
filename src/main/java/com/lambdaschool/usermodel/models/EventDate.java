@@ -9,6 +9,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "eventdate")
 @IdClass(EventDateId.class)
+@JsonIgnoreProperties("events")
 public class EventDate implements Serializable
 {
     @Id
@@ -19,9 +20,9 @@ public class EventDate implements Serializable
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "edateid")
-    @JsonIgnoreProperties(value = "eventdates")
-    private EDate edate;
+    @JoinColumn(name = "dateeid")
+    @JsonIgnoreProperties(value = "events")
+    private Datee datee;
 
     private String eventinfo;
     private String eventdateday;
@@ -31,18 +32,17 @@ public class EventDate implements Serializable
     }
 
     public EventDate(
-        Event event,
-        EDate edate)
+        Event event, Datee datee)
     {
         this.event = event;
-        this.edate = edate;
+        this.datee = datee;
     }
 
     public EventDate(
-        EDate edate,
+        Datee datee,
         Event event)
     {
-        this.edate = edate;
+        this.datee = datee;
         this.event = event;
     }
 
@@ -56,14 +56,14 @@ public class EventDate implements Serializable
         this.event = event;
     }
 
-    public EDate getEdate()
+    public Datee getdatee()
     {
-        return edate;
+        return datee;
     }
 
-    public void setEdate(EDate edate)
+    public void setdatee(Datee datee)
     {
-        this.edate = edate;
+        this.datee = datee;
     }
 
     @Override
@@ -79,7 +79,7 @@ public class EventDate implements Serializable
         }
         EventDate that = (EventDate) obj;
         return ((event == null) ? 0 : event.getEventid()) == ((that.event == null) ? 0 : that.event.getEventid()) &&
-            ((edate == null) ? 0 : edate.getEventdateid()) == ((that.edate == null)? 0 : that.edate.getEventdateid());
+            ((datee == null) ? 0 : datee.getEventdateid()) == ((that.datee == null)? 0 : that.datee.getEventdateid());
 
     }
 

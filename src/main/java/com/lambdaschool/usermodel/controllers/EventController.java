@@ -1,6 +1,5 @@
 package com.lambdaschool.usermodel.controllers;
 
-import com.lambdaschool.usermodel.models.EDate;
 import com.lambdaschool.usermodel.models.Event;
 import com.lambdaschool.usermodel.services.EventService;
 import com.lambdaschool.usermodel.services.UserService;

@@ -45,10 +45,10 @@ public class SeedData
     TOSService tosService;
 
     /**
-     * Connects the eDate service to this process
+     * Connects the datee service to this process
      */
     @Autowired
-    EDateService eDateService;
+    DateeService dateeService;
 
     /**
      * Connects the event service to this process
@@ -150,25 +150,25 @@ public class SeedData
         tosService.save(t5Id, t5Text);
 
 
-        EDate date2 = new EDate(0,2,6,24,2021);
-        EDate date3 = new EDate(30,18,10,24,2020);
-        EDate date4 = new EDate(30,20,12,4,2020);
-        EDate date5 = new EDate(0,11,12,14,2020);
-        EDate date6 = new EDate(0,19,11,24,2020);
-        EDate date7 = new EDate(30,24,9,30,2020);
-        EDate date8 = new EDate(30,2,6,11,2021);
-        EDate date9 = new EDate(0,1,2,28,2021);
-        EDate date10 = new EDate(30,0,3,19,2021);
+        Datee date2 = new Datee(0,2,6,24,2021);
+        Datee date3 = new Datee(30,18,10,24,2020);
+        Datee date4 = new Datee(30,20,12,4,2020);
+        Datee date5 = new Datee(0,11,12,14,2020);
+        Datee date6 = new Datee(0,19,11,24,2020);
+        Datee date7 = new Datee(30,24,9,30,2020);
+        Datee date8 = new Datee(30,2,6,11,2021);
+        Datee date9 = new Datee(0,1,2,28,2021);
+        Datee date10 = new Datee(30,0,3,19,2021);
 
-        date2 = eDateService.save(date2);
-        date3 = eDateService.save(date3);
-        date4 = eDateService.save(date4);
-        date5 = eDateService.save(date5);
-        date6 = eDateService.save(date6);
-        date7 = eDateService.save(date7);
-        date8 = eDateService.save(date8);
-        date9 = eDateService.save(date9);
-        date10 = eDateService.save(date10);
+        date2 = dateeService.save(date2);
+        date3 = dateeService.save(date3);
+        date4 = dateeService.save(date4);
+        date5 = dateeService.save(date5);
+        date6 = dateeService.save(date6);
+        date7 = dateeService.save(date7);
+        date8 = dateeService.save(date8);
+        date9 = dateeService.save(date9);
+        date10 = dateeService.save(date10);
 
         Category c1 = new Category("Uncategorized");
         Category c2 = new Category("Tech");

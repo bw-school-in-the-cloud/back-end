@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class EventDateId implements Serializable
 {
     private long event;
-    private long edate;
+    private long datee;
 
     public EventDateId()
     {
@@ -21,14 +21,14 @@ public class EventDateId implements Serializable
         this.event = event;
     }
 
-    public long getEdate()
+    public long getdatee()
     {
-        return edate;
+        return datee;
     }
 
-    public void setEdate(long edate)
+    public void setdatee(long datee)
     {
-        this.edate = edate;
+        this.datee = datee;
     }
 
     @Override
@@ -50,6 +50,6 @@ public class EventDateId implements Serializable
         }
         EventDateId evdi = (EventDateId) o;
         return event == evdi.event &&
-            edate == evdi.edate;
+            datee == evdi.datee;
     }
 }

@@ -8,13 +8,13 @@ import javax.validation.constraints.Min;
 import java.util.*;
 
 @Entity
-@Table(name = "edate")
-public class EDate
+@Table(name = "datee")
+public class Datee
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnoreProperties("edateid")
-    private long edateid;
+    @JsonIgnoreProperties("dateeid")
+    private long dateeid;
 
     @Column(nullable = false)
     @Max(59)
@@ -41,18 +41,18 @@ public class EDate
     @Column(nullable = false)
     private int eventyear;
 
-    @OneToMany(mappedBy = "edate",
+    @OneToMany(mappedBy = "datee",
         cascade = CascadeType.ALL,
         orphanRemoval = true)
-    @JsonIgnoreProperties(value = "edate",
+    @JsonIgnoreProperties(value = "datee",
         allowSetters = true)
     private Set<EventDate> events = new HashSet<>();
 
-    public EDate()
+    public Datee()
     {
     }
 
-    public EDate(
+    public Datee(
         @Max(59) int timeminute,
         int timedigital,
         @Min(1) @Max(12) int eventmonth,
@@ -68,12 +68,12 @@ public class EDate
 
     public long getEventdateid()
     {
-        return edateid;
+        return dateeid;
     }
 
     public void setEventdateid(long eventdateid)
     {
-        this.edateid = eventdateid;
+        this.dateeid = eventdateid;
     }
 
     public int getEventmonth()
