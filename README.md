@@ -1001,6 +1001,16 @@ Example Output:
 
 </details>
 
+<details>
+<summary>Headers</summary>    
+
+Location: http://eschoolinthecloud.herokuapp.com/events/event/38
+*Status: 200 Okay*
+
+</details>
+
+### PATCH Requests
+
 **Update Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/{eventid}
 
 <details>
@@ -1018,6 +1028,7 @@ Example Output:
 <details>
 <summary>Headers</summary>    
 
+Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 *Status: 200 Okay*
 
 </details>
