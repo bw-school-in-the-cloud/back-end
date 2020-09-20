@@ -11,4 +11,6 @@ public interface EDateService
     EDate save(EDate edate);
 
     List<EDate> findAll();
+
+    EDate findEDateById(long id);
 }

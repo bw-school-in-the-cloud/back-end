@@ -1,8 +1,11 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.exceptions.ResourceNotFoundException;
+import com.lambdaschool.usermodel.models.Category;
 import com.lambdaschool.usermodel.models.EDate;
 import com.lambdaschool.usermodel.models.Event;
+import com.lambdaschool.usermodel.models.EventDate;
+import com.lambdaschool.usermodel.repository.EDateRepository;
 import com.lambdaschool.usermodel.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,12 @@ public class EventServiceImpl implements EventService
 {
     @Autowired
     EventRepository eventRepository;
+
+    @Autowired
+    EDateRepository eDateRepository;
+
+    @Autowired
+    CategoryService categoryService;
 
     @Override
     public List<Event> findAll()
@@ -125,6 +134,19 @@ public class EventServiceImpl implements EventService
             addEvent.setLengthdesc("One and a Half Hours");
         }
 
+        if (event.getCategory() != null)
+        {
+            addEvent.setCategory(categoryService.findCategoryById(event.getCategory().getCategoryid()));
+        }
+
+        addEvent.getEventdates().clear();
+        for (EventDate e : event.getEventdates())
+        {
+            EDate adDate = eDateRepository.findById(e.getEdate().getEventdateid())
+                .orElseThrow(() -> new ResourceNotFoundException("Event Date ID:" + e.getEdate()
+                    .getEventdateid() + " could not be found!"));
+            addEvent.getEventdates().add(new EventDate(addEvent, adDate));
+        }
         return eventRepository.save(addEvent);
     }
 }

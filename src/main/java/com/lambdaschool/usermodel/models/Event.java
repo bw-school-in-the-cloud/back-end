@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(name = "events")
+@Table(name = "event")
 public class Event
     extends Auditable
 {
@@ -21,11 +21,12 @@ public class Event
 
     @ManyToOne
     @JoinColumn(name = "categoryid")
+    @JsonIgnoreProperties(value = "event")
     private Category category;
 
     @OneToMany(mappedBy = "event",
         cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "event", allowSetters = true)
+    @JsonIgnoreProperties(value = "edate", allowSetters = true)
     private Set<EventDate> eventdates = new HashSet<>();
 
     public Event()
@@ -35,11 +36,13 @@ public class Event
     public Event(
         String title,
         String description,
-        double length)
+        double length,
+        Category category)
     {
         this.title = title;
         this.description = description;
         this.length = length;
+        this.category = category;
     }
 
     public long getEventid()
@@ -85,6 +88,16 @@ public class Event
     public Set<EventDate> getEventdates()
     {
         return eventdates;
+    }
+
+    public Category getCategory()
+    {
+        return category;
+    }
+
+    public void setCategory(Category category)
+    {
+        this.category = category;
     }
 
     public void setEventdates(Set<EventDate> eventdates)

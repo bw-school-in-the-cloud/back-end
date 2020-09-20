@@ -8,22 +8,23 @@ import javax.validation.constraints.Min;
 import java.util.*;
 
 @Entity
-@Table(name = "edates")
+@Table(name = "edate")
 public class EDate
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long eventdateid;
+    @JsonIgnoreProperties("edateid")
+    private long edateid;
 
     @Column(nullable = false)
     @Max(59)
-    private int eventminute;
+    private int timeminute;
 
     @Column(nullable = false)
-    private int eventhour;
+    private int timedigital;
 
-    private int timelatin;
-    private String timelatinprefix;
+    private int timeimperial;
+    private String timeimperialsuffix;
 
     @Column(nullable = false)
     @Min(1)
@@ -41,7 +42,8 @@ public class EDate
     private int eventyear;
 
     @OneToMany(mappedBy = "edate",
-        cascade = CascadeType.ALL)
+        cascade = CascadeType.ALL,
+        orphanRemoval = true)
     @JsonIgnoreProperties(value = "edate",
         allowSetters = true)
     private Set<EventDate> events = new HashSet<>();
@@ -51,14 +53,14 @@ public class EDate
     }
 
     public EDate(
-        @Max(59) int eventminute,
-        int eventhour,
+        @Max(59) int timeminute,
+        int timedigital,
         @Min(1) @Max(12) int eventmonth,
         @Min(1) @Max(31) int eventday,
         int eventyear)
     {
-        this.eventminute = eventminute;
-        this.eventhour = eventhour;
+        this.timeminute = timeminute;
+        this.timedigital = timedigital;
         this.eventmonth = eventmonth;
         this.eventday = eventday;
         this.eventyear = eventyear;
@@ -66,12 +68,12 @@ public class EDate
 
     public long getEventdateid()
     {
-        return eventdateid;
+        return edateid;
     }
 
     public void setEventdateid(long eventdateid)
     {
-        this.eventdateid = eventdateid;
+        this.edateid = eventdateid;
     }
 
     public int getEventmonth()
@@ -114,44 +116,44 @@ public class EDate
         this.eventyear = eventyear;
     }
 
-    public int getTimelatin()
+    public int getTimeimperial()
     {
-        return timelatin;
+        return timeimperial;
     }
 
-    public void setTimelatin(int timelatin)
+    public void setTimeimperial(int timelatin)
     {
-        this.timelatin = timelatin;
+        this.timeimperial = timelatin;
     }
 
-    public String getTimelatinprefix()
+    public String getTimeimperialsuffix()
     {
-        return timelatinprefix;
+        return timeimperialsuffix;
     }
 
-    public void setTimelatinprefix(String timelatinprefix)
+    public void setTimeimperialsuffix(String timelatinprefix)
     {
-            this.timelatinprefix = timelatinprefix;
+            this.timeimperialsuffix = timelatinprefix;
     }
 
-    public int getEventminute()
+    public int getTimeminute()
     {
-        return eventminute;
+        return timeminute;
     }
 
-    public void setEventminute(int eventminute)
+    public void setTimeminute(int eventminute)
     {
-        this.eventminute = eventminute;
+        this.timeminute = eventminute;
     }
 
-    public int getEventhour()
+    public int getTimedigital()
     {
-        return eventhour;
+        return timedigital;
     }
 
-    public void setEventhour(int eventhour)
+    public void setTimedigital(int eventhour)
     {
-        this.eventhour = eventhour;
+        this.timedigital = eventhour;
     }
 
     public Set<EventDate> getEvents()
@@ -167,6 +169,6 @@ public class EDate
     @Override
     public String toString()
     {
-        return eventmonth + "/" + eventday + "/" + eventyear + " @" + timelatin + ":" + eventminute + " " + timelatinprefix;
+        return eventmonth + "/" + eventday + "/" + eventyear + " @" + timeimperial + ":" + timeminute + " " + timeimperialsuffix;
     }
 }

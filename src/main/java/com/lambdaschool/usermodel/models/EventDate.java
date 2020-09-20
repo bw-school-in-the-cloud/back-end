@@ -7,20 +7,20 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "eventdates")
+@Table(name = "eventdate")
 @IdClass(EventDateId.class)
-public class EventDate extends Auditable implements Serializable
+public class EventDate implements Serializable
 {
     @Id
     @ManyToOne
     @JoinColumn(name = "eventid")
-    @JsonIgnoreProperties(value = "edate")
+    @JsonIgnoreProperties(value = "eventdates")
     private Event event;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "eventdateid")
-    @JsonIgnoreProperties(value = "events")
+    @JoinColumn(name = "edateid")
+    @JsonIgnoreProperties(value = "eventdates")
     private EDate edate;
 
     private String eventinfo;
@@ -36,6 +36,14 @@ public class EventDate extends Auditable implements Serializable
     {
         this.event = event;
         this.edate = edate;
+    }
+
+    public EventDate(
+        EDate edate,
+        Event event)
+    {
+        this.edate = edate;
+        this.event = event;
     }
 
     public Event getEvent()

@@ -57,6 +57,12 @@ public class SeedData
     EventService eventService;
 
     /**
+     * Connects the category service to this process
+     */
+    @Autowired
+    CategoryService categoryService;
+
+    /**
      * Generates test, seed data for our application
      * First a set of known data is seeded into our database.
      * Second a random set of data using Java Faker is seeded into our database.
@@ -72,6 +78,7 @@ public class SeedData
     {
         userService.deleteAll();
         roleService.deleteAll();
+
         Role r1 = new Role("admin");
         Role r2 = new Role("student");
         Role r3 = new Role("volunteer");
@@ -144,50 +151,69 @@ public class SeedData
 
 
         EDate date2 = new EDate(0,2,6,24,2021);
-        EDate date3 = new EDate(30,1,10,24,2020);
-        EDate date4 = new EDate(30,2,12,4,2020);
-        EDate date5 = new EDate(0,1,12,14,2020);
-        EDate date6 = new EDate(0,1,11,24,2020);
-        EDate date7 = new EDate(30,4,9,30,2020);
+        EDate date3 = new EDate(30,18,10,24,2020);
+        EDate date4 = new EDate(30,20,12,4,2020);
+        EDate date5 = new EDate(0,11,12,14,2020);
+        EDate date6 = new EDate(0,19,11,24,2020);
+        EDate date7 = new EDate(30,24,9,30,2020);
         EDate date8 = new EDate(30,2,6,11,2021);
         EDate date9 = new EDate(0,1,2,28,2021);
         EDate date10 = new EDate(30,0,3,19,2021);
 
-        eDateService.save(date2);
-        eDateService.save(date3);
-        eDateService.save(date4);
-        eDateService.save(date5);
-        eDateService.save(date6);
-        eDateService.save(date7);
-        eDateService.save(date8);
-        eDateService.save(date9);
-        eDateService.save(date10);
+        date2 = eDateService.save(date2);
+        date3 = eDateService.save(date3);
+        date4 = eDateService.save(date4);
+        date5 = eDateService.save(date5);
+        date6 = eDateService.save(date6);
+        date7 = eDateService.save(date7);
+        date8 = eDateService.save(date8);
+        date9 = eDateService.save(date9);
+        date10 = eDateService.save(date10);
 
-        Event e1 = new Event("First Event", "Test Event", 1.5);
-        Event e2 = new Event("Second Event", "Test Event", 3.0);
-        Event e3 = new Event("Third Event", "Test Event", 0.5);
-        Event e4 = new Event("Fourth Event", "Test Event", 5.0);
-        Event e5 = new Event("Fifth Event", "Test Event", 3.5);
+        Category c1 = new Category("Uncategorized");
+        Category c2 = new Category("Tech");
+        Category c3 = new Category("Science");
+        Category c4 = new Category("Literature");
+        Category c5 = new Category("Gaming");
+        Category c6 = new Category("Entertainment");
 
-        eventService.save(e1);
-        eventService.save(e2);
-        eventService.save(e3);
-        eventService.save(e4);
-        eventService.save(e5);
+        c1 = categoryService.save(c1);
+        c2 = categoryService.save(c2);
+        c3 = categoryService.save(c3);
+        c4 = categoryService.save(c4);
+        c5 = categoryService.save(c5);
+        c6 = categoryService.save(c6);
 
+        Event e1 = new Event("First Event", "Test Event", 1.5, c1);
+        e1.getEventdates().add(new EventDate(date2, new Event()));
+        e1.getEventdates().add(new EventDate(date5, new Event()));
 
+        Event e2 = new Event("Second Event", "Test Event", 3.0, c2);
+        e2.getEventdates().add(new EventDate(date2, new Event()));
+        e2.getEventdates().add(new EventDate(date6, new Event()));
+        e2.getEventdates().add(new EventDate(date5, new Event()));
 
-        Set<EventDate> anEventDate = new HashSet<>();
-        anEventDate.add(new EventDate(e1,new EDate()));
-        EDate date1 = new EDate(30, 0, 1, 5, 2021);
-        date1.setEvents(anEventDate);
+        Event e3 = new Event("Third Event", "Test Event", 0.5, c3);
+        e3.getEventdates().add(new EventDate(date7, new Event()));
 
+        Event e4 = new Event("Fourth Event", "Test Event", 5.0, c4);
+        e3.getEventdates().add(new EventDate(date7, new Event()));
+        e3.getEventdates().add(new EventDate(date9, new Event()));
 
-        eDateService.save(date1);
+        Event e5 = new Event("Fifth Event", "Test Event", 3.5, c5);
 
+        Event e6 = new Event("Sixth Event", "Test Event", 2.5, c6);
+        e6.getEventdates().add(new EventDate(date2, new Event()));
+        e6.getEventdates().add(new EventDate(date4, new Event()));
+        e6.getEventdates().add(new EventDate(date5, new Event()));
+        e6.getEventdates().add(new EventDate(date7, new Event()));
 
-
-        eDateService.save(date1);
+        e1 = eventService.save(e1);
+        e2 = eventService.save(e2);
+        e3 = eventService.save(e3);
+        e4 = eventService.save(e4);
+        e5 = eventService.save(e5);
+        e6 = eventService.save(e6);
 
         if (false)
         {

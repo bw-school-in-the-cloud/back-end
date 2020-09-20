@@ -2,8 +2,6 @@ package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.exceptions.ResourceNotFoundException;
 import com.lambdaschool.usermodel.models.EDate;
-import com.lambdaschool.usermodel.models.Event;
-import com.lambdaschool.usermodel.models.TOS;
 import com.lambdaschool.usermodel.repository.EDateRepository;
 import com.lambdaschool.usermodel.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +34,13 @@ public class EDateServiceImpl implements EDateService
     }
 
     @Override
+    public EDate findEDateById(long id)
+    {
+        return eDateRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Category ID: " + id + " not found!"));
+    }
+
+    @Override
     public EDate save(EDate edate)
     {
         EDate addDate = new EDate();
@@ -47,23 +52,23 @@ public class EDateServiceImpl implements EDateService
             addDate.setEventdateid(edate.getEventdateid());
         }
 
-        addDate.setEventminute(edate.getEventminute());
-        addDate.setEventhour(edate.getEventhour());
+        addDate.setTimeminute(edate.getTimeminute());
 
-        if (edate.getEventhour() == 0 || edate.getEventhour() == 24)
+        if (edate.getTimedigital() == 0 || edate.getTimedigital() == 24)
         {
-            addDate.setTimelatinprefix("AM");
-            addDate.setTimelatin(12);
-        }else if (edate.getEventhour() < 12)
+            addDate.setTimeimperialsuffix("AM");
+            addDate.setTimeimperial(12);
+        }else if (edate.getTimedigital() < 12)
         {
-            addDate.setTimelatinprefix("AM");
-            addDate.setTimelatin(edate.getEventhour());
-        }else if (edate.getEventhour() > 12)
+            addDate.setTimeimperialsuffix("AM");
+            addDate.setTimeimperial(edate.getTimedigital());
+        }else if (edate.getTimedigital() > 12)
         {
-            addDate.setTimelatinprefix("PM");
-            addDate.setTimelatin(edate.getEventhour() - 12);
+            addDate.setTimeimperialsuffix("PM");
+            addDate.setTimeimperial(edate.getTimedigital() - 12);
         }
 
+        addDate.setTimedigital(edate.getTimedigital());
         addDate.setEventmonth(edate.getEventmonth());
 
         if (edate.getEventmonth() == 1)
@@ -99,7 +104,7 @@ public class EDateServiceImpl implements EDateService
         }else if (edate.getEventmonth() == 11)
         {
             addDate.setEventmonthname("November");
-        }else if (edate.getEventmonth() == 2)
+        }else if (edate.getEventmonth() == 12)
         {
             addDate.setEventmonthname("December");
         }

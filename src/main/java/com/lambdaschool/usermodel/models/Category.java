@@ -8,6 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "category")
+@JsonIgnoreProperties("event")
 public class Category
     extends Auditable
 {
