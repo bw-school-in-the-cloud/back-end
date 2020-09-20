@@ -986,6 +986,21 @@ Example Output:
 
 ### POST Requests
 
+**Add A New Event --** http://eschoolinthecloud.herokuapp.com/events/event
+
+<details>
+<summary>Minimum Body</summary>
+
+```JSON
+{
+    "title": "Hundred Event",
+    "description": "Adding a Test Event",
+    "length": 2.0
+}
+```
+
+</details>
+
 **Update Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/{eventid}
 
 <details>
@@ -999,15 +1014,24 @@ Example Output:
 }
 ```
 </details>
+
 <details>
-<summary>Http Status</summary>    
+<summary>Headers</summary>    
 
 *Status: 200 Okay*
 
 </details>
 
-</details>
+
+
+
+
+
+
+
+
+
+
+
 
 </details>
-
-
