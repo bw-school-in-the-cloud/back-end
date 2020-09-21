@@ -53,10 +53,10 @@ public class User
     @Email
     private String primaryemail;
 
-    @ManyToOne
-    @JoinColumn(name = "categoryid")
-    @JsonIgnoreProperties(value = "events")
-    private Category category;
+//    @ManyToOne
+//    @JoinColumn(name = "tzoneid")
+//    @JsonIgnoreProperties(value = "events")
+//    private TZone tzones;
 
     /**
      * A list of emails for this user

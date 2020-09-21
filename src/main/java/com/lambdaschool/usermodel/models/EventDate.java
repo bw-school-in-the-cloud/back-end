@@ -21,7 +21,7 @@ public class EventDate implements Serializable
     @Id
     @ManyToOne
     @JoinColumn(name = "dateeid")
-    @JsonIgnoreProperties(value = "eventdates")
+    @JsonIgnoreProperties(value = "events")
     private Datee datee;
 
     private String eventinfo;

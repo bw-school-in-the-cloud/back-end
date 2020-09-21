@@ -10,12 +10,15 @@ https://eschoolinthecloud.herokuapp.com/
 
 Required Fields in **BOLD**   
 
+## USER TABLE
+
 Name | Data Type (min, max)
 ------------ | -------------
 **Username**| **String**
 **Password** | **String**
-**Email** | **Email**
-Password | String
+**Email** | **Email**   
+   
+**Role Type will defualt to Volunteer**
 
 ## Terms Of Service Requests
 <details>
@@ -282,6 +285,17 @@ Example Output:
 *Sign up and/or Admin access only*
 
 **Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
+   
+## USER TABLE
+
+Name | Data Type (min, max)
+------------ | -------------
+Fname | String
+Lname | String
+**Username**| **String**
+**Password** | **String**
+**Email** | **Email**
+Role | Role
 
 <details>
 <summary>Minimum Body</summary>
@@ -1237,6 +1251,45 @@ Example Output:
 ### POST REQs
 
 **Add A New Event --** http://eschoolinthecloud.herokuapp.com/events/event
+   
+
+## EVENT TABLE
+
+Name | Data Type (min, max)
+------------ | -------------
+Title | String
+Description | String
+**Username**| **String**
+**Password** | **String**
+**Email** | **Email**
+Length | double
+Length Description | String
+Category | Category
+Event Dates | Set<EventDates>   
+
+
+## DATE TABLE
+
+Name | Data Type (min, max)
+------------ | -------------
+**Minutes**| **int (0, 59)**
+**Hours** | **int (0, 24)**
+Hours (Analog Clock) | int (1, 12)
+AM / PM | String
+**Month** | **int (1, 12)**
+Month Name | String
+**Day** | **int (1, 31)**
+**Year** | **int**
+Events | Set<EventDates>
+
+
+## CATEGORY TABLE
+   
+Name | Data Type (min, max)
+------------ | -------------
+**Name**| **String**
+[ Events ] | Set<EventDates>
+  
 
 <details>
 <summary>Minimum Body</summary>
@@ -1256,6 +1309,26 @@ Example Output:
 
 Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 *Status: 200 Okay*
+
+</details>   
+
+**Add A New Event Category --** http://eschoolinthecloud.herokuapp.com/events/category
+
+<details>
+<summary>Minimum Body</summary>
+
+```JSON
+{
+    "name": "New Category"
+}
+```
+</details>
+
+<details>
+<summary>Headers</summary>
+
+Location: http://eschoolinthecloud.herokuapp.com/events/category/39
+*Status: 201 Created*
 
 </details>
 
