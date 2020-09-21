@@ -1,7 +1,16 @@
 # School In The Cloud 
 
 ### API URL 
-https://eschoolinthecloud.herokuapp.com/
+https://eschoolinthecloud.herokuapp.com/   
+   
+
+![Step One](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow1.png?raw=true)
+   
+![Step Two](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow2.png?raw=true)
+   
+![Step Three](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow3.png?raw=true)
+   
+![Step Four](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow4.png?raw=true)
 
 ## Signing Up A New User
 
