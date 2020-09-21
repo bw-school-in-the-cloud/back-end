@@ -15,7 +15,7 @@ https://eschoolinthecloud.herokuapp.com/
 ## Signing Up A New User
 
 ### POST
-## TO https://eschoolinthecloud.herokuapp.com/createnewuser
+https://eschoolinthecloud.herokuapp.com/createnewuser
 
 Required Fields in **BOLD**   
 
@@ -27,7 +27,7 @@ Name | Data Type (min, max)
 **Password** | **String**
 **Email** | **Email**   
    
-**Role Type will defualt to Volunteer**
+**Role Type will default to Volunteer**
 
 ## Terms Of Service Requests
 <details>
@@ -37,7 +37,7 @@ Name | Data Type (min, max)
 Note: *Data for React I MVP Only*   
 
 
-**List Terms Of Service --** https://eschoolinthecloud.herokuapp.com/terms/terms   
+:heavy_exclamation_mark: **List Terms Of Service --** https://eschoolinthecloud.herokuapp.com/terms/terms   
 Example Output:
 
 <details> 
@@ -81,7 +81,7 @@ Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or
 
 ### GET REQs
 
-**List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
+:heavy_exclamation_mark: **List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
 Example Output:
 
 <details>
@@ -167,7 +167,7 @@ Example Output:
 </details>
 
 
-**Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
+:heavy_exclamation_mark: **Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 Example Output: 
 
 <details>
@@ -212,7 +212,7 @@ Example Output:
 ```
 </details>
 
-**Find User By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
+:heavy_exclamation_mark: **Find User By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
 Example Output:
 
 <details>
@@ -257,7 +257,7 @@ Example Output:
 ```
 </details>
 
-**Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
+:heavy_exclamation_mark: **Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
 
 Note: *Finds usernames containing the string*     
 Example Output: 
@@ -293,7 +293,7 @@ Example Output:
 ### POST REQs
 *Sign up and/or Admin access only*
 
-**Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
+:heavy_exclamation_mark: **Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
    
 ## USER TABLE
 
@@ -358,7 +358,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 ### PUT REQs
 *Admin access only*
 
-**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
+:heavy_exclamation_mark: **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
 <details>
 <summary>Minimum Body</summary>
@@ -389,7 +389,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 ### PATCH REQs
 *Admin access only*
 
-**Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
+:heavy_exclamation_mark: **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
 <details>
 <summary>Minimum Body</summary>
@@ -412,7 +412,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 ### DELETE REqs
 *Admin access only*
 
-**Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
+:heavy_exclamation_mark: **Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary>     
@@ -430,7 +430,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 ### GET REQs  
 
-**List All Events --** https://eschoolinthecloud.herokuapp.com/events/events   
+:heavy_exclamation_mark: **List All Events --** https://eschoolinthecloud.herokuapp.com/events/events   
 Example Output:
 
 <details> 
@@ -662,7 +662,7 @@ Example Output:
 
 </details>
 
-**Find Event By Title --** http://eschoolinthecloud.herokuapp.com/events/event/name/{title}   
+:heavy_exclamation_mark: **Find Event By Title --** http://eschoolinthecloud.herokuapp.com/events/event/name/{title}   
 Example Output:
 
 <details>
@@ -724,7 +724,7 @@ Example Output:
 ```
 </details>
 
-**List All Events --** https://eschoolinthecloud.herokuapp.com/events/events    
+:heavy_exclamation_mark: **List All Events --** https://eschoolinthecloud.herokuapp.com/events/events    
 Example Output:
 
 <details> 
@@ -956,7 +956,7 @@ Example Output:
 
 </details>
 
-**List All Events By Categories --** http://eschoolinthecloud.herokuapp.com/events/categories   
+:heavy_exclamation_mark: **List All Events By Categories --** http://eschoolinthecloud.herokuapp.com/events/categories   
 Example Output:
 
 <details>
@@ -1203,7 +1203,7 @@ Example Output:
 ```
 </details>
 
-**List Events By Category By ID --** http://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
+:heavy_exclamation_mark: **List Events By Category By ID --** http://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
 Example Output:
 
 <details>
@@ -1243,7 +1243,7 @@ Example Output:
 ```
 </details>
 
-**Find Event Category By Name --** http://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}   
+:heavy_exclamation_mark: **Find Event Category By Name --** http://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}   
 Example Output:
 
 <details>
@@ -1259,7 +1259,7 @@ Example Output:
 
 ### POST REQs
 
-**Add A New Event --** http://eschoolinthecloud.herokuapp.com/events/event
+:heavy_exclamation_mark: **Add A New Event --** http://eschoolinthecloud.herokuapp.com/events/event
    
 
 ## EVENT TABLE
@@ -1321,7 +1321,7 @@ Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 
 </details>   
 
-**Add A New Event Category --** http://eschoolinthecloud.herokuapp.com/events/category
+:heavy_exclamation_mark: **Add A New Event Category --** http://eschoolinthecloud.herokuapp.com/events/category
 
 <details>
 <summary>Minimum Body</summary>
@@ -1343,7 +1343,7 @@ Location: http://eschoolinthecloud.herokuapp.com/events/category/39
 
 ### PATCH REQs
 
-**Update Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/{eventid}
+:heavy_exclamation_mark: **Update Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/{eventid}
 
 <details>
 <summary>Minimum Body</summary>
@@ -1367,7 +1367,7 @@ Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 
 ### Delete REQs
 
-**Delete Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/   
+:heavy_exclamation_mark: **Delete Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/   
 
 <details>
 <summary>http://eschoolinthecloud.herokuapp.com/events/event/38</summary>
