@@ -96,6 +96,16 @@ public class UserServiceImpl
             newUser.setUserid(user.getUserid());
         }
 
+        if (user.getFname() != null)
+        {
+            newUser.setFname(user.getFname());
+        }
+
+        if (user.getLname() != null)
+        {
+            newUser.setLname(user.getLname());
+        }
+
         newUser.setUsername(user.getUsername()
             .toLowerCase());
         newUser.setPasswordNoEncrypt(user.getPassword());

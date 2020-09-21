@@ -3,11 +3,28 @@
 ### API URL 
 https://eschoolinthecloud.herokuapp.com/
 
-## Terms Of Servie Http Requests
+## Signing Up A New User
+
+### POST
+## TO https://eschoolinthecloud.herokuapp.com/createnewuser
+
+Required Fields in **BOLD**   
+
+## USER TABLE
+
+Name | Data Type (min, max)
+------------ | -------------
+**Username**| **String**
+**Password** | **String**
+**Email** | **Email**   
+   
+**Role Type will defualt to Volunteer**
+
+## Terms Of Service Requests
 <details>
 <summary> :arrow_down: </summary>
 
-### GET Requests
+### GET REQs
 Note: *Data for React I MVP Only*   
 
 
@@ -49,11 +66,11 @@ Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or
 
 </details>
 
-## User Http Requests
+## User Requests
 <details>
 <summary> :arrow_down: </summary>
 
-### GET Requests
+### GET REQs
 
 **List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
 Example Output:
@@ -186,7 +203,7 @@ Example Output:
 ```
 </details>
 
-**Find By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
+**Find User By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
 Example Output:
 
 <details>
@@ -231,7 +248,7 @@ Example Output:
 ```
 </details>
 
-**Find Username Like (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
+**Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
 
 Note: *Finds usernames containing the string*     
 Example Output: 
@@ -264,10 +281,21 @@ Example Output:
 ```
 </details>
 
-### POST Requests
+### POST REQs
 *Sign up and/or Admin access only*
 
 **Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
+   
+## USER TABLE
+
+Name | Data Type (min, max)
+------------ | -------------
+Fname | String
+Lname | String
+**Username**| **String**
+**Password** | **String**
+**Email** | **Email**
+Role | Role
 
 <details>
 <summary>Minimum Body</summary>
@@ -311,14 +339,14 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 <details>
-<summary>Return</summary>     
+<summary>Postman Results</summary>     
 
-**Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
+**Location:** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 *Status: 201 Created*
 
 </details>
 
-### PUT Requests
+### PUT REQs
 *Admin access only*
 
 **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
@@ -349,7 +377,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 </details>
 
-### PATCH Requests
+### PATCH REQs
 *Admin access only*
 
 **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
@@ -372,7 +400,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 </details>
 
-### DELETE Requests
+### DELETE REqs
 *Admin access only*
 
 **Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
@@ -386,3 +414,965 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 </details>
 
+
+## Event Requests
+<details>
+<summary> :arrow_down: </summary>
+
+### GET REQs  
+
+**List All Events --** https://eschoolinthecloud.herokuapp.com/events/events   
+Example Output:
+
+<details> 
+<summary>http://eschoolinthecloud.herokuapp.com/events/events</summary>
+
+```JSON
+[
+    {
+        "eventid": 31,
+        "title": "First Event",
+        "description": "Test Event",
+        "length": 1.5,
+        "lengthdesc": "One and a Half Hours",
+        "category": {
+            "categoryid": 25,
+            "name": "Uncategorized"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 2,
+                    "timeimperial": 2,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 6,
+                    "eventmonthname": "June",
+                    "eventday": 24,
+                    "eventyear": 2021,
+                    "eventdateid": 16
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 11,
+                    "timeimperial": 11,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 14,
+                    "eventyear": 2020,
+                    "eventdateid": 19
+                }
+            }
+        ]
+    },
+    {
+        "eventid": 32,
+        "title": "Second Event",
+        "description": "Test Event",
+        "length": 3.0,
+        "lengthdesc": "Three Hours",
+        "category": {
+            "categoryid": 26,
+            "name": "Tech"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 2,
+                    "timeimperial": 2,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 6,
+                    "eventmonthname": "June",
+                    "eventday": 24,
+                    "eventyear": 2021,
+                    "eventdateid": 16
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 11,
+                    "timeimperial": 11,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 14,
+                    "eventyear": 2020,
+                    "eventdateid": 19
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 19,
+                    "timeimperial": 7,
+                    "timeimperialsuffix": "PM",
+                    "eventmonth": 11,
+                    "eventmonthname": "November",
+                    "eventday": 24,
+                    "eventyear": 2020,
+                    "eventdateid": 20
+                }
+            }
+        ]
+    },
+    {
+        "eventid": 33,
+        "title": "Third Event",
+        "description": "Test Event",
+        "length": 0.5,
+        "lengthdesc": "30 Minutes",
+        "category": {
+            "categoryid": 27,
+            "name": "Science"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 24,
+                    "timeimperial": 12,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 9,
+                    "eventmonthname": "September",
+                    "eventday": 30,
+                    "eventyear": 2020,
+                    "eventdateid": 21
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 1,
+                    "timeimperial": 1,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 2,
+                    "eventmonthname": "February",
+                    "eventday": 28,
+                    "eventyear": 2021,
+                    "eventdateid": 23
+                }
+            }
+        ]
+    },
+    {
+        "eventid": 34,
+        "title": "Fourth Event",
+        "description": "Test Event",
+        "length": 5.0,
+        "lengthdesc": "Five Hours",
+        "category": {
+            "categoryid": 28,
+            "name": "Literature"
+        },
+        "eventdates": []
+    },
+    {
+        "eventid": 35,
+        "title": "Fifth Event",
+        "description": "Test Event",
+        "length": 3.5,
+        "lengthdesc": "Three and a Half Hours",
+        "category": {
+            "categoryid": 29,
+            "name": "Gaming"
+        },
+        "eventdates": []
+    },
+    {
+        "eventid": 36,
+        "title": "Sixth Event",
+        "description": "Test Event",
+        "length": 2.5,
+        "lengthdesc": "Two and a Half Hours",
+        "category": {
+            "categoryid": 30,
+            "name": "Entertainment"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 2,
+                    "timeimperial": 2,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 6,
+                    "eventmonthname": "June",
+                    "eventday": 24,
+                    "eventyear": 2021,
+                    "eventdateid": 16
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 20,
+                    "timeimperial": 8,
+                    "timeimperialsuffix": "PM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 4,
+                    "eventyear": 2020,
+                    "eventdateid": 18
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 11,
+                    "timeimperial": 11,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 14,
+                    "eventyear": 2020,
+                    "eventdateid": 19
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 24,
+                    "timeimperial": 12,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 9,
+                    "eventmonthname": "September",
+                    "eventday": 30,
+                    "eventyear": 2020,
+                    "eventdateid": 21
+                }
+            }
+        ]
+    }
+]
+```
+
+</details>
+
+**Find Event By Title --** http://eschoolinthecloud.herokuapp.com/events/event/name/{title}   
+Example Output:
+
+<details>
+<summary>http://eschoolinthecloud.herokuapp.com/events/event/name/Second</summary>
+
+```JSON
+{
+    "eventid": 32,
+    "title": "Second",
+    "description": "Test Event",
+    "length": 3.0,
+    "lengthdesc": "Three Hours",
+    "category": {
+        "categoryid": 26,
+        "name": "Tech"
+    },
+    "eventdates": [
+        {
+            "datee": {
+                "timeminute": 0,
+                "timedigital": 2,
+                "timeimperial": 2,
+                "timeimperialsuffix": "AM",
+                "eventmonth": 6,
+                "eventmonthname": "June",
+                "eventday": 24,
+                "eventyear": 2021,
+                "eventdateid": 16
+            }
+        },
+        {
+            "datee": {
+                "timeminute": 0,
+                "timedigital": 19,
+                "timeimperial": 7,
+                "timeimperialsuffix": "PM",
+                "eventmonth": 11,
+                "eventmonthname": "November",
+                "eventday": 24,
+                "eventyear": 2020,
+                "eventdateid": 20
+            }
+        },
+        {
+            "datee": {
+                "timeminute": 0,
+                "timedigital": 11,
+                "timeimperial": 11,
+                "timeimperialsuffix": "AM",
+                "eventmonth": 12,
+                "eventmonthname": "December",
+                "eventday": 14,
+                "eventyear": 2020,
+                "eventdateid": 19
+            }
+        }
+    ]
+}
+```
+</details>
+
+**List All Events --** https://eschoolinthecloud.herokuapp.com/events/events    
+Example Output:
+
+<details> 
+<summary>http://eschoolinthecloud.herokuapp.com/events/events</summary>
+
+```JSON
+[
+    {
+        "eventid": 31,
+        "title": "First",
+        "description": "Test Event",
+        "length": 1.5,
+        "lengthdesc": "One and a Half Hours",
+        "category": {
+            "categoryid": 25,
+            "name": "Uncategorized"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 2,
+                    "timeimperial": 2,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 6,
+                    "eventmonthname": "June",
+                    "eventday": 24,
+                    "eventyear": 2021,
+                    "eventdateid": 16
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 11,
+                    "timeimperial": 11,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 14,
+                    "eventyear": 2020,
+                    "eventdateid": 19
+                }
+            }
+        ]
+    },
+    {
+        "eventid": 32,
+        "title": "Second",
+        "description": "Test Event",
+        "length": 3.0,
+        "lengthdesc": "Three Hours",
+        "category": {
+            "categoryid": 26,
+            "name": "Tech"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 2,
+                    "timeimperial": 2,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 6,
+                    "eventmonthname": "June",
+                    "eventday": 24,
+                    "eventyear": 2021,
+                    "eventdateid": 16
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 19,
+                    "timeimperial": 7,
+                    "timeimperialsuffix": "PM",
+                    "eventmonth": 11,
+                    "eventmonthname": "November",
+                    "eventday": 24,
+                    "eventyear": 2020,
+                    "eventdateid": 20
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 11,
+                    "timeimperial": 11,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 14,
+                    "eventyear": 2020,
+                    "eventdateid": 19
+                }
+            }
+        ]
+    },
+    {
+        "eventid": 33,
+        "title": "Third",
+        "description": "Test Event",
+        "length": 0.5,
+        "lengthdesc": "30 Minutes",
+        "category": {
+            "categoryid": 27,
+            "name": "Science"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 24,
+                    "timeimperial": 12,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 9,
+                    "eventmonthname": "September",
+                    "eventday": 30,
+                    "eventyear": 2020,
+                    "eventdateid": 21
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 1,
+                    "timeimperial": 1,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 2,
+                    "eventmonthname": "February",
+                    "eventday": 28,
+                    "eventyear": 2021,
+                    "eventdateid": 23
+                }
+            }
+        ]
+    },
+    {
+        "eventid": 34,
+        "title": "Fourth",
+        "description": "Test Event",
+        "length": 5.0,
+        "lengthdesc": "Five Hours",
+        "category": {
+            "categoryid": 28,
+            "name": "Literature"
+        },
+        "eventdates": []
+    },
+    {
+        "eventid": 35,
+        "title": "Fifth",
+        "description": "Test Event",
+        "length": 3.5,
+        "lengthdesc": "Three and a Half Hours",
+        "category": {
+            "categoryid": 29,
+            "name": "Gaming"
+        },
+        "eventdates": []
+    },
+    {
+        "eventid": 36,
+        "title": "Sixth Event",
+        "description": "Test Event",
+        "length": 2.5,
+        "lengthdesc": "Two and a Half Hours",
+        "category": {
+            "categoryid": 30,
+            "name": "Entertainment"
+        },
+        "eventdates": [
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 2,
+                    "timeimperial": 2,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 6,
+                    "eventmonthname": "June",
+                    "eventday": 24,
+                    "eventyear": 2021,
+                    "eventdateid": 16
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 20,
+                    "timeimperial": 8,
+                    "timeimperialsuffix": "PM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 4,
+                    "eventyear": 2020,
+                    "eventdateid": 18
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 11,
+                    "timeimperial": 11,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 14,
+                    "eventyear": 2020,
+                    "eventdateid": 19
+                }
+            },
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 24,
+                    "timeimperial": 12,
+                    "timeimperialsuffix": "AM",
+                    "eventmonth": 9,
+                    "eventmonthname": "September",
+                    "eventday": 30,
+                    "eventyear": 2020,
+                    "eventdateid": 21
+                }
+            }
+        ]
+    }
+]
+```
+
+</details>
+
+**List All Events By Categories --** http://eschoolinthecloud.herokuapp.com/events/categories   
+Example Output:
+
+<details>
+<summary>http://eschoolinthecloud.herokuapp.com/events/categories</summary>
+
+```JSON
+[
+    {
+        "categoryid": 25,
+        "name": "Uncategorized",
+        "events": [
+            {
+                "eventid": 32,
+                "title": "Second",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 3.0,
+                "lengthdesc": "Three Hours",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 2,
+                            "timeimperial": 2,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 6,
+                            "eventmonthname": "June",
+                            "eventday": 24,
+                            "eventyear": 2021,
+                            "eventdateid": 16
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 19,
+                            "timeimperial": 7,
+                            "timeimperialsuffix": "PM",
+                            "eventmonth": 11,
+                            "eventmonthname": "November",
+                            "eventday": 24,
+                            "eventyear": 2020,
+                            "eventdateid": 20
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 11,
+                            "timeimperial": 11,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 14,
+                            "eventyear": 2020,
+                            "eventdateid": 19
+                        }
+                    }
+                ]
+            },
+            {
+                "eventid": 31,
+                "title": "First",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 1.5,
+                "lengthdesc": "One and a Half Hours",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 2,
+                            "timeimperial": 2,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 6,
+                            "eventmonthname": "June",
+                            "eventday": 24,
+                            "eventyear": 2021,
+                            "eventdateid": 16
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 11,
+                            "timeimperial": 11,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 14,
+                            "eventyear": 2020,
+                            "eventdateid": 19
+                        }
+                    }
+                ]
+            },
+            {
+                "eventid": 33,
+                "title": "Third",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 0.5,
+                "lengthdesc": "30 Minutes",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 30,
+                            "timedigital": 24,
+                            "timeimperial": 12,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 9,
+                            "eventmonthname": "September",
+                            "eventday": 30,
+                            "eventyear": 2020,
+                            "eventdateid": 21
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 1,
+                            "timeimperial": 1,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 2,
+                            "eventmonthname": "February",
+                            "eventday": 28,
+                            "eventyear": 2021,
+                            "eventdateid": 23
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "categoryid": 26,
+        "name": "Tech",
+        "events": []
+    },
+    {
+        "categoryid": 27,
+        "name": "Science",
+        "events": []
+    },
+    {
+        "categoryid": 28,
+        "name": "Literature",
+        "events": [
+            {
+                "eventid": 34,
+                "title": "Fourth",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 5.0,
+                "lengthdesc": "Five Hours",
+                "eventdates": []
+            }
+        ]
+    },
+    {
+        "categoryid": 29,
+        "name": "Gaming",
+        "events": [
+            {
+                "eventid": 35,
+                "title": "Fifth",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 3.5,
+                "lengthdesc": "Three and a Half Hours",
+                "eventdates": []
+            }
+        ]
+    },
+    {
+        "categoryid": 30,
+        "name": "Entertainment",
+        "events": [
+            {
+                "eventid": 36,
+                "title": "Sixth Event",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 2.5,
+                "lengthdesc": "Two and a Half Hours",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 2,
+                            "timeimperial": 2,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 6,
+                            "eventmonthname": "June",
+                            "eventday": 24,
+                            "eventyear": 2021,
+                            "eventdateid": 16
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 30,
+                            "timedigital": 20,
+                            "timeimperial": 8,
+                            "timeimperialsuffix": "PM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 4,
+                            "eventyear": 2020,
+                            "eventdateid": 18
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 11,
+                            "timeimperial": 11,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 14,
+                            "eventyear": 2020,
+                            "eventdateid": 19
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 30,
+                            "timedigital": 24,
+                            "timeimperial": 12,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 9,
+                            "eventmonthname": "September",
+                            "eventday": 30,
+                            "eventyear": 2020,
+                            "eventdateid": 21
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+</details>
+
+**List Events By Category By ID --** http://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
+Example Output:
+
+<details>
+<summary>http://eschoolinthecloud.herokuapp.com/events/category/id/25</summary>
+
+```JSON
+{
+    "categoryid": 25,
+    "name": "Uncategorized",
+    "events": [
+        {
+            "eventid": 32,
+            "title": "Second",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 3.0,
+            "lengthdesc": "Three Hours"
+        },
+        {
+            "eventid": 31,
+            "title": "First",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 1.5,
+            "lengthdesc": "One and a Half Hours"
+        },
+        {
+            "eventid": 33,
+            "title": "Third",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 0.5,
+            "lengthdesc": "30 Minutes"
+        }
+    ]
+}
+```
+</details>
+
+**Find Event Category By Name --** http://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}   
+Example Output:
+
+<details>
+<summary>http://eschoolinthecloud.herokuapp.com/events/category/id/tech</summary>
+
+```JSON
+{
+    "categoryid": 26,
+    "name": "Tech"
+}
+```
+</details>
+
+### POST REQs
+
+**Add A New Event --** http://eschoolinthecloud.herokuapp.com/events/event
+   
+
+## EVENT TABLE
+
+Name | Data Type (min, max)
+------------ | -------------
+Title | String
+Description | String
+**Username**| **String**
+**Password** | **String**
+**Email** | **Email**
+Length | double
+Length Description | String
+Category | Category
+Event Dates | Set<EventDates>   
+
+
+## DATE TABLE
+
+Name | Data Type (min, max)
+------------ | -------------
+**Minutes**| **int (0, 59)**
+**Hours** | **int (0, 24)**
+Hours (Analog Clock) | int (1, 12)
+AM / PM | String
+**Month** | **int (1, 12)**
+Month Name | String
+**Day** | **int (1, 31)**
+**Year** | **int**
+Events | Set<EventDates>
+
+
+## CATEGORY TABLE
+   
+Name | Data Type (min, max)
+------------ | -------------
+**Name**| **String**
+[ Events ] | Set<EventDates>
+  
+
+<details>
+<summary>Minimum Body</summary>
+
+```JSON
+{
+    "title": "Hundred Event",
+    "description": "Adding a Test Event",
+    "length": 2.0
+}
+```
+
+</details>
+
+<details>
+<summary>Postman Results</summary>    
+
+Location: http://eschoolinthecloud.herokuapp.com/events/event/38
+*Status: 200 Okay*
+
+</details>   
+
+**Add A New Event Category --** http://eschoolinthecloud.herokuapp.com/events/category
+
+<details>
+<summary>Minimum Body</summary>
+
+```JSON
+{
+    "name": "New Category"
+}
+```
+</details>
+
+<details>
+<summary>Postman Results</summary>
+
+Location: http://eschoolinthecloud.herokuapp.com/events/category/39
+*Status: 201 Created*
+
+</details>
+
+### PATCH REQs
+
+**Update Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/{eventid}
+
+<details>
+<summary>Minimum Body</summary>
+
+```JSON
+{
+    "title": "Hundred Event",
+    "description": "Updating Test Event",
+    "length": 2.0
+}
+```
+</details>
+
+<details>
+<summary>Postman Results</summary>    
+
+Location: http://eschoolinthecloud.herokuapp.com/events/event/38
+*Status: 200 Okay*
+
+</details>
+
+### Delete REQs
+
+**Delete Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/   
+
+<details>
+<summary>http://eschoolinthecloud.herokuapp.com/events/event/38</summary>
+
+*Status: 200 Okay*
+
+</details>
+
+
+
+
+
+
+
+
+
+</details>
