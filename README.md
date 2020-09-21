@@ -3,11 +3,25 @@
 ### API URL 
 https://eschoolinthecloud.herokuapp.com/
 
-## Terms Of Servie Http Requests
+## Signing Up A New User
+
+### POST
+## TO https://eschoolinthecloud.herokuapp.com/createnewuser
+
+Required Fields in **BOLD**   
+
+Name | Data Type (min, max)
+------------ | -------------
+**Username**| **String**
+**Password** | **String**
+**Email** | **Email**
+Password | String
+
+## Terms Of Service Requests
 <details>
 <summary> :arrow_down: </summary>
 
-### GET Requests
+### GET REQs
 Note: *Data for React I MVP Only*   
 
 
@@ -49,11 +63,11 @@ Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or
 
 </details>
 
-## User Http Requests
+## User Requests
 <details>
 <summary> :arrow_down: </summary>
 
-### GET Requests
+### GET REQs
 
 **List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
 Example Output:
@@ -186,7 +200,7 @@ Example Output:
 ```
 </details>
 
-**Find By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
+**Find User By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
 Example Output:
 
 <details>
@@ -231,7 +245,7 @@ Example Output:
 ```
 </details>
 
-**Find Username Like (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
+**Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
 
 Note: *Finds usernames containing the string*     
 Example Output: 
@@ -264,7 +278,7 @@ Example Output:
 ```
 </details>
 
-### POST Requests
+### POST REQs
 *Sign up and/or Admin access only*
 
 **Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
@@ -318,7 +332,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 </details>
 
-### PUT Requests
+### PUT REQs
 *Admin access only*
 
 **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
@@ -349,7 +363,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 </details>
 
-### PATCH Requests
+### PATCH REQs
 *Admin access only*
 
 **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
@@ -372,7 +386,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 </details>
 
-### DELETE Requests
+### DELETE REqs
 *Admin access only*
 
 **Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
@@ -387,12 +401,11 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 
-## Events Http Requests
+## Event Requests
 <details>
 <summary> :arrow_down: </summary>
 
-### GET Requests  
-
+### GET REQs  
 
 **List All Events --** https://eschoolinthecloud.herokuapp.com/events/events   
 Example Output:
@@ -688,7 +701,7 @@ Example Output:
 ```
 </details>
 
-**List All Event Dates --** https://eschoolinthecloud.herokuapp.com/events/events    
+**List All Events --** https://eschoolinthecloud.herokuapp.com/events/events    
 Example Output:
 
 <details> 
@@ -698,7 +711,7 @@ Example Output:
 [
     {
         "eventid": 31,
-        "title": "First Event",
+        "title": "First",
         "description": "Test Event",
         "length": 1.5,
         "lengthdesc": "One and a Half Hours",
@@ -737,7 +750,7 @@ Example Output:
     },
     {
         "eventid": 32,
-        "title": "Second Event",
+        "title": "Second",
         "description": "Test Event",
         "length": 3.0,
         "lengthdesc": "Three Hours",
@@ -789,7 +802,7 @@ Example Output:
     },
     {
         "eventid": 33,
-        "title": "Third Event",
+        "title": "Third",
         "description": "Test Event",
         "length": 0.5,
         "lengthdesc": "30 Minutes",
@@ -828,7 +841,7 @@ Example Output:
     },
     {
         "eventid": 34,
-        "title": "Fourth Event",
+        "title": "Fourth",
         "description": "Test Event",
         "length": 5.0,
         "lengthdesc": "Five Hours",
@@ -840,7 +853,7 @@ Example Output:
     },
     {
         "eventid": 35,
-        "title": "Fifth Event",
+        "title": "Fifth",
         "description": "Test Event",
         "length": 3.5,
         "lengthdesc": "Three and a Half Hours",
@@ -920,7 +933,7 @@ Example Output:
 
 </details>
 
-**List All Event Categories --** http://eschoolinthecloud.herokuapp.com/events/categories   
+**List All Events By Categories --** http://eschoolinthecloud.herokuapp.com/events/categories   
 Example Output:
 
 <details>
@@ -930,33 +943,244 @@ Example Output:
 [
     {
         "categoryid": 25,
-        "name": "Uncategorized"
+        "name": "Uncategorized",
+        "events": [
+            {
+                "eventid": 32,
+                "title": "Second",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 3.0,
+                "lengthdesc": "Three Hours",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 2,
+                            "timeimperial": 2,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 6,
+                            "eventmonthname": "June",
+                            "eventday": 24,
+                            "eventyear": 2021,
+                            "eventdateid": 16
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 19,
+                            "timeimperial": 7,
+                            "timeimperialsuffix": "PM",
+                            "eventmonth": 11,
+                            "eventmonthname": "November",
+                            "eventday": 24,
+                            "eventyear": 2020,
+                            "eventdateid": 20
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 11,
+                            "timeimperial": 11,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 14,
+                            "eventyear": 2020,
+                            "eventdateid": 19
+                        }
+                    }
+                ]
+            },
+            {
+                "eventid": 31,
+                "title": "First",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 1.5,
+                "lengthdesc": "One and a Half Hours",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 2,
+                            "timeimperial": 2,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 6,
+                            "eventmonthname": "June",
+                            "eventday": 24,
+                            "eventyear": 2021,
+                            "eventdateid": 16
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 11,
+                            "timeimperial": 11,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 14,
+                            "eventyear": 2020,
+                            "eventdateid": 19
+                        }
+                    }
+                ]
+            },
+            {
+                "eventid": 33,
+                "title": "Third",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 0.5,
+                "lengthdesc": "30 Minutes",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 30,
+                            "timedigital": 24,
+                            "timeimperial": 12,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 9,
+                            "eventmonthname": "September",
+                            "eventday": 30,
+                            "eventyear": 2020,
+                            "eventdateid": 21
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 1,
+                            "timeimperial": 1,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 2,
+                            "eventmonthname": "February",
+                            "eventday": 28,
+                            "eventyear": 2021,
+                            "eventdateid": 23
+                        }
+                    }
+                ]
+            }
+        ]
     },
     {
         "categoryid": 26,
-        "name": "Tech"
+        "name": "Tech",
+        "events": []
     },
     {
         "categoryid": 27,
-        "name": "Science"
+        "name": "Science",
+        "events": []
     },
     {
         "categoryid": 28,
-        "name": "Literature"
+        "name": "Literature",
+        "events": [
+            {
+                "eventid": 34,
+                "title": "Fourth",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 5.0,
+                "lengthdesc": "Five Hours",
+                "eventdates": []
+            }
+        ]
     },
     {
         "categoryid": 29,
-        "name": "Gaming"
+        "name": "Gaming",
+        "events": [
+            {
+                "eventid": 35,
+                "title": "Fifth",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 3.5,
+                "lengthdesc": "Three and a Half Hours",
+                "eventdates": []
+            }
+        ]
     },
     {
         "categoryid": 30,
-        "name": "Entertainment"
+        "name": "Entertainment",
+        "events": [
+            {
+                "eventid": 36,
+                "title": "Sixth Event",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 2.5,
+                "lengthdesc": "Two and a Half Hours",
+                "eventdates": [
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 2,
+                            "timeimperial": 2,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 6,
+                            "eventmonthname": "June",
+                            "eventday": 24,
+                            "eventyear": 2021,
+                            "eventdateid": 16
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 30,
+                            "timedigital": 20,
+                            "timeimperial": 8,
+                            "timeimperialsuffix": "PM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 4,
+                            "eventyear": 2020,
+                            "eventdateid": 18
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 0,
+                            "timedigital": 11,
+                            "timeimperial": 11,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 12,
+                            "eventmonthname": "December",
+                            "eventday": 14,
+                            "eventyear": 2020,
+                            "eventdateid": 19
+                        }
+                    },
+                    {
+                        "datee": {
+                            "timeminute": 30,
+                            "timedigital": 24,
+                            "timeimperial": 12,
+                            "timeimperialsuffix": "AM",
+                            "eventmonth": 9,
+                            "eventmonthname": "September",
+                            "eventday": 30,
+                            "eventyear": 2020,
+                            "eventdateid": 21
+                        }
+                    }
+                ]
+            }
+        ]
     }
 ]
 ```
 </details>
 
-**Find Event Category By ID --** http://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
+**List Events By Category By ID --** http://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
 Example Output:
 
 <details>
@@ -965,7 +1189,33 @@ Example Output:
 ```JSON
 {
     "categoryid": 25,
-    "name": "Uncategorized"
+    "name": "Uncategorized",
+    "events": [
+        {
+            "eventid": 32,
+            "title": "Second",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 3.0,
+            "lengthdesc": "Three Hours"
+        },
+        {
+            "eventid": 31,
+            "title": "First",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 1.5,
+            "lengthdesc": "One and a Half Hours"
+        },
+        {
+            "eventid": 33,
+            "title": "Third",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 0.5,
+            "lengthdesc": "30 Minutes"
+        }
+    ]
 }
 ```
 </details>
@@ -984,7 +1234,7 @@ Example Output:
 ```
 </details>
 
-### POST Requests
+### POST REQs
 
 **Add A New Event --** http://eschoolinthecloud.herokuapp.com/events/event
 
@@ -1009,7 +1259,7 @@ Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 
 </details>
 
-### PATCH Requests
+### PATCH REQs
 
 **Update Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/{eventid}
 
@@ -1033,9 +1283,16 @@ Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 
 </details>
 
+### Delete REQs
 
+**Delete Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/   
 
+<details>
+<summary>http://eschoolinthecloud.herokuapp.com/events/event/38</summary>
 
+*Status: 200 Okay*
+
+</details>
 
 
 

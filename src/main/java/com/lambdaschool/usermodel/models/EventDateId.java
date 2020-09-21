@@ -1,10 +1,16 @@
 package com.lambdaschool.usermodel.models;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
+import java.io.Serializable;
+@JsonIgnoreProperties(value = "event")
 public class EventDateId implements Serializable
 {
+    @JsonIgnoreProperties(value = "datee")
     private long event;
+
+    @JsonIgnoreProperties(value = "event")
     private long datee;
 
     public EventDateId()

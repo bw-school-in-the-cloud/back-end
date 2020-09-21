@@ -1,13 +1,14 @@
 package com.lambdaschool.usermodel.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
 @Table(name = "event")
-@JsonIgnoreProperties(value = "lengthchange")
+@JsonIgnoreProperties(value = "eventdates")
 public class Event
     extends Auditable
 {
@@ -16,16 +17,18 @@ public class Event
     private long eventid;
 
     private String title;
+    private String presenter;
     private String description;
 
     @Transient
-    public boolean lengthchange = false;
+    @JsonIgnore public boolean lengthchange = false;
+
     private double length;
     private String lengthdesc;
 
     @ManyToOne
     @JoinColumn(name = "categoryid")
-    @JsonIgnoreProperties(value = "event")
+    @JsonIgnoreProperties(value = "events")
     private Category category;
 
     @OneToMany(mappedBy = "event",

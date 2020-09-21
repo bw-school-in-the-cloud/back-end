@@ -53,7 +53,7 @@ public class Datee
     @OneToMany(mappedBy = "datee",
         cascade = CascadeType.ALL,
         orphanRemoval = true)
-    @JsonIgnoreProperties(value = "datee",
+    @JsonIgnoreProperties(value = "date",
         allowSetters = true)
     private Set<EventDate> events = new HashSet<>();
 

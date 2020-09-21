@@ -47,10 +47,10 @@ public class CategoryController
      * <br>Example: https://eschoolinthecloud.herokuapp.com/users/user/7
      *
      * @param categoryId The primary key of the user you seek
-     * @return JSON object of the user you seek
+     * @return JSON object of the category you seek
      * @see CategoryService#findCategoryById(categoryId) CategoryService.findCategoryrById(long)
      */
-    @GetMapping(value = "/category/id/{categoryId}",
+    @GetMapping(value = "/category/{categoryId}",
         produces = "application/json")
     public ResponseEntity<?> getCategoryById(
         @PathVariable
@@ -65,8 +65,8 @@ public class CategoryController
      * The Role with the given name
      * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/roles/role/name/data">https://eschoolinthecloud.herokuapp.com/roles/role/name/data</a>
      *
-     * @param name The name of the role you seek
-     * @return JSON object of the role you seek
+     * @param name The name of the role category seek
+     * @return JSON object of the category you seek
      * @see CategoryService#findCategoryByName(String) RoleService.findByName(String)
      */
     @GetMapping(value = "/category/name/{name}",

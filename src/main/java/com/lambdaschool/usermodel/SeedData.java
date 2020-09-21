@@ -188,12 +188,12 @@ public class SeedData
         e1.getEventdates().add(new EventDate(date2, new Event()));
         e1.getEventdates().add(new EventDate(date5, new Event()));
 
-        Event e2 = new Event("Second", "Test Event", 3.0, c2);
+        Event e2 = new Event("Second", "Test Event", 3.0, c1);
         e2.getEventdates().add(new EventDate(date2, new Event()));
         e2.getEventdates().add(new EventDate(date6, new Event()));
         e2.getEventdates().add(new EventDate(date5, new Event()));
 
-        Event e3 = new Event("Third", "Test Event", 0.5, c3);
+        Event e3 = new Event("Third", "Test Event", 0.5, c1);
         e3.getEventdates().add(new EventDate(date7, new Event()));
 
         Event e4 = new Event("Fourth", "Test Event", 5.0, c4);

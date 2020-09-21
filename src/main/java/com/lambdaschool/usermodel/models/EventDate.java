@@ -9,7 +9,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "eventdate")
 @IdClass(EventDateId.class)
-@JsonIgnoreProperties("events")
+//@JsonIgnoreProperties("event")
 public class EventDate implements Serializable
 {
     @Id
@@ -21,7 +21,7 @@ public class EventDate implements Serializable
     @Id
     @ManyToOne
     @JoinColumn(name = "dateeid")
-    @JsonIgnoreProperties(value = "events")
+    @JsonIgnoreProperties(value = "eventdates")
     private Datee datee;
 
     private String eventinfo;

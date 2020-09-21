@@ -178,10 +178,10 @@ public class EventController
         @RequestBody
             Event updateEvent,
         @PathVariable
-            long id)
+            long eventid)
     {
         eventService.update(updateEvent,
-            id);
+            eventid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -192,12 +192,12 @@ public class EventController
      * @param id the primary key of the user you wish to delete
      * @return Status of OK
      */
-    @DeleteMapping(value = "/user/{id}")
+    @DeleteMapping(value = "/event/{eventid}")
     public ResponseEntity<?> deleteEventById(
         @PathVariable
-            long id)
+            long eventid)
     {
-        eventService.delete(id);
+        eventService.delete(eventid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

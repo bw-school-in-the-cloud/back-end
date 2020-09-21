@@ -6,14 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -34,6 +27,9 @@ public class User
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userid;
+
+    private String fname;
+    private String lname;
 
     /**
      * The username (String). Cannot be null and must be unique
@@ -56,6 +52,11 @@ public class User
             unique = true)
     @Email
     private String primaryemail;
+
+    @ManyToOne
+    @JoinColumn(name = "categoryid")
+    @JsonIgnoreProperties(value = "events")
+    private Category category;
 
     /**
      * A list of emails for this user
@@ -81,6 +82,20 @@ public class User
      */
     public User()
     {
+    }
+
+    public User(
+        String fname,
+        String lname,
+        String username,
+        String password,
+        @Email String primaryemail)
+    {
+        this.fname = fname;
+        this.lname = lname;
+        this.username = username;
+        this.password = password;
+        this.primaryemail = primaryemail;
     }
 
     /**
@@ -120,6 +135,26 @@ public class User
     public void setUserid(long userid)
     {
         this.userid = userid;
+    }
+
+    public String getFname()
+    {
+        return fname;
+    }
+
+    public void setFname(String fname)
+    {
+        this.fname = fname;
+    }
+
+    public String getLname()
+    {
+        return lname;
+    }
+
+    public void setLname(String lname)
+    {
+        this.lname = lname;
     }
 
     /**

@@ -157,6 +157,8 @@ public class EventServiceImpl implements EventService
         if (event.getCategory() != null)
         {
             addEvent.setCategory(categoryService.findCategoryById(event.getCategory().getCategoryid()));
+        }else if (event.getCategory() == null){
+            addEvent.setCategory(categoryService.findCategoryById(25));
         }
 
         addEvent.getEventdates().clear();
@@ -208,76 +210,76 @@ public class EventServiceImpl implements EventService
                 currentEvent.setLengthdesc("One Hour");
             }else if (updateEvent.getLength() == 1.5)
             {
-                currentEvent.setLengthdesc("One and a Half Hours");
+                currentEvent.setLengthdesc("One Hour Thirty Minutes");
             }else if (updateEvent.getLength() == 2.0)
             {
                 currentEvent.setLengthdesc("Two Hours");
             }else if (updateEvent.getLength() == 2.5)
             {
-                currentEvent.setLengthdesc("Two and a Half Hours");
+                currentEvent.setLengthdesc("Two Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 3.0)
             {
                 currentEvent.setLengthdesc("Three Hours");
             }else if (updateEvent.getLength() == 3.5)
             {
-                currentEvent.setLengthdesc("Three and a Half Hours");
+                currentEvent.setLengthdesc("Three Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 4.0)
             {
                 currentEvent.setLengthdesc("Four Hours");
             }else if (updateEvent.getLength() == 4.5)
             {
-                currentEvent.setLengthdesc("Four and a Half Hours");
+                currentEvent.setLengthdesc("Four Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 5.0)
             {
                 currentEvent.setLengthdesc("Five Hours");
             }else if (updateEvent.getLength() == 5.5)
             {
-                currentEvent.setLengthdesc("Five and a Half Hours");
+                currentEvent.setLengthdesc("Five Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 6.0)
             {
                 currentEvent.setLengthdesc("Six Hours");
             }else if (updateEvent.getLength() == 6.5)
             {
-                currentEvent.setLengthdesc("Six and a Half Hours");
+                currentEvent.setLengthdesc("Six Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 7.0)
             {
                 currentEvent.setLengthdesc("Seven Hours");
             }else if (updateEvent.getLength() == 7.5)
             {
-                currentEvent.setLengthdesc("Seven and a Half Hours");
+                currentEvent.setLengthdesc("Seven Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 8.0)
             {
                 currentEvent.setLengthdesc("Eight Hours");
             }else if (updateEvent.getLength() == 8.5)
             {
-                currentEvent.setLengthdesc("Eight and a Half Hours");
+                currentEvent.setLengthdesc("Eight Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 9.0)
             {
                 currentEvent.setLengthdesc("Nine Hours");
             }else if (updateEvent.getLength() == 9.5)
             {
-                currentEvent.setLengthdesc("Nine and a Half Hours");
+                currentEvent.setLengthdesc("Nine Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 10.0)
             {
                 currentEvent.setLengthdesc("Ten Hours");
             }else if (updateEvent.getLength() == 10.5)
             {
-                currentEvent.setLengthdesc("Ten and a Half Hours");
+                currentEvent.setLengthdesc("Ten Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 11.0)
             {
                 currentEvent.setLengthdesc("Eleven Hours");
             }else if (updateEvent.getLength() == 11.5)
             {
-                currentEvent.setLengthdesc("Eleven and a Half Hours");
+                currentEvent.setLengthdesc("Eleven Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 12.0)
             {
                 currentEvent.setLengthdesc("Twelve Hours");
             }else if (updateEvent.getLength() == 12.5)
             {
-                currentEvent.setLengthdesc("Twelve and a Half Hours");
+                currentEvent.setLengthdesc("Twelve Hours Thirty Minutes");
             }else if (updateEvent.getLength() == 13.0)
             {
-                currentEvent.setLengthdesc("One and a Half Hours");
+                currentEvent.setLengthdesc("Thirteen Hours");
             }
         }
 
