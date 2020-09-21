@@ -339,9 +339,9 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 <details>
-<summary>Return</summary>     
+<summary>Postman Results</summary>     
 
-**Headers:** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
+**Location:** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 *Status: 201 Created*
 
 </details>
@@ -1305,7 +1305,7 @@ Name | Data Type (min, max)
 </details>
 
 <details>
-<summary>Headers</summary>    
+<summary>Postman Results</summary>    
 
 Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 *Status: 200 Okay*
@@ -1325,7 +1325,7 @@ Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 </details>
 
 <details>
-<summary>Headers</summary>
+<summary>Postman Results</summary>
 
 Location: http://eschoolinthecloud.herokuapp.com/events/category/39
 *Status: 201 Created*
@@ -1349,7 +1349,7 @@ Location: http://eschoolinthecloud.herokuapp.com/events/category/39
 </details>
 
 <details>
-<summary>Headers</summary>    
+<summary>Postman Results</summary>    
 
 Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 *Status: 200 Okay*
