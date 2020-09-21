@@ -22,7 +22,7 @@ import java.util.Set;
  * after the application context has been loaded.
  */
 @Transactional
-//@Component
+@Component
 public class SeedData
         implements CommandLineRunner
 {
@@ -214,6 +214,11 @@ public class SeedData
         e4 = eventService.save(e4);
         e5 = eventService.save(e5);
         e6 = eventService.save(e6);
+
+//        SessionInfo tz1 = new SessionInfo("Eastern Standard", "EST");
+
+//        ProfileInfo pf1 = new ProfileInfo();
+
 
         if (false)
         {
