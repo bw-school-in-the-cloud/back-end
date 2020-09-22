@@ -25,7 +25,7 @@ Name | Data Type (min, max)
 ------------ | -------------
 **Username**| **String**
 **Password** | **String**
-**Email** | **Email**   
+**Primaryemail** | **Email**   
    
 **Role Type will default to Volunteer**
 
