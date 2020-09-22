@@ -27,6 +27,7 @@ public class Datee
 
     private int timeimperial;
     private String timeimperialsuffix;
+    private String timezone;
 
     @Column(nullable = false)
     @Min(1)
