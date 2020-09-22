@@ -41,7 +41,7 @@ Note: *Data for React I MVP Only*
 Example Output:
 
 <details> 
-<summary>https://eschoolinthecloud.herokuapp.com/terms/terms</summary>
+<summary>http://eschoolinthecloud.herokuapp.com/terms/terms</summary>
 
 ```JSON
 [
@@ -434,7 +434,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 Example Output:
 
 <details> 
-<summary>http://eschoolinthecloud.herokuapp.com/events/events</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/events</summary>
 
 ```JSON
 [
@@ -666,7 +666,7 @@ Example Output:
 Example Output:
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/event/name/Second</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/event/name/Second</summary>
 
 ```JSON
 {
@@ -728,7 +728,7 @@ Example Output:
 Example Output:
 
 <details> 
-<summary>http://eschoolinthecloud.herokuapp.com/events/events</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/events</summary>
 
 ```JSON
 [
@@ -960,7 +960,7 @@ Example Output:
 Example Output:
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/categories</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/categories</summary>
 
 ```JSON
 [
@@ -1273,7 +1273,7 @@ Example Output:
 Example Output:
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/category/id/25</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/category/id/25</summary>
 
 ```JSON
 {
@@ -1424,7 +1424,7 @@ Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 :arrow_forward: **Delete Event By ID --** https://eschoolinthecloud.herokuapp.com/events/event/   
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/event/38</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/event/38</summary>
 
 *Status: 200 Okay*
 
