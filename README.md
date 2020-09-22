@@ -4,13 +4,13 @@
 https://eschoolinthecloud.herokuapp.com/   
    
 
-![Step One](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow1.png?raw=true)
+![Step One](https://github.com/bw-school-in-the-cloud/back-end/blob/master/PostmanFlow1.png?raw=true)
    
-![Step Two](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow2.png?raw=true)
+![Step Two](https://github.com/bw-school-in-the-cloud/back-end/blob/master/PostmanFlow2.png?raw=true)
    
-![Step Three](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow3.png?raw=true)
+![Step Three](https://github.com/bw-school-in-the-cloud/back-end/blob/master/PostmanFlow3.png?raw=true)
    
-![Step Four](https://github.com/bw-school-in-the-cloud/back-end/blob/features/events/PostmanFlow4.png?raw=true)
+![Step Four](https://github.com/bw-school-in-the-cloud/back-end/blob/master/PostmanFlow4.png?raw=true)
 
 ## Signing Up A New User
 
@@ -37,11 +37,11 @@ Name | Data Type (min, max)
 Note: *Data for React I MVP Only*   
 
 
-:arrow_forward: **List Terms Of Service --** https://eschoolinthecloud.herokuapp.com/terms/terms   
+:arrow_forward: **List Terms Of Service --** http://eschoolinthecloud.herokuapp.com/terms/terms   
 Example Output:
 
 <details> 
-<summary>https://eschoolinthecloud.herokuapp.com/terms/terms</summary>
+<summary>http://eschoolinthecloud.herokuapp.com/terms/terms</summary>
 
 ```JSON
 [
@@ -434,7 +434,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 Example Output:
 
 <details> 
-<summary>http://eschoolinthecloud.herokuapp.com/events/events</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/events</summary>
 
 ```JSON
 [
@@ -662,11 +662,11 @@ Example Output:
 
 </details>
 
-:arrow_forward: **Find Event By Title --** http://eschoolinthecloud.herokuapp.com/events/event/name/{title}   
+:arrow_forward: **Find Event By Title --** https://eschoolinthecloud.herokuapp.com/events/event/name/{title}   
 Example Output:
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/event/name/Second</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/event/name/Second</summary>
 
 ```JSON
 {
@@ -728,7 +728,7 @@ Example Output:
 Example Output:
 
 <details> 
-<summary>http://eschoolinthecloud.herokuapp.com/events/events</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/events</summary>
 
 ```JSON
 [
@@ -956,11 +956,11 @@ Example Output:
 
 </details>
 
-:arrow_forward: **List All Events By Categories --** http://eschoolinthecloud.herokuapp.com/events/categories   
+:arrow_forward: **List All Events By Categories --** https://eschoolinthecloud.herokuapp.com/events/categories   
 Example Output:
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/categories</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/categories</summary>
 
 ```JSON
 [
@@ -1203,11 +1203,77 @@ Example Output:
 ```
 </details>
 
-:arrow_forward: **List Events By Category By ID --** http://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
+:arrow_forward: **List Events By Ccategory Name --** https://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}
+Example Output:   
+
+<details>
+<summary>https://eschoolinthecloud.herokuapp.com/events/category/name/Tech</summary>
+   
+```JSON
+{
+    "categoryid": 26,
+    "name": "Tech",
+    "events": [
+        {
+            "eventid": 32,
+            "title": "Second Event",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 3.0,
+            "lengthdesc": "Three Hours",
+            "eventdates": [
+                {
+                    "datee": {
+                        "timeminute": 0,
+                        "timedigital": 2,
+                        "timeimperial": 2,
+                        "timeimperialsuffix": "AM",
+                        "eventmonth": 6,
+                        "eventmonthname": "June",
+                        "eventday": 24,
+                        "eventyear": 2021,
+                        "eventdateid": 16
+                    }
+                },
+                {
+                    "datee": {
+                        "timeminute": 0,
+                        "timedigital": 11,
+                        "timeimperial": 11,
+                        "timeimperialsuffix": "AM",
+                        "eventmonth": 12,
+                        "eventmonthname": "December",
+                        "eventday": 14,
+                        "eventyear": 2020,
+                        "eventdateid": 19
+                    }
+                },
+                {
+                    "datee": {
+                        "timeminute": 0,
+                        "timedigital": 19,
+                        "timeimperial": 7,
+                        "timeimperialsuffix": "PM",
+                        "eventmonth": 11,
+                        "eventmonthname": "November",
+                        "eventday": 24,
+                        "eventyear": 2020,
+                        "eventdateid": 20
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+</details>
+
+:arrow_forward: **List Events By Category By ID --** https://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
 Example Output:
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/category/id/25</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/category/id/25</summary>
 
 ```JSON
 {
@@ -1243,23 +1309,11 @@ Example Output:
 ```
 </details>
 
-:arrow_forward: **Find Event Category By Name --** http://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}   
-Example Output:
 
-<details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/category/id/tech</summary>
-
-```JSON
-{
-    "categoryid": 26,
-    "name": "Tech"
-}
-```
-</details>
 
 ### POST REQs
 
-:arrow_forward: **Add A New Event --** http://eschoolinthecloud.herokuapp.com/events/event
+:arrow_forward: **Add A New Event --** https://eschoolinthecloud.herokuapp.com/events/event
    
 
 ## EVENT TABLE
@@ -1316,12 +1370,12 @@ Name | Data Type (min, max)
 <details>
 <summary>Postman Results</summary>    
 
-Location: http://eschoolinthecloud.herokuapp.com/events/event/38
+Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 *Status: 200 Okay*
 
 </details>   
 
-:arrow_forward: **Add A New Event Category --** http://eschoolinthecloud.herokuapp.com/events/category
+:arrow_forward: **Add A New Event Category --** https://eschoolinthecloud.herokuapp.com/events/category
 
 <details>
 <summary>Minimum Body</summary>
@@ -1336,14 +1390,14 @@ Location: http://eschoolinthecloud.herokuapp.com/events/event/38
 <details>
 <summary>Postman Results</summary>
 
-Location: http://eschoolinthecloud.herokuapp.com/events/category/39
+Location: https://eschoolinthecloud.herokuapp.com/events/category/39
 *Status: 201 Created*
 
 </details>
 
 ### PATCH REQs
 
-:arrow_forward: **Update Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/{eventid}
+:arrow_forward: **Update Event By ID --** https://eschoolinthecloud.herokuapp.com/events/event/{eventid}
 
 <details>
 <summary>Minimum Body</summary>
@@ -1360,17 +1414,17 @@ Location: http://eschoolinthecloud.herokuapp.com/events/category/39
 <details>
 <summary>Postman Results</summary>    
 
-Location: http://eschoolinthecloud.herokuapp.com/events/event/38
+Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 *Status: 200 Okay*
 
 </details>
 
 ### Delete REQs
 
-:arrow_forward: **Delete Event By ID --** http://eschoolinthecloud.herokuapp.com/events/event/   
+:arrow_forward: **Delete Event By ID --** https://eschoolinthecloud.herokuapp.com/events/event/   
 
 <details>
-<summary>http://eschoolinthecloud.herokuapp.com/events/event/38</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/events/event/38</summary>
 
 *Status: 200 Okay*
 
