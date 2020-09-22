@@ -303,7 +303,7 @@ Fname | String
 Lname | String
 **Username**| **String**
 **Password** | **String**
-**Email** | **Email**
+**Primaryemail** | **Email**
 Role | Role
 
 <details>
