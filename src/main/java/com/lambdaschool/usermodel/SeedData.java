@@ -62,6 +62,9 @@ public class SeedData
     @Autowired
     CategoryService categoryService;
 
+    @Autowired
+    ProfileInfoService profileInfoService;
+
     /**
      * Generates test, seed data for our application
      * First a set of known data is seeded into our database.
@@ -217,7 +220,12 @@ public class SeedData
 
 //        SessionInfo tz1 = new SessionInfo("Eastern Standard", "EST");
 
-//        ProfileInfo pf1 = new ProfileInfo();
+        ProfileInfo pf1 = new ProfileInfo("Hmm");
+
+        profileInfoService.save(pf1);
+
+        User trial = new User("Zach","Zach","Zach","Zach","Zach@z.c");
+        userService.save(trial);
 
 
         if (false)
