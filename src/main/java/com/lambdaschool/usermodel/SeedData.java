@@ -225,8 +225,21 @@ public class SeedData
         User trial = new User("Zach","Zach","Zach","Zach","Zach@z.c");
         trial.getEventdates().add(new EventDate(date3, e1, new User()));
         trial.getEvents().add(new Attendee(e1, new User()));
-
         userService.save(trial);
+
+        User trial1 = new User("TestOne","passwordone","test1@z.c");
+        User trial2 = new User("TestTwo","passwordtwo","test2@z.c");
+        User trial3 = new User("TestThree","passwordthree","test3@z.c");
+        User trial4 = new User("TestFour","passwordfour","test4@z.c");
+
+        trial1.getEvents().add(new Attendee(e1, new User()));
+        trial2.getEvents().add(new Attendee(e3, new User()));
+        trial3.getEvents().add(new Attendee(e4, new User()));
+        trial4.getEvents().add(new Attendee(e1, new User()));
+        userService.save(trial1);
+        userService.save(trial2);
+        userService.save(trial3);
+        userService.save(trial4);
 
         ProfileInfo pf1 = new ProfileInfo("Hmm");
 

@@ -98,12 +98,28 @@ public class UserServiceImpl
         if (user.getFname() != null)
         {
             newUser.setFname(user.getFname());
+        }else if (user.getFname() == null) {
+            newUser.setFname("Guest");
         }
 
-        if (user.getLname() != null)
+        int max = 5000;
+        int min = 1;
+        int range = max - min + 1;
+
+        // generate random numbers within 1 to 10
+
+
+        String rand = String.valueOf(((int) (Math.random() * range) + min));
+
+            // Output is different everytime this code is executed
+
+
+            if (user.getLname() != null)
         {
             newUser.setLname(user.getLname());
-        }
+        }else if (user.getLname() == null) {
+                newUser.setLname(rand);
+            }
 
         newUser.setUsername(user.getUsername()
             .toLowerCase());
