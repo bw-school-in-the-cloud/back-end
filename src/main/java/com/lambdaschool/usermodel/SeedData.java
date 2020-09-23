@@ -22,7 +22,7 @@ import java.util.Set;
  * after the application context has been loaded.
  */
 @Transactional
-@Component
+// @Component
 public class SeedData
         implements CommandLineRunner
 {
@@ -55,6 +55,9 @@ public class SeedData
      */
     @Autowired
     EventService eventService;
+
+    @Autowired
+    AttendeeService attendeeService;
 
     /**
      * Connects the category service to this process
@@ -236,10 +239,17 @@ public class SeedData
         trial2.getEvents().add(new Attendee(e3, new User()));
         trial3.getEvents().add(new Attendee(e4, new User()));
         trial4.getEvents().add(new Attendee(e1, new User()));
+
         userService.save(trial1);
         userService.save(trial2);
         userService.save(trial3);
         userService.save(trial4);
+
+        Attendee at0 = new Attendee(e1, trial);
+        Attendee at1 = new Attendee(e1, trial1);
+        Attendee at2 = new Attendee(e3, trial2);
+        Attendee at3 = new Attendee(e4, trial3);
+        Attendee at4 = new Attendee(e1, trial4);
 
         ProfileInfo pf1 = new ProfileInfo("Hmm");
 

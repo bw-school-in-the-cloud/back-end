@@ -141,6 +141,18 @@ public class User
         this.eventdates = eventdates;
     }
 
+    public User(
+        String username,
+        String password,
+        @Email String primaryemail,
+        Set<UserRoles> roles)
+    {
+        this.username = username;
+        this.password = password;
+        this.primaryemail = primaryemail;
+        this.roles = roles;
+    }
+
     /**
      * Getter for userid
      *

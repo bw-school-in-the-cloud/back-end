@@ -37,6 +37,15 @@ public class AttendeeServiceImpl implements AttendeeService
 
     @Transactional
     @Override
+    public Attendee save(Attendee attendee)
+    {
+        Attendee newAttend = new Attendee(attendee.getEvent(), attendee.getUser());
+
+        return attendeeRepository.save(newAttend);
+    }
+
+    @Transactional
+    @Override
     public Attendee save(Event event)
     {
         Authentication authentication = SecurityContextHolder

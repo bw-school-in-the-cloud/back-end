@@ -55,13 +55,13 @@ public class ResourceServerConfig
                 .permitAll()
                 .antMatchers(HttpMethod.POST,
                         "/users/**")
-                .hasAnyRole("ADMIN")
+                .hasAnyRole("ADMIN","STUDENT","VOLUNTEER")
                 .antMatchers(HttpMethod.DELETE,
                         "/users/**")
-                .hasAnyRole("ADMIN")
+                .hasAnyRole("ADMIN","STUDENT","VOLUNTEER")
                 .antMatchers(HttpMethod.PUT,
                         "/users/**")
-                .hasAnyRole("ADMIN")
+                .hasAnyRole("ADMIN","STUDENT","VOLUNTEER")
                 .antMatchers("/users/**",
                         "/useremails/**",
                         "/events/**",
