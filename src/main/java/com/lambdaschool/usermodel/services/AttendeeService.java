@@ -15,5 +15,7 @@ public interface AttendeeService
 
     Attendee save(Event event);
 
+    Attendee save(Attendee attendee);
+
     List<Attendee> findAll();
 }
