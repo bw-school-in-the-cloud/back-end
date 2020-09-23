@@ -44,6 +44,9 @@ public class Datee
     @Column(nullable = false)
     private int eventyear;
 
+    private String display;
+    private String displaytime;
+
     @OneToMany(mappedBy = "datee",
         cascade = CascadeType.ALL,
         orphanRemoval = true)
@@ -157,6 +160,36 @@ public class Datee
     public void setTimedigital(int eventhour)
     {
         this.timedigital = eventhour;
+    }
+
+    public String getTimezone()
+    {
+        return timezone;
+    }
+
+    public void setTimezone(String timezone)
+    {
+        this.timezone = timezone;
+    }
+
+    public String getDisplay()
+    {
+        return display;
+    }
+
+    public void setDisplay(String display)
+    {
+        this.display = display;
+    }
+
+    public String getDisplaytime()
+    {
+        return displaytime;
+    }
+
+    public void setDisplaytime(String displaytime)
+    {
+        this.displaytime = displaytime;
     }
 
     public Set<EventDate> getEvents()

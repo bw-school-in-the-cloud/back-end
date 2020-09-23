@@ -113,6 +113,23 @@ public class DateeServiceImpl implements DateeService
         addDate.setEventday(datee.getEventday());
         addDate.setEventyear(datee.getEventyear());
 
+        if (datee.getTimezone() == null)
+        {
+            addDate.setTimezone("PDT");
+        }
+
+        String displayMin = new String();
+
+        if (addDate.getTimeminute() < 10)
+        {
+            displayMin = "0" + addDate.getTimeminute();
+        } else {
+            displayMin = String.valueOf(addDate.getTimeminute());
+        }
+
+        addDate.setDisplay(addDate.getTimeimperial() + ":" + displayMin + " " + addDate.getTimeimperialsuffix() + " " + addDate.getEventmonthname() + " " + addDate.getEventday() + ", " + addDate.getEventyear());
+        addDate.setDisplaytime(addDate.getTimeimperial() + ":" + displayMin + " " + addDate.getTimeimperialsuffix());
+
         return dateeRepository.save(addDate);
     }
 }
