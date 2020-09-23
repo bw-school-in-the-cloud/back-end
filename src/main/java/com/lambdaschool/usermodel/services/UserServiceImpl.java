@@ -1,12 +1,11 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.exceptions.ResourceNotFoundException;
-import com.lambdaschool.usermodel.models.Role;
-import com.lambdaschool.usermodel.models.User;
-import com.lambdaschool.usermodel.models.UserRoles;
-import com.lambdaschool.usermodel.models.Useremail;
+import com.lambdaschool.usermodel.models.*;
 import com.lambdaschool.usermodel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -148,6 +147,20 @@ public class UserServiceImpl
                     ue.getUseremail()));
         }
 
+        newUser.getEventdates().clear();
+        for (EventDate ed : user.getEventdates())
+        {
+            newUser.getEventdates().add(new EventDate(ed.getEvent(),
+                ed.getdatee(), newUser));
+        }
+
+        newUser.getEvents().clear();
+
+        for (Attendee a : user.getEvents())
+        {
+            newUser.getEvents().add(new Attendee(a.getEvent(), newUser));
+        }
+
         return userrepos.save(newUser);
     }
 
@@ -215,6 +228,18 @@ public class UserServiceImpl
             throw new ResourceNotFoundException("This user is not authorized to make change");
         }
     }
+
+    @Override
+    public User getCurrentUserInfo() {
+        {
+            Authentication authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
+            String primaryEmail = authentication.getName();
+            return userrepos.findByPrimaryemail(primaryEmail);
+        }
+    }
+
 
     @Transactional
     @Override

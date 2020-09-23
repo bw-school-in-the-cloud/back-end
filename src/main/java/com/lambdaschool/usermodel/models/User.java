@@ -62,6 +62,19 @@ public class User
     @JsonIgnoreProperties(value = "user", allowSetters = true)
     private List<Useremail> useremails = new ArrayList<>();
 
+    @OneToMany(mappedBy = "hostedby",
+        cascade = CascadeType.ALL,
+        orphanRemoval = true)
+    @JsonIgnoreProperties(value = "user", allowSetters = true)
+    private List<EventDate> eventdates = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user",
+        cascade = CascadeType.ALL,
+        orphanRemoval = true)
+    @JsonIgnoreProperties(value = "user",
+        allowSetters = true)
+    private Set<Attendee> events = new HashSet<>();
+
     /**
      * Part of the join relationship between user and role
      * connects users to the user role combination
@@ -110,6 +123,22 @@ public class User
         this.username = username;
         this.password = password;
         this.primaryemail = primaryemail;
+    }
+
+    public User(
+        String fname,
+        String lname,
+        String username,
+        String password,
+        @Email String primaryemail,
+        List<EventDate> eventdates)
+    {
+        this.fname = fname;
+        this.lname = lname;
+        this.username = username;
+        this.password = password;
+        this.primaryemail = primaryemail;
+        this.eventdates = eventdates;
     }
 
     /**
@@ -241,6 +270,16 @@ public class User
         this.useremails = useremails;
     }
 
+    public List<EventDate> getEventdates()
+    {
+        return eventdates;
+    }
+
+    public void setEventdates(List<EventDate> eventdates)
+    {
+        this.eventdates = eventdates;
+    }
+
     /**
      * Getter for user role combinations
      *
@@ -259,6 +298,11 @@ public class User
     public void setRoles(Set<UserRoles> roles)
     {
         this.roles = roles;
+    }
+
+    public Set<Attendee> getEvents()
+    {
+        return events;
     }
 
     /**
