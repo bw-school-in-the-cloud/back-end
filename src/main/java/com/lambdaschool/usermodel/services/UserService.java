@@ -75,6 +75,9 @@ public interface UserService
             User user,
             long id);
 
+
+    User getCurrentUserInfo();
+
     /**
      * Deletes all record and their associated records from the database
      */

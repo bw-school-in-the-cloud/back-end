@@ -36,6 +36,11 @@ public class Event
     @JsonIgnoreProperties(value = "event", allowSetters = true)
     private Set<EventDate> eventdates = new HashSet<>();
 
+    @OneToMany(mappedBy = "event",
+        cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "event", allowSetters = true)
+    private Set<Attendee> attendees = new HashSet<>();
+
     public Event()
     {
     }

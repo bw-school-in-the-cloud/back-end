@@ -167,6 +167,55 @@ Example Output:
 </details>
 
 
+:arrow_forward: **Find Current User --** https://eschoolinthecloud.herokuapp.com/users/getuserinfo   
+Examle Output:   
+
+<details>
+<summary>https://eschoolinthecloud.herokuapp.com/users/getuserinfo</summary>
+
+```JSON
+{
+    "userid": 4,
+    "fname": "Guest",
+    "lname": "888",
+    "username": "admin",
+    "primaryemail": "admin@lambdaschool.local",
+    "useremails": [
+        {
+            "useremailid": 5,
+            "useremail": "admin@email.local"
+        },
+        {
+            "useremailid": 6,
+            "useremail": "admin@mymail.local"
+        }
+    ],
+    "eventdates": [],
+    "events": [],
+    "roles": [
+        {
+            "role": {
+                "roleid": 1,
+                "name": "ADMIN"
+            }
+        },
+        {
+            "role": {
+                "roleid": 2,
+                "name": "STUDENT"
+            }
+        },
+        {
+            "role": {
+                "roleid": 3,
+                "name": "VOLUNTEER"
+            }
+        }
+    ]
+}
+```
+</details>
+
 :arrow_forward: **Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 Example Output: 
 
@@ -1203,7 +1252,7 @@ Example Output:
 ```
 </details>
 
-:arrow_forward: **List Events By Ccategory Name --** https://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}
+:arrow_forward: **List Events By Category Name --** https://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}
 Example Output:   
 
 <details>
@@ -1309,6 +1358,166 @@ Example Output:
 ```
 </details>
 
+:arrow_forward: **List Events By Users Attending --** https://eschoolinthecloud.herokuapp.com/events/dates/users/events   
+Example Output:   
+
+<details>
+<summary>https://eschoolinthecloud.herokuapp.com/events/dates/users/events </summary>
+   
+```JSON
+[
+    {
+        "event": {
+            "eventid": 31,
+            "title": "First",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 1.5,
+            "lengthdesc": "One and a Half Hours",
+            "category": {
+                "categoryid": 25,
+                "name": "Uncategorized"
+            }
+        },
+        "user": {
+            "userid": 37,
+            "fname": "Zach",
+            "lname": "Zach",
+            "username": "zach",
+            "primaryemail": "zach@z.c",
+            "useremails": [],
+            "eventdates": [
+                {
+                    "event": {
+                        "eventid": 31,
+                        "title": "First",
+                        "description": "Test Event",
+                        "lengthchange": false,
+                        "length": 1.5,
+                        "lengthdesc": "One and a Half Hours",
+                        "category": {
+                            "categoryid": 25,
+                            "name": "Uncategorized"
+                        }
+                    },
+                    "datee": {
+                        "timeminute": 30,
+                        "timedigital": 18,
+                        "timeimperial": 6,
+                        "timeimperialsuffix": "PM",
+                        "eventmonth": 10,
+                        "eventmonthname": "October",
+                        "eventday": 24,
+                        "eventyear": 2020,
+                        "eventdateid": 17
+                    },
+                    "eventinfo": null,
+                    "eventdateday": null
+                }
+            ],
+            "roles": []
+        }
+    },
+    {
+        "event": {
+            "eventid": 31,
+            "title": "First",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 1.5,
+            "lengthdesc": "One and a Half Hours",
+            "category": {
+                "categoryid": 25,
+                "name": "Uncategorized"
+            }
+        },
+        "user": {
+            "userid": 38,
+            "fname": "Guest",
+            "lname": "1032",
+            "username": "testone",
+            "primaryemail": "test1@z.c",
+            "useremails": [],
+            "eventdates": [],
+            "roles": []
+        }
+    },
+    {
+        "event": {
+            "eventid": 31,
+            "title": "First",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 1.5,
+            "lengthdesc": "One and a Half Hours",
+            "category": {
+                "categoryid": 25,
+                "name": "Uncategorized"
+            }
+        },
+        "user": {
+            "userid": 41,
+            "fname": "Guest",
+            "lname": "3632",
+            "username": "testfour",
+            "primaryemail": "test4@z.c",
+            "useremails": [],
+            "eventdates": [],
+            "roles": []
+        }
+    },
+    {
+        "event": {
+            "eventid": 33,
+            "title": "Third",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 0.5,
+            "lengthdesc": "30 Minutes",
+            "category": {
+                "categoryid": 25,
+                "name": "Uncategorized"
+            }
+        },
+        "user": {
+            "userid": 39,
+            "fname": "Guest",
+            "lname": "2289",
+            "username": "testtwo",
+            "primaryemail": "test2@z.c",
+            "useremails": [],
+            "eventdates": [],
+            "roles": []
+        }
+    },
+    {
+        "event": {
+            "eventid": 34,
+            "title": "Fourth",
+            "description": "Test Event",
+            "lengthchange": false,
+            "length": 5.0,
+            "lengthdesc": "Five Hours",
+            "category": {
+                "categoryid": 28,
+                "name": "Literature"
+            }
+        },
+        "user": {
+            "userid": 40,
+            "fname": "Guest",
+            "lname": "4811",
+            "username": "testthree",
+            "primaryemail": "test3@z.c",
+            "useremails": [],
+            "eventdates": [],
+            "roles": []
+        }
+    }
+]
+```
+
+</details>
 
 
 ### POST REQs
