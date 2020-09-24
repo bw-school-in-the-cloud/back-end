@@ -67,6 +67,24 @@ public class OpenController
         // Create the user
         User newuser = new User();
 
+        if  (newuser.getFname() == null)
+        {
+            newuser.setFname("Guest");
+        }
+
+        int max = 5000;
+        int min = 1;
+        int range = max - min + 1;
+
+        // generate random numbers within 1 to 10
+        String rand = String.valueOf(((int) (Math.random() * range) + min));
+
+        // Output is different everytime this code is executed
+        if (newuser.getLname() == null)
+        {
+            newuser.setLname(rand);
+        }
+
         newuser.setUsername(newminuser.getUsername());
         newuser.setPassword(newminuser.getPassword());
         newuser.setPrimaryemail(newminuser.getPrimaryemail());
