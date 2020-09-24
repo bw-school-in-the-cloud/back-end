@@ -163,10 +163,10 @@ public class UserServiceImpl
                     ue.getUseremail()));
         }
 
-        newUser.getEventdates().clear();
-        for (EventDate ed : user.getEventdates())
+        newUser.getHostedby().clear();
+        for (EventDate ed : user.getHostedby())
         {
-            newUser.getEventdates().add(new EventDate(ed.getEvent(),
+            newUser.getHostedby().add(new EventDate(ed.getEvent(),
                 ed.getdatee(), newUser));
         }
 

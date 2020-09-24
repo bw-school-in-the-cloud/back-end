@@ -27,8 +27,32 @@ Name | Data Type (min, max)
 **Password** | **String**
 **Primaryemail** | **Email**   
    
-**Role Type will default to Volunteer**
+**Role Type will default to Volunteer**   
+Role Type can be set with nested Role ID or Role Type Name in String Format
 
+```JSON
+{
+    "fname": "Doc",
+    "lname": "Example",
+    "username": "docExampleRole",
+    "primaryemail": "docNews@lambdaschool.local",
+    "password": "password",
+    "roles": [
+        {
+            "role": {
+                "roleid": 1
+            }
+        },
+        {
+            "role": {
+                "name": "STUDENT"
+            }
+        }
+    ]
+}
+```   
+   
+   
 ## Terms Of Service Requests
 <details>
 <summary> :arrow_down: </summary>
@@ -1602,7 +1626,51 @@ Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 Location: https://eschoolinthecloud.herokuapp.com/events/category/39
 *Status: 201 Created*
 
+</details>   
+
+:arrow_forward: **Add A New Attendee --** https://eschoolinthecloud.herokuapp.com/events/dates/users/attendee   
+   
+<details>
+<summary>Minimum Body</summary>
+   
+```JSON
+{
+    "event": {
+        "eventid": 31,
+        "category": {
+            "categoryid": 25,
+            "name": "Uncategorized"
+        }
+    },
+    "user": {
+        "userid": 4,
+        "hostedby": [
+            {
+                "event": {
+                    "eventid": 31,
+                    "category": {
+                        "categoryid": 25
+                    }
+                },
+                "datee": {
+                    "eventdateid": 17
+                }
+            }
+        ]
+    }
+}
+```   
+
+<details>
+<summary>Postman Results:</summary>
+   
+Location: https://eschoolinthecloud.herokuapp.com/events/dates/users/attendee/4   
+*Status: 201 Created*   
+
 </details>
+
+</details>
+
 
 ### PATCH REQs
 

@@ -1,7 +1,6 @@
 package com.lambdaschool.usermodel.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.io.Serializable;
 @JsonIgnoreProperties(value = "event")

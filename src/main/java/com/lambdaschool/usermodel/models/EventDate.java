@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Entity
 @Table(name = "eventdate")
@@ -26,6 +25,7 @@ public class EventDate implements Serializable
 
     private String eventinfo;
     private String eventdateday;
+    private double duration;
 
     @ManyToOne
     @JoinColumn(name = "userid")
@@ -95,7 +95,7 @@ public class EventDate implements Serializable
 
     public void setEventinfo(String eventinfo)
     {
-        this.eventinfo = eventinfo;
+        this.eventinfo = this.getEvent().getCategory().getName() + ": " + this.getEvent().getDescription() + " " + this.getdatee().getDisplay();
     }
 
     public String getEventdateday()
@@ -136,6 +136,16 @@ public class EventDate implements Serializable
     public void setUser(User hostedby)
     {
         this.hostedby = hostedby;
+    }
+
+    public double getDuration()
+    {
+        return duration;
+    }
+
+    public void setDuration(double duration)
+    {
+        this.duration = event.getLength();
     }
 
     @Override

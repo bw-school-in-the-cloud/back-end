@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "attendee")
-@JsonIgnoreProperties(value = "events")
 @IdClass(AttendeeId.class)
 public class Attendee implements Serializable
 {

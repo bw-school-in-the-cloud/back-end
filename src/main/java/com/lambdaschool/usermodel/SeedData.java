@@ -10,10 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Calendar;
-import java.util.HashSet;
 import java.util.Locale;
-import java.util.Set;
 
 /**
  * SeedData puts both known and random data into the database. It implements CommandLineRunner.
@@ -22,7 +19,7 @@ import java.util.Set;
  * after the application context has been loaded.
  */
 @Transactional
-// @Component
+@Component
 public class SeedData
         implements CommandLineRunner
 {
@@ -226,7 +223,7 @@ public class SeedData
 
 //        SessionInfo tz1 = new SessionInfo("Eastern Standard", "EST");
         User trial = new User("Zach","Zach","Zach","Zach","Zach@z.c");
-        trial.getEventdates().add(new EventDate(date3, e1, new User()));
+        trial.getHostedby().add(new EventDate(date3, e1, new User()));
         trial.getEvents().add(new Attendee(e1, new User()));
         userService.save(trial);
 

@@ -1,7 +1,9 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.exceptions.ResourceNotFoundException;
-import com.lambdaschool.usermodel.models.*;
+import com.lambdaschool.usermodel.models.Datee;
+import com.lambdaschool.usermodel.models.Event;
+import com.lambdaschool.usermodel.models.EventDate;
 import com.lambdaschool.usermodel.repository.DateeRepository;
 import com.lambdaschool.usermodel.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class EventServiceImpl implements EventService
 
     @Autowired
     CategoryService categoryService;
+
+    @Autowired
+    UserService userService;
 
     @Autowired
     private HelperFunctions helperFunctions;
@@ -168,6 +173,14 @@ public class EventServiceImpl implements EventService
                 .orElseThrow(() -> new ResourceNotFoundException("Event Date ID:" + e.getdatee()
                     .getEventdateid() + " could not be found!"));
             addEvent.getEventdates().add(new EventDate(addEvent, adDate));
+
+            for (EventDate ed : addEvent.getEventdates())
+            {
+                String ei = ed.getEvent().getCategory().getName() + ": " + ed.getEvent().getDescription();
+
+                ed.setDuration(ed.getEvent().getLength());
+                ed.setEventinfo(ei);
+            }
         }
         return eventRepository.save(addEvent);
     }

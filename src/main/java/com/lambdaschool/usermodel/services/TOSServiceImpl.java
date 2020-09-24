@@ -1,7 +1,6 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.models.TOS;
-import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.repository.TOSRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

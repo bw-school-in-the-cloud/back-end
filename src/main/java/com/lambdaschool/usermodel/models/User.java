@@ -18,6 +18,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "users")
+@JsonIgnoreProperties(value = "eventdates")
 public class User
         extends Auditable
 {
@@ -66,14 +67,14 @@ public class User
         cascade = CascadeType.ALL,
         orphanRemoval = true)
     @JsonIgnoreProperties(value = "user", allowSetters = true)
-    private List<EventDate> eventdates = new ArrayList<>();
+    private List<EventDate> hostedby = new ArrayList<>();
 
     @OneToMany(mappedBy = "user",
         cascade = CascadeType.ALL,
         orphanRemoval = true)
     @JsonIgnoreProperties(value = "user",
         allowSetters = true)
-    private Set<Attendee> events = new HashSet<>();
+    private Set<Attendee> attendees = new HashSet<>();
 
     /**
      * Part of the join relationship between user and role
@@ -112,6 +113,14 @@ public class User
     }
 
     public User(
+        String username,
+        @Email String primaryemail)
+    {
+        this.username = username;
+        this.primaryemail = primaryemail;
+    }
+
+    public User(
         String fname,
         String lname,
         String username,
@@ -120,8 +129,8 @@ public class User
     {
         this.fname = fname;
         this.lname = lname;
-        this.username = username;
-        this.password = password;
+        setUsername(username);
+        setPassword(password);
         this.primaryemail = primaryemail;
     }
 
@@ -131,14 +140,15 @@ public class User
         String username,
         String password,
         @Email String primaryemail,
-        List<EventDate> eventdates)
+        List<EventDate> hostedby)
     {
         this.fname = fname;
         this.lname = lname;
-        this.username = username;
-        this.password = password;
+        setUsername(username);
+        setPassword(password);
         this.primaryemail = primaryemail;
-        this.eventdates = eventdates;
+        this.hostedby = hostedby;
+
     }
 
     public User(
@@ -147,8 +157,8 @@ public class User
         @Email String primaryemail,
         Set<UserRoles> roles)
     {
-        this.username = username;
-        this.password = password;
+        setUsername(username);
+        setPassword(password);
         this.primaryemail = primaryemail;
         this.roles = roles;
     }
@@ -282,16 +292,6 @@ public class User
         this.useremails = useremails;
     }
 
-    public List<EventDate> getEventdates()
-    {
-        return eventdates;
-    }
-
-    public void setEventdates(List<EventDate> eventdates)
-    {
-        this.eventdates = eventdates;
-    }
-
     /**
      * Getter for user role combinations
      *
@@ -312,9 +312,24 @@ public class User
         this.roles = roles;
     }
 
+    public List<EventDate> getHostedby()
+    {
+        return hostedby;
+    }
+
+    public void setHostedby(List<EventDate> hostedby)
+    {
+        this.hostedby = hostedby;
+    }
+
     public Set<Attendee> getEvents()
     {
-        return events;
+        return attendees;
+    }
+
+    public void setEvents(Set<Attendee> events)
+    {
+        this.attendees = events;
     }
 
     /**
