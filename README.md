@@ -27,8 +27,32 @@ Name | Data Type (min, max)
 **Password** | **String**
 **Primaryemail** | **Email**   
    
-**Role Type will default to Volunteer**
+**Role Type will default to Volunteer**   
+Role Type can be set with nested Role ID or Role Type Name in String Format
 
+```JSON
+{
+    "fname": "Doc",
+    "lname": "Example",
+    "username": "docExampleRole",
+    "primaryemail": "docNews@lambdaschool.local",
+    "password": "password",
+    "roles": [
+        {
+            "role": {
+                "roleid": 1
+            }
+        },
+        {
+            "role": {
+                "name": "STUDENT"
+            }
+        }
+    ]
+}
+```   
+   
+   
 ## Terms Of Service Requests
 <details>
 <summary> :arrow_down: </summary>
