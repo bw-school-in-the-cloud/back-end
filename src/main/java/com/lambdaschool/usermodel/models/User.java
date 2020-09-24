@@ -113,6 +113,14 @@ public class User
     }
 
     public User(
+        String username,
+        @Email String primaryemail)
+    {
+        this.username = username;
+        this.primaryemail = primaryemail;
+    }
+
+    public User(
         String fname,
         String lname,
         String username,

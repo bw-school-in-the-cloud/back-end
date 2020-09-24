@@ -1,12 +1,7 @@
 package com.lambdaschool.usermodel.controllers;
 
 import com.lambdaschool.usermodel.models.Category;
-import com.lambdaschool.usermodel.models.Event;
-import com.lambdaschool.usermodel.models.Role;
-import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.services.CategoryService;
-import com.lambdaschool.usermodel.services.RoleService;
-import com.lambdaschool.usermodel.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,7 +11,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.Calendar;
 import java.util.List;
 
 @RestController

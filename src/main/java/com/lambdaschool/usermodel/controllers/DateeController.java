@@ -1,21 +1,18 @@
 package com.lambdaschool.usermodel.controllers;
 
 import com.lambdaschool.usermodel.models.Category;
-
 import com.lambdaschool.usermodel.models.Datee;
-import com.lambdaschool.usermodel.models.TOS;
-import com.lambdaschool.usermodel.services.CategoryService;
-
 import com.lambdaschool.usermodel.services.DateeService;
 import com.lambdaschool.usermodel.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -58,5 +55,29 @@ public class DateeController
         Datee e = dateeService.finddateeById(dateeId);
         return new ResponseEntity<>(e,
             HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/date",
+        consumes = "application/json")
+    public ResponseEntity<?> addNewDate(
+        @Valid
+        @RequestBody
+            Datee newDatee)
+    {
+        // ids are not recognized by the Post method
+        newDatee.setEventdateid(0);
+        newDatee = dateeService.save(newDatee);
+
+        // set the location header for the newly created resource
+        HttpHeaders responseHeaders = new HttpHeaders();
+        URI newRoleURI = ServletUriComponentsBuilder.fromCurrentRequest()
+            .path("/{dateid}")
+            .buildAndExpand(newDatee.getEventdateid())
+            .toUri();
+        responseHeaders.setLocation(newRoleURI);
+
+        return new ResponseEntity<>(null,
+            responseHeaders,
+            HttpStatus.CREATED);
     }
 }

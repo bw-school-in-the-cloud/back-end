@@ -3,7 +3,6 @@ package com.lambdaschool.usermodel.services;
 import com.lambdaschool.usermodel.models.Attendee;
 import com.lambdaschool.usermodel.models.Event;
 import com.lambdaschool.usermodel.models.User;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

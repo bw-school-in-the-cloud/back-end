@@ -1,15 +1,12 @@
 package com.lambdaschool.usermodel.controllers;
 
 import com.lambdaschool.usermodel.models.Event;
-import com.lambdaschool.usermodel.models.User;
 import com.lambdaschool.usermodel.services.EventService;
 import com.lambdaschool.usermodel.services.UserService;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -61,12 +58,12 @@ public class EventController
     }
 
     /**
-     * Return a user object based on a given username
+     * Return an event object based on a given username
      * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/users/user/name/cinnamon">https://eschoolinthecloud.herokuapp.com/users/user/name/cinnamon</a>
      *
-     * @param eventName the name of user (String) you seek
+     * @param eventName the name of the event (String) you seek
      * @return JSON object of the user you seek
-     * @see UserService#findEventByName(String) UserService.findByName(String)
+     * @see EventService#findEventByName(String) EventService.findEventByName(String)
      */
     @GetMapping(value = "/event/name/{eventName}",
         produces = "application/json")
@@ -99,15 +96,14 @@ public class EventController
 //    }
 
     /**
-     * Given a complete User Object, create a new User record and accompanying useremail records
-     * and user role records.
+     * Given a complete Event Object, create a new Event record.
      * <br> Example: <a href="https://eschoolinthecloud.herokuapp.com/users/user">https://eschoolinthecloud.herokuapp.com/users/user</a>
      *
-     * @param newuser A complete new user to add including emails and roles.
-     *                roles must already exist.
+     * @param newevent A complete new event to add.
+     *
      * @return A location header with the URI to the newly created user and a status of CREATED
      * @throws URISyntaxException Exception if something does not work in creating the location header
-     * @see UserService#save(User) UserService.save(User)
+     * @see EventService#save(Event) EventService.save(Event)
      */
     @PostMapping(value = "/event",
         consumes = "application/json")
@@ -144,7 +140,7 @@ public class EventController
      *                   replace the User. Roles must already exist.
      * @param eventid     The primary key of the user you wish to replace.
      * @return status of OK
-     * @see UserService#save(User) UserService.save(User)
+     * @see EventService#save(Event) EventService.save(Event)
      */
     @PutMapping(value = "/event/{eventid}",
         consumes = "application/json")
@@ -162,15 +158,14 @@ public class EventController
     }
 
     /**
-     * Updates the user record associated with the given id with the provided data. Only the provided fields are affected.
-     * Roles are handled through different endpoints
-     * If an email list is given, it replaces the original emai list.
+     * Updates the event record associated with the given id with the provided data. Only the provided fields are affected.
+     *
      * <br> Example: <a href="https://eschoolinthecloud.herokuapp.com/users/user/7">https://eschoolinthecloud.herokuapp.com/users/user/7</a>
      *
      * @param updateEvent An object containing values for just the fields that are being updated. All other fields are left NULL.
-     * @param id         The primary key of the user you wish to update.
+     * @param eventid         The primary key of the user you wish to update.
      * @return A status of OK
-     * @see UserService#update(Event, long) UserService.update(User, long)
+     * @see EventService#update(Event, long) EventService.update(Event, long)
      */
     @PatchMapping(value = "/event/{id}",
         consumes = "application/json")
@@ -186,10 +181,10 @@ public class EventController
     }
 
     /**
-     * Deletes a given user along with associated emails and roles
+     * Deletes an event
      * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/users/user/14">https://eschoolinthecloud.herokuapp.com/users/user/14</a>
      *
-     * @param id the primary key of the user you wish to delete
+     * @param eventid the primary key of the user you wish to delete
      * @return Status of OK
      */
     @DeleteMapping(value = "/event/{eventid}")

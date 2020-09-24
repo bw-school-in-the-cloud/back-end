@@ -1,7 +1,9 @@
 package com.lambdaschool.usermodel.services;
 
 import com.lambdaschool.usermodel.exceptions.ResourceNotFoundException;
-import com.lambdaschool.usermodel.models.*;
+import com.lambdaschool.usermodel.models.Datee;
+import com.lambdaschool.usermodel.models.Event;
+import com.lambdaschool.usermodel.models.EventDate;
 import com.lambdaschool.usermodel.repository.DateeRepository;
 import com.lambdaschool.usermodel.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;

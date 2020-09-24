@@ -2,8 +2,6 @@ package com.lambdaschool.usermodel.services;
 
 
 import com.lambdaschool.usermodel.models.Datee;
-import com.lambdaschool.usermodel.models.Event;
-import com.lambdaschool.usermodel.models.TOS;
 
 import java.util.List;
 
