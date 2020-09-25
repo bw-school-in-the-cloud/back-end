@@ -15,7 +15,7 @@ https://eschoolinthecloud.herokuapp.com/
 ## Signing Up A New User
 
 ### POST
-https://eschoolinthecloud.herokuapp.com/createnewuser
+https://eschoolinthecloud.herokuapp.com/createnewuser   
 
 :small_orange_diamond: Required Fields in **BOLD**   
 
@@ -52,8 +52,8 @@ Name | Data Type (min, max)
 }
 ```   
    
-   
 ## Terms Of Service Requests
+
 <details>
 <summary> :arrow_down: </summary>
 
@@ -62,7 +62,7 @@ Name | Data Type (min, max)
 
 
 :arrow_forward: **List Terms Of Service --** http://eschoolinthecloud.herokuapp.com/terms/terms   
-Example Output:
+Example Output:   
 
 <details> 
 <summary>http://eschoolinthecloud.herokuapp.com/terms/terms</summary>
@@ -92,7 +92,6 @@ Example Output:
 ]
 ```
     
-
 :small_orange_diamond: Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
 
 </details>
@@ -100,13 +99,14 @@ Example Output:
 </details>
 
 ## User Requests
+
 <details>
 <summary> :arrow_down: </summary>
 
 ### GET REQs
 
 :arrow_forward: **List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/users</summary>
@@ -444,8 +444,8 @@ Example Output:
     }
 ]
 ```
-</details>
 
+</details>
 
 :arrow_forward: **Find Current User --** https://eschoolinthecloud.herokuapp.com/users/getuserinfo   
 Examle Output:   
@@ -494,10 +494,11 @@ Examle Output:
     ]
 }
 ```
+
 </details>
 
 :arrow_forward: **Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
-Example Output: 
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/4</summary>
@@ -546,7 +547,7 @@ Example Output:
 </details>
 
 :arrow_forward: **Find User By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/name/admin</summary>
@@ -646,7 +647,7 @@ Lname | String
 **Primaryemail** | **Email**
 Role | Role   
    
-:small_orange_diamond: *First Name will default to Guest, and Last Name will default to a random Number between 1 - 5000 if not set*
+:small_orange_diamond: *First Name will default to Guest, and Last Name will default to a random Number between 1 - 5000 if not set*   
 
 <details>
 <summary>Minimum Body</summary>
@@ -668,7 +669,6 @@ Role | Role
 
 **OR**
 
-
 ```JSON
 {
     "username": "add-user",
@@ -684,8 +684,7 @@ Role | Role
 }
 ```
      
-
-:small_orange_diamond: Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
+:small_orange_diamond: Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*   
 
 </details>
 
@@ -722,7 +721,7 @@ Role | Role
 
 <details>
 <summary>Http Status</summary>    
-
+   
 *Status: 200 Okay*
 
 </details>
@@ -744,7 +743,7 @@ Role | Role
 
 <details>
 <summary>Http Status</summary>    
-
+   
 *Status: 200 Okay*
 
 </details>
@@ -756,7 +755,7 @@ Role | Role
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary>     
 
-*Status: 200 Okay*
+*Status: 200 Okay*   
 
 </details>
 
@@ -770,7 +769,7 @@ Role | Role
 ### GET REQs  
 
 :arrow_forward: **List All Events --** https://eschoolinthecloud.herokuapp.com/events/events   
-Example Output:
+Example Output:   
 
 <details> 
 <summary>https://eschoolinthecloud.herokuapp.com/events/events</summary>
@@ -1224,7 +1223,7 @@ Example Output:
 </details>
 
 :arrow_forward: **Find Event By Title --** https://eschoolinthecloud.herokuapp.com/events/event/name/{title}   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/event/name/Second</summary>
@@ -1304,7 +1303,8 @@ Example Output:
         }
     ]
 }
-```
+```   
+
 </details>   
    
 :arrow_forward: **List Events with Titles Containing --** https://eschoolinthecloud.herokuapp.com/events/event/name/like/{searchterms}   
@@ -1372,11 +1372,10 @@ Example Output:
 ]
 ```   
    
-
 </details>
 
 :arrow_forward: **List All Events By Dates --** https://eschoolinthecloud.herokuapp.com/events/dates    
-Example Output:
+Example Output:   
 
 <details> 
 <summary>https://eschoolinthecloud.herokuapp.com/events/dates</summary>
@@ -1909,7 +1908,7 @@ Example Output:
 </details>
 
 :arrow_forward: **List All Events By Categories --** https://eschoolinthecloud.herokuapp.com/events/categories   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/categories</summary>
@@ -2155,7 +2154,7 @@ Example Output:
 ```
 </details>
 
-:arrow_forward: **List Events By Category Name --** https://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}
+:arrow_forward: **List Events By Category Name --** https://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}   
 Example Output:   
 
 <details>
@@ -2222,7 +2221,7 @@ Example Output:
 </details>
 
 :arrow_forward: **List Events By Category By ID --** https://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/category/id/25</summary>
@@ -2259,6 +2258,7 @@ Example Output:
     ]
 }
 ```
+
 </details>
 
 :arrow_forward: **List Events By Users Attending --** https://eschoolinthecloud.herokuapp.com/events/dates/users/events   
@@ -2463,7 +2463,7 @@ Display Time | String
 Events | Set<EventDates>   
    
 :small_orange_diamond: *The system will automatically set Analog Clock hours, AM/PM, Month Name, Display Date & Time, as well as Display Time automatically based off of system input*   
-:small_orange_diamond: *Timezone is currently defaulting to PDT, different timezones will be add in the future.*
+:small_orange_diamond: *Timezone is currently defaulting to PDT, different timezones will be added in the future.*
 
 
 ## CATEGORY TABLE
@@ -2471,7 +2471,7 @@ Events | Set<EventDates>
 Name | Data Type (min, max)
 ------------ | -------------
 **Name**| **String**
-[ Events ] | Set<EventDates>
+[ Events ] | Set<EventDates>   
   
 
 <details>
@@ -2490,8 +2490,8 @@ Name | Data Type (min, max)
 <details>
 <summary>Postman Results</summary>    
 
-Location: https://eschoolinthecloud.herokuapp.com/events/event/38
-*Status: 201 Created*
+Location: https://eschoolinthecloud.herokuapp.com/events/event/38   
+*Status: 201 Created*   
 
 </details>   
 
@@ -2510,8 +2510,8 @@ Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 <details>
 <summary>Postman Results</summary>
 
-Location: https://eschoolinthecloud.herokuapp.com/events/category/39
-*Status: 201 Created*
+Location: https://eschoolinthecloud.herokuapp.com/events/category/39   
+*Status: 201 Created*   
 
 </details>   
 
@@ -2588,7 +2588,7 @@ Location: https://eschoolinthecloud.herokuapp.com/events/dates/users/attendee/4
 <details>
 <summary>Postman Results</summary>    
 
-Location: https://eschoolinthecloud.herokuapp.com/events/event/38
+Location: https://eschoolinthecloud.herokuapp.com/events/event/38   
 *Status: 200 Okay*
 
 </details>
@@ -2600,7 +2600,7 @@ Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/event/38</summary>
 
-*Status: 200 Okay*
+*Status: 200 Okay*   
 
 </details>
 
