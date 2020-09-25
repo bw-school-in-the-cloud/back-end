@@ -27,8 +27,8 @@ Name | Data Type (min, max)
 **Password** | **String**
 **Primaryemail** | **Email**   
    
-**Role Type will default to Volunteer**   
-Role Type can be set with nested Role ID or Role Type Name in String Format
+:small_red_triangle_down: **Role Type will default to Volunteer**   
+:small_red_triangle_down: Role Type can be set with nested Role ID or Role Type Name in String Format
 
 ```JSON
 {
@@ -58,7 +58,7 @@ Role Type can be set with nested Role ID or Role Type Name in String Format
 <summary> :arrow_down: </summary>
 
 ### GET REQs
-Note: *Data for React I MVP Only*   
+:small_red_triangle_down: Note: *Data for React I MVP Only*   
 
 
 :arrow_forward: **List Terms Of Service --** http://eschoolinthecloud.herokuapp.com/terms/terms   
@@ -93,7 +93,7 @@ Example Output:
 ```
     
 
-Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
+:small_red_triangle_down: Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
 
 </details>
 
@@ -596,7 +596,7 @@ Example Output:
 
 :arrow_forward: **Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
 
-Note: *Finds usernames containing the string*     
+:small_red_triangle_down: Note: *Finds usernames containing the string*     
 Example Output: 
 
 <details>
@@ -631,8 +631,7 @@ Example Output:
 ```
 </details>
 
-### POST REQs
-*Sign up and/or Admin access only*
+### POST REQs   
 
 :arrow_forward: **Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
    
@@ -645,7 +644,8 @@ Lname | String
 **Username**| **String**
 **Password** | **String**
 **Primaryemail** | **Email**
-Role | Role
+Role | Role   
+:small_red_triangle_down: *First Name will default to Guest, and Last Name will default to a random Number between 1 - 5000 if not set*
 
 <details>
 <summary>Minimum Body</summary>
@@ -684,7 +684,7 @@ Role | Role
 ```
      
 
-Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
+:small_red_triangle_down: Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
 
 </details>
 
@@ -697,7 +697,6 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 ### PUT REQs
-*Admin access only*
 
 :arrow_forward: **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
@@ -728,7 +727,6 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 ### PATCH REQs
-*Admin access only*
 
 :arrow_forward: **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
@@ -751,7 +749,6 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 ### DELETE REqs
-*Admin access only*
 
 :arrow_forward: **Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 
@@ -2443,6 +2440,7 @@ Length | double
 Length Description | String
 Category | Category
 Event Dates | Set<EventDates>   
+:small_red_triangle_down: *Length should be incremented in values of 0.5 to represent 30 minutes increments of time, different decimal point values will be added in the future.* 
 
 
 ## DATE TABLE
@@ -2453,11 +2451,16 @@ Name | Data Type (min, max)
 **Hours** | **int (0, 24)**
 Hours (Analog Clock) | int (1, 12)
 AM / PM | String
+Timezone | String
 **Month** | **int (1, 12)**
 Month Name | String
 **Day** | **int (1, 31)**
 **Year** | **int**
-Events | Set<EventDates>
+Display Date & Time | String
+Display Time | String
+Events | Set<EventDates>   
+:small_red_triangle_down: *The system will automatically set Analog Clock hours, AM/PM, Month Name, Display Date & Time, as well as Display Time automatically based off of system input*   
+:small_red_triangle_down: *Timezone is currently defaulting to PDT, different timezones will be add in the future.*
 
 
 ## CATEGORY TABLE
@@ -2485,7 +2488,7 @@ Name | Data Type (min, max)
 <summary>Postman Results</summary>    
 
 Location: https://eschoolinthecloud.herokuapp.com/events/event/38
-*Status: 200 Okay*
+*Status: 201 Created*
 
 </details>   
 
