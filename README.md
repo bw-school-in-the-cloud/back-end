@@ -17,7 +17,7 @@ https://eschoolinthecloud.herokuapp.com/
 ### POST
 https://eschoolinthecloud.herokuapp.com/createnewuser
 
-Required Fields in **BOLD**   
+:small_orange_diamond: Required Fields in **BOLD**   
 
 ## USER TABLE
 
@@ -645,6 +645,7 @@ Lname | String
 **Password** | **String**
 **Primaryemail** | **Email**
 Role | Role   
+   
 :small_orange_diamond: *First Name will default to Guest, and Last Name will default to a random Number between 1 - 5000 if not set*
 
 <details>
@@ -2440,6 +2441,7 @@ Length | double
 Length Description | String
 Category | Category
 Event Dates | Set<EventDates>   
+   
 :small_orange_diamond: *Length should be incremented in values of 0.5 to represent 30 minutes increments of time, different decimal point values will be added in the future.* 
 
 
@@ -2459,6 +2461,7 @@ Month Name | String
 Display Date & Time | String
 Display Time | String
 Events | Set<EventDates>   
+   
 :small_orange_diamond: *The system will automatically set Analog Clock hours, AM/PM, Month Name, Display Date & Time, as well as Display Time automatically based off of system input*   
 :small_orange_diamond: *Timezone is currently defaulting to PDT, different timezones will be add in the future.*
 
@@ -2520,6 +2523,7 @@ Name | Data Type (min, max)
 ------------ | -------------
 **Event**| **Event**
 **User** | **User**   
+   
 :small_orange_diamond: Note: *Event and User should already be in the system when trying to add attendee's*
 
    
