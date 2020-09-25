@@ -596,9 +596,9 @@ Example Output:
 </details>
 
 :arrow_forward: **Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}   
+Example Output:   
+   
 :small_orange_diamond: Note: *Finds usernames containing the string*
-    
-Example Output: 
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/name/like/vol</summary>
