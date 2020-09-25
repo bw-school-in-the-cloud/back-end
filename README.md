@@ -115,6 +115,8 @@ Example Output:
 [
     {
         "userid": 4,
+        "fname": "Guest",
+        "lname": "1410",
         "username": "admin",
         "primaryemail": "admin@lambdaschool.local",
         "useremails": [
@@ -127,6 +129,7 @@ Example Output:
                 "useremail": "admin@mymail.local"
             }
         ],
+        "hostedby": [],
         "roles": [
             {
                 "role": {
@@ -146,10 +149,13 @@ Example Output:
                     "name": "VOLUNTEER"
                 }
             }
-        ]
+        ],
+        "events": []
     },
     {
         "userid": 7,
+        "fname": "Guest",
+        "lname": "2714",
         "username": "student",
         "primaryemail": "student@lambdaschool.local",
         "useremails": [
@@ -158,6 +164,7 @@ Example Output:
                 "useremail": "student@mymail.local"
             }
         ],
+        "hostedby": [],
         "roles": [
             {
                 "role": {
@@ -165,10 +172,13 @@ Example Output:
                     "name": "STUDENT"
                 }
             }
-        ]
+        ],
+        "events": []
     },
     {
         "userid": 9,
+        "fname": "Guest",
+        "lname": "482",
         "username": "volunteer",
         "primaryemail": "volunteer@lambdaschool.local",
         "useremails": [
@@ -177,11 +187,257 @@ Example Output:
                 "useremail": "volunteer@email.local"
             }
         ],
+        "hostedby": [],
         "roles": [
             {
                 "role": {
                     "roleid": 3,
                     "name": "VOLUNTEER"
+                }
+            }
+        ],
+        "events": []
+    },
+    {
+        "userid": 37,
+        "fname": "Zach",
+        "lname": "Zach",
+        "username": "zach",
+        "primaryemail": "zach@z.c",
+        "useremails": [],
+        "hostedby": [
+            {
+                "event": {
+                    "eventid": 31,
+                    "title": "First",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 1.5,
+                    "lengthdesc": "One and a Half Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 18,
+                    "timeimperial": 6,
+                    "timeimperialsuffix": "PM",
+                    "timezone": "PDT",
+                    "eventmonth": 10,
+                    "eventmonthname": "October",
+                    "eventday": 24,
+                    "eventyear": 2020,
+                    "display": "6:30 PM October 24, 2020",
+                    "displaytime": "6:30 PM",
+                    "eventdateid": 17
+                },
+                "eventinfo": null,
+                "eventdateday": null,
+                "duration": 0.0
+            }
+        ],
+        "roles": [],
+        "events": [
+            {
+                "event": {
+                    "eventid": 31,
+                    "title": "First",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 1.5,
+                    "lengthdesc": "One and a Half Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "user": {
+                    "userid": 37,
+                    "fname": "Zach",
+                    "lname": "Zach",
+                    "username": "zach",
+                    "primaryemail": "zach@z.c",
+                    "useremails": [],
+                    "hostedby": [
+                        {
+                            "event": {
+                                "eventid": 31,
+                                "title": "First",
+                                "description": "Test Event",
+                                "lengthchange": false,
+                                "length": 1.5,
+                                "lengthdesc": "One and a Half Hours",
+                                "category": {
+                                    "categoryid": 25,
+                                    "name": "Uncategorized"
+                                }
+                            },
+                            "datee": {
+                                "timeminute": 30,
+                                "timedigital": 18,
+                                "timeimperial": 6,
+                                "timeimperialsuffix": "PM",
+                                "timezone": "PDT",
+                                "eventmonth": 10,
+                                "eventmonthname": "October",
+                                "eventday": 24,
+                                "eventyear": 2020,
+                                "display": "6:30 PM October 24, 2020",
+                                "displaytime": "6:30 PM",
+                                "eventdateid": 17
+                            },
+                            "eventinfo": null,
+                            "eventdateday": null,
+                            "duration": 0.0
+                        }
+                    ],
+                    "roles": []
+                }
+            }
+        ]
+    },
+    {
+        "userid": 38,
+        "fname": "Guest",
+        "lname": "1512",
+        "username": "testone",
+        "primaryemail": "test1@z.c",
+        "useremails": [],
+        "hostedby": [],
+        "roles": [],
+        "events": [
+            {
+                "event": {
+                    "eventid": 31,
+                    "title": "First",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 1.5,
+                    "lengthdesc": "One and a Half Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "user": {
+                    "userid": 38,
+                    "fname": "Guest",
+                    "lname": "1512",
+                    "username": "testone",
+                    "primaryemail": "test1@z.c",
+                    "useremails": [],
+                    "hostedby": [],
+                    "roles": []
+                }
+            }
+        ]
+    },
+    {
+        "userid": 39,
+        "fname": "Guest",
+        "lname": "4232",
+        "username": "testtwo",
+        "primaryemail": "test2@z.c",
+        "useremails": [],
+        "hostedby": [],
+        "roles": [],
+        "events": [
+            {
+                "event": {
+                    "eventid": 33,
+                    "title": "Third",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 0.5,
+                    "lengthdesc": "30 Minutes",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "user": {
+                    "userid": 39,
+                    "fname": "Guest",
+                    "lname": "4232",
+                    "username": "testtwo",
+                    "primaryemail": "test2@z.c",
+                    "useremails": [],
+                    "hostedby": [],
+                    "roles": []
+                }
+            }
+        ]
+    },
+    {
+        "userid": 40,
+        "fname": "Guest",
+        "lname": "4124",
+        "username": "testthree",
+        "primaryemail": "test3@z.c",
+        "useremails": [],
+        "hostedby": [],
+        "roles": [],
+        "events": [
+            {
+                "event": {
+                    "eventid": 34,
+                    "title": "Fourth",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 5.0,
+                    "lengthdesc": "Five Hours",
+                    "category": {
+                        "categoryid": 28,
+                        "name": "Literature"
+                    }
+                },
+                "user": {
+                    "userid": 40,
+                    "fname": "Guest",
+                    "lname": "4124",
+                    "username": "testthree",
+                    "primaryemail": "test3@z.c",
+                    "useremails": [],
+                    "hostedby": [],
+                    "roles": []
+                }
+            }
+        ]
+    },
+    {
+        "userid": 41,
+        "fname": "Guest",
+        "lname": "3529",
+        "username": "testfour",
+        "primaryemail": "test4@z.c",
+        "useremails": [],
+        "hostedby": [],
+        "roles": [],
+        "events": [
+            {
+                "event": {
+                    "eventid": 31,
+                    "title": "First",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 1.5,
+                    "lengthdesc": "One and a Half Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "user": {
+                    "userid": 41,
+                    "fname": "Guest",
+                    "lname": "3529",
+                    "username": "testfour",
+                    "primaryemail": "test4@z.c",
+                    "useremails": [],
+                    "hostedby": [],
+                    "roles": []
                 }
             }
         ]
@@ -249,6 +505,8 @@ Example Output:
 ```JSON
 {
     "userid": 4,
+    "fname": "Guest",
+    "lname": "1410",
     "username": "admin",
     "primaryemail": "admin@lambdaschool.local",
     "useremails": [
@@ -261,6 +519,7 @@ Example Output:
             "useremail": "admin@mymail.local"
         }
     ],
+    "hostedby": [],
     "roles": [
         {
             "role": {
@@ -280,7 +539,8 @@ Example Output:
                 "name": "VOLUNTEER"
             }
         }
-    ]
+    ],
+    "events": []
 }
 ```
 </details>
@@ -294,6 +554,8 @@ Example Output:
 ```JSON
 {
     "userid": 4,
+    "fname": "Guest",
+    "lname": "1410",
     "username": "admin",
     "primaryemail": "admin@lambdaschool.local",
     "useremails": [
@@ -306,6 +568,7 @@ Example Output:
             "useremail": "admin@mymail.local"
         }
     ],
+    "hostedby": [],
     "roles": [
         {
             "role": {
@@ -325,7 +588,8 @@ Example Output:
                 "name": "VOLUNTEER"
             }
         }
-    ]
+    ],
+    "events": []
 }
 ```
 </details>
@@ -336,12 +600,14 @@ Note: *Finds usernames containing the string*
 Example Output: 
 
 <details>
-<summary>https://eschoolinthecloud.herokuapp.com/users/user/name/like/olu</summary>
+<summary>https://eschoolinthecloud.herokuapp.com/users/user/name/like/vol</summary>
 
 ```JSON
 [
     {
         "userid": 9,
+        "fname": "Guest",
+        "lname": "482",
         "username": "volunteer",
         "primaryemail": "volunteer@lambdaschool.local",
         "useremails": [
@@ -350,6 +616,7 @@ Example Output:
                 "useremail": "volunteer@email.local"
             }
         ],
+        "hostedby": [],
         "roles": [
             {
                 "role": {
@@ -357,7 +624,8 @@ Example Output:
                     "name": "VOLUNTEER"
                 }
             }
-        ]
+        ],
+        "events": []
     }
 ]
 ```
@@ -513,8 +781,9 @@ Example Output:
 [
     {
         "eventid": 31,
-        "title": "First Event",
+        "title": "First",
         "description": "Test Event",
+        "lengthchange": false,
         "length": 1.5,
         "lengthdesc": "One and a Half Hours",
         "category": {
@@ -528,12 +797,19 @@ Example Output:
                     "timedigital": 2,
                     "timeimperial": 2,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 6,
                     "eventmonthname": "June",
                     "eventday": 24,
                     "eventyear": 2021,
+                    "display": "2:00 AM June 24, 2021",
+                    "displaytime": "2:00 AM",
                     "eventdateid": 16
-                }
+                },
+                "eventinfo": "Uncategorized: Test Event 2:00 AM June 24, 2021",
+                "eventdateday": "June 24",
+                "duration": 1.5,
+                "user": null
             },
             {
                 "datee": {
@@ -541,24 +817,151 @@ Example Output:
                     "timedigital": 11,
                     "timeimperial": 11,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 12,
                     "eventmonthname": "December",
                     "eventday": 14,
                     "eventyear": 2020,
+                    "display": "11:00 AM December 14, 2020",
+                    "displaytime": "11:00 AM",
                     "eventdateid": 19
+                },
+                "eventinfo": "Uncategorized: Test Event 11:00 AM December 14, 2020",
+                "eventdateday": "December 14",
+                "duration": 1.5,
+                "user": null
+            },
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 18,
+                    "timeimperial": 6,
+                    "timeimperialsuffix": "PM",
+                    "timezone": "PDT",
+                    "eventmonth": 10,
+                    "eventmonthname": "October",
+                    "eventday": 24,
+                    "eventyear": 2020,
+                    "display": "6:30 PM October 24, 2020",
+                    "displaytime": "6:30 PM",
+                    "eventdateid": 17
+                },
+                "eventinfo": null,
+                "eventdateday": null,
+                "duration": 0.0,
+                "user": {
+                    "userid": 37,
+                    "fname": "Zach",
+                    "lname": "Zach",
+                    "username": "zach",
+                    "primaryemail": "zach@z.c",
+                    "useremails": [],
+                    "hostedby": [
+                        {
+                            "event": {
+                                "eventid": 31,
+                                "title": "First",
+                                "description": "Test Event",
+                                "lengthchange": false,
+                                "length": 1.5,
+                                "lengthdesc": "One and a Half Hours",
+                                "category": {
+                                    "categoryid": 25,
+                                    "name": "Uncategorized"
+                                }
+                            },
+                            "datee": {
+                                "timeminute": 30,
+                                "timedigital": 18,
+                                "timeimperial": 6,
+                                "timeimperialsuffix": "PM",
+                                "timezone": "PDT",
+                                "eventmonth": 10,
+                                "eventmonthname": "October",
+                                "eventday": 24,
+                                "eventyear": 2020,
+                                "display": "6:30 PM October 24, 2020",
+                                "displaytime": "6:30 PM",
+                                "eventdateid": 17
+                            },
+                            "eventinfo": null,
+                            "eventdateday": null,
+                            "duration": 0.0
+                        }
+                    ],
+                    "roles": [],
+                    "events": [
+                        {
+                            "event": {
+                                "eventid": 31,
+                                "title": "First",
+                                "description": "Test Event",
+                                "lengthchange": false,
+                                "length": 1.5,
+                                "lengthdesc": "One and a Half Hours",
+                                "category": {
+                                    "categoryid": 25,
+                                    "name": "Uncategorized"
+                                }
+                            },
+                            "user": {
+                                "userid": 37,
+                                "fname": "Zach",
+                                "lname": "Zach",
+                                "username": "zach",
+                                "primaryemail": "zach@z.c",
+                                "useremails": [],
+                                "hostedby": [
+                                    {
+                                        "event": {
+                                            "eventid": 31,
+                                            "title": "First",
+                                            "description": "Test Event",
+                                            "lengthchange": false,
+                                            "length": 1.5,
+                                            "lengthdesc": "One and a Half Hours",
+                                            "category": {
+                                                "categoryid": 25,
+                                                "name": "Uncategorized"
+                                            }
+                                        },
+                                        "datee": {
+                                            "timeminute": 30,
+                                            "timedigital": 18,
+                                            "timeimperial": 6,
+                                            "timeimperialsuffix": "PM",
+                                            "timezone": "PDT",
+                                            "eventmonth": 10,
+                                            "eventmonthname": "October",
+                                            "eventday": 24,
+                                            "eventyear": 2020,
+                                            "display": "6:30 PM October 24, 2020",
+                                            "displaytime": "6:30 PM",
+                                            "eventdateid": 17
+                                        },
+                                        "eventinfo": null,
+                                        "eventdateday": null,
+                                        "duration": 0.0
+                                    }
+                                ],
+                                "roles": []
+                            }
+                        }
+                    ]
                 }
             }
         ]
     },
     {
         "eventid": 32,
-        "title": "Second Event",
+        "title": "Second",
         "description": "Test Event",
+        "lengthchange": false,
         "length": 3.0,
         "lengthdesc": "Three Hours",
         "category": {
-            "categoryid": 26,
-            "name": "Tech"
+            "categoryid": 25,
+            "name": "Uncategorized"
         },
         "eventdates": [
             {
@@ -567,25 +970,19 @@ Example Output:
                     "timedigital": 2,
                     "timeimperial": 2,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 6,
                     "eventmonthname": "June",
                     "eventday": 24,
                     "eventyear": 2021,
+                    "display": "2:00 AM June 24, 2021",
+                    "displaytime": "2:00 AM",
                     "eventdateid": 16
-                }
-            },
-            {
-                "datee": {
-                    "timeminute": 0,
-                    "timedigital": 11,
-                    "timeimperial": 11,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 12,
-                    "eventmonthname": "December",
-                    "eventday": 14,
-                    "eventyear": 2020,
-                    "eventdateid": 19
-                }
+                },
+                "eventinfo": "Uncategorized: Test Event 2:00 AM June 24, 2021",
+                "eventdateday": "June 24",
+                "duration": 3.0,
+                "user": null
             },
             {
                 "datee": {
@@ -593,24 +990,52 @@ Example Output:
                     "timedigital": 19,
                     "timeimperial": 7,
                     "timeimperialsuffix": "PM",
+                    "timezone": "PDT",
                     "eventmonth": 11,
                     "eventmonthname": "November",
                     "eventday": 24,
                     "eventyear": 2020,
+                    "display": "7:00 PM November 24, 2020",
+                    "displaytime": "7:00 PM",
                     "eventdateid": 20
-                }
+                },
+                "eventinfo": "Uncategorized: Test Event 7:00 PM November 24, 2020",
+                "eventdateday": "November 24",
+                "duration": 3.0,
+                "user": null
+            },
+            {
+                "datee": {
+                    "timeminute": 0,
+                    "timedigital": 11,
+                    "timeimperial": 11,
+                    "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
+                    "eventmonth": 12,
+                    "eventmonthname": "December",
+                    "eventday": 14,
+                    "eventyear": 2020,
+                    "display": "11:00 AM December 14, 2020",
+                    "displaytime": "11:00 AM",
+                    "eventdateid": 19
+                },
+                "eventinfo": "Uncategorized: Test Event 11:00 AM December 14, 2020",
+                "eventdateday": "December 14",
+                "duration": 3.0,
+                "user": null
             }
         ]
     },
     {
         "eventid": 33,
-        "title": "Third Event",
+        "title": "Third",
         "description": "Test Event",
+        "lengthchange": false,
         "length": 0.5,
         "lengthdesc": "30 Minutes",
         "category": {
-            "categoryid": 27,
-            "name": "Science"
+            "categoryid": 25,
+            "name": "Uncategorized"
         },
         "eventdates": [
             {
@@ -619,12 +1044,19 @@ Example Output:
                     "timedigital": 24,
                     "timeimperial": 12,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 9,
                     "eventmonthname": "September",
                     "eventday": 30,
                     "eventyear": 2020,
+                    "display": "12:30 AM September 30, 2020",
+                    "displaytime": "12:30 AM",
                     "eventdateid": 21
-                }
+                },
+                "eventinfo": "Uncategorized: Test Event 12:30 AM September 30, 2020",
+                "eventdateday": "September 30",
+                "duration": 0.5,
+                "user": null
             },
             {
                 "datee": {
@@ -632,19 +1064,27 @@ Example Output:
                     "timedigital": 1,
                     "timeimperial": 1,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 2,
                     "eventmonthname": "February",
                     "eventday": 28,
                     "eventyear": 2021,
+                    "display": "1:00 AM February 28, 2021",
+                    "displaytime": "1:00 AM",
                     "eventdateid": 23
-                }
+                },
+                "eventinfo": "Uncategorized: Test Event 1:00 AM February 28, 2021",
+                "eventdateday": "February 28",
+                "duration": 0.5,
+                "user": null
             }
         ]
     },
     {
         "eventid": 34,
-        "title": "Fourth Event",
+        "title": "Fourth",
         "description": "Test Event",
+        "lengthchange": false,
         "length": 5.0,
         "lengthdesc": "Five Hours",
         "category": {
@@ -655,8 +1095,9 @@ Example Output:
     },
     {
         "eventid": 35,
-        "title": "Fifth Event",
+        "title": "Fifth",
         "description": "Test Event",
+        "lengthchange": false,
         "length": 3.5,
         "lengthdesc": "Three and a Half Hours",
         "category": {
@@ -669,6 +1110,7 @@ Example Output:
         "eventid": 36,
         "title": "Sixth Event",
         "description": "Test Event",
+        "lengthchange": false,
         "length": 2.5,
         "lengthdesc": "Two and a Half Hours",
         "category": {
@@ -682,12 +1124,19 @@ Example Output:
                     "timedigital": 2,
                     "timeimperial": 2,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 6,
                     "eventmonthname": "June",
                     "eventday": 24,
                     "eventyear": 2021,
+                    "display": "2:00 AM June 24, 2021",
+                    "displaytime": "2:00 AM",
                     "eventdateid": 16
-                }
+                },
+                "eventinfo": "Entertainment: Test Event 2:00 AM June 24, 2021",
+                "eventdateday": "June 24",
+                "duration": 2.5,
+                "user": null
             },
             {
                 "datee": {
@@ -695,12 +1144,19 @@ Example Output:
                     "timedigital": 20,
                     "timeimperial": 8,
                     "timeimperialsuffix": "PM",
+                    "timezone": "PDT",
                     "eventmonth": 12,
                     "eventmonthname": "December",
                     "eventday": 4,
                     "eventyear": 2020,
+                    "display": "8:30 PM December 4, 2020",
+                    "displaytime": "8:30 PM",
                     "eventdateid": 18
-                }
+                },
+                "eventinfo": "Entertainment: Test Event 8:30 PM December 4, 2020",
+                "eventdateday": "December 4",
+                "duration": 2.5,
+                "user": null
             },
             {
                 "datee": {
@@ -708,12 +1164,19 @@ Example Output:
                     "timedigital": 11,
                     "timeimperial": 11,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 12,
                     "eventmonthname": "December",
                     "eventday": 14,
                     "eventyear": 2020,
+                    "display": "11:00 AM December 14, 2020",
+                    "displaytime": "11:00 AM",
                     "eventdateid": 19
-                }
+                },
+                "eventinfo": "Entertainment: Test Event 11:00 AM December 14, 2020",
+                "eventdateday": "December 14",
+                "duration": 2.5,
+                "user": null
             },
             {
                 "datee": {
@@ -721,12 +1184,39 @@ Example Output:
                     "timedigital": 24,
                     "timeimperial": 12,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 9,
                     "eventmonthname": "September",
                     "eventday": 30,
                     "eventyear": 2020,
+                    "display": "12:30 AM September 30, 2020",
+                    "displaytime": "12:30 AM",
                     "eventdateid": 21
-                }
+                },
+                "eventinfo": "Entertainment: Test Event 12:30 AM September 30, 2020",
+                "eventdateday": "September 30",
+                "duration": 2.5,
+                "user": null
+            },
+            {
+                "datee": {
+                    "timeminute": 30,
+                    "timedigital": 18,
+                    "timeimperial": 6,
+                    "timeimperialsuffix": "PM",
+                    "timezone": "PDT",
+                    "eventmonth": 10,
+                    "eventmonthname": "October",
+                    "eventday": 24,
+                    "eventyear": 2020,
+                    "display": "6:30 PM October 24, 2020",
+                    "displaytime": "6:30 PM",
+                    "eventdateid": 17
+                },
+                "eventinfo": "Entertainment: Test Event 6:30 PM October 24, 2020",
+                "eventdateday": "October 24",
+                "duration": 2.5,
+                "user": null
             }
         ]
     }
@@ -746,11 +1236,12 @@ Example Output:
     "eventid": 32,
     "title": "Second",
     "description": "Test Event",
+    "lengthchange": false,
     "length": 3.0,
     "lengthdesc": "Three Hours",
     "category": {
-        "categoryid": 26,
-        "name": "Tech"
+        "categoryid": 25,
+        "name": "Uncategorized"
     },
     "eventdates": [
         {
@@ -759,12 +1250,19 @@ Example Output:
                 "timedigital": 2,
                 "timeimperial": 2,
                 "timeimperialsuffix": "AM",
+                "timezone": "PDT",
                 "eventmonth": 6,
                 "eventmonthname": "June",
                 "eventday": 24,
                 "eventyear": 2021,
+                "display": "2:00 AM June 24, 2021",
+                "displaytime": "2:00 AM",
                 "eventdateid": 16
-            }
+            },
+            "eventinfo": "Uncategorized: Test Event 2:00 AM June 24, 2021",
+            "eventdateday": "June 24",
+            "duration": 3.0,
+            "user": null
         },
         {
             "datee": {
@@ -772,12 +1270,19 @@ Example Output:
                 "timedigital": 19,
                 "timeimperial": 7,
                 "timeimperialsuffix": "PM",
+                "timezone": "PDT",
                 "eventmonth": 11,
                 "eventmonthname": "November",
                 "eventday": 24,
                 "eventyear": 2020,
+                "display": "7:00 PM November 24, 2020",
+                "displaytime": "7:00 PM",
                 "eventdateid": 20
-            }
+            },
+            "eventinfo": "Uncategorized: Test Event 7:00 PM November 24, 2020",
+            "eventdateday": "November 24",
+            "duration": 3.0,
+            "user": null
         },
         {
             "datee": {
@@ -785,32 +1290,40 @@ Example Output:
                 "timedigital": 11,
                 "timeimperial": 11,
                 "timeimperialsuffix": "AM",
+                "timezone": "PDT",
                 "eventmonth": 12,
                 "eventmonthname": "December",
                 "eventday": 14,
                 "eventyear": 2020,
+                "display": "11:00 AM December 14, 2020",
+                "displaytime": "11:00 AM",
                 "eventdateid": 19
-            }
+            },
+            "eventinfo": "Uncategorized: Test Event 11:00 AM December 14, 2020",
+            "eventdateday": "December 14",
+            "duration": 3.0,
+            "user": null
         }
     ]
 }
 ```
-</details>
+</details>   
+   
+:arrow_forward: **List Events with Titles Containing --** https://eschoolinthecloud.herokuapp.com/events/event/name/like/{searchterms}   
+Example Output:   
 
-:arrow_forward: **List All Events --** https://eschoolinthecloud.herokuapp.com/events/events    
-Example Output:
-
-<details> 
-<summary>https://eschoolinthecloud.herokuapp.com/events/events</summary>
-
+<details>
+<summary>https://eschoolinthecloud.herokuapp.com/events/event/name/like/thir </summary>
+   
 ```JSON
 [
     {
-        "eventid": 31,
-        "title": "First",
+        "eventid": 33,
+        "title": "Third",
         "description": "Test Event",
-        "length": 1.5,
-        "lengthdesc": "One and a Half Hours",
+        "lengthchange": false,
+        "length": 0.5,
+        "lengthdesc": "30 Minutes",
         "category": {
             "categoryid": 25,
             "name": "Uncategorized"
@@ -818,107 +1331,23 @@ Example Output:
         "eventdates": [
             {
                 "datee": {
-                    "timeminute": 0,
-                    "timedigital": 2,
-                    "timeimperial": 2,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 6,
-                    "eventmonthname": "June",
-                    "eventday": 24,
-                    "eventyear": 2021,
-                    "eventdateid": 16
-                }
-            },
-            {
-                "datee": {
-                    "timeminute": 0,
-                    "timedigital": 11,
-                    "timeimperial": 11,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 12,
-                    "eventmonthname": "December",
-                    "eventday": 14,
-                    "eventyear": 2020,
-                    "eventdateid": 19
-                }
-            }
-        ]
-    },
-    {
-        "eventid": 32,
-        "title": "Second",
-        "description": "Test Event",
-        "length": 3.0,
-        "lengthdesc": "Three Hours",
-        "category": {
-            "categoryid": 26,
-            "name": "Tech"
-        },
-        "eventdates": [
-            {
-                "datee": {
-                    "timeminute": 0,
-                    "timedigital": 2,
-                    "timeimperial": 2,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 6,
-                    "eventmonthname": "June",
-                    "eventday": 24,
-                    "eventyear": 2021,
-                    "eventdateid": 16
-                }
-            },
-            {
-                "datee": {
-                    "timeminute": 0,
-                    "timedigital": 19,
-                    "timeimperial": 7,
-                    "timeimperialsuffix": "PM",
-                    "eventmonth": 11,
-                    "eventmonthname": "November",
-                    "eventday": 24,
-                    "eventyear": 2020,
-                    "eventdateid": 20
-                }
-            },
-            {
-                "datee": {
-                    "timeminute": 0,
-                    "timedigital": 11,
-                    "timeimperial": 11,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 12,
-                    "eventmonthname": "December",
-                    "eventday": 14,
-                    "eventyear": 2020,
-                    "eventdateid": 19
-                }
-            }
-        ]
-    },
-    {
-        "eventid": 33,
-        "title": "Third",
-        "description": "Test Event",
-        "length": 0.5,
-        "lengthdesc": "30 Minutes",
-        "category": {
-            "categoryid": 27,
-            "name": "Science"
-        },
-        "eventdates": [
-            {
-                "datee": {
                     "timeminute": 30,
                     "timedigital": 24,
                     "timeimperial": 12,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 9,
                     "eventmonthname": "September",
                     "eventday": 30,
                     "eventyear": 2020,
+                    "display": "12:30 AM September 30, 2020",
+                    "displaytime": "12:30 AM",
                     "eventdateid": 21
-                }
+                },
+                "eventinfo": "Uncategorized: Test Event 12:30 AM September 30, 2020",
+                "eventdateday": "September 30",
+                "duration": 0.5,
+                "user": null
             },
             {
                 "datee": {
@@ -926,106 +1355,558 @@ Example Output:
                     "timedigital": 1,
                     "timeimperial": 1,
                     "timeimperialsuffix": "AM",
+                    "timezone": "PDT",
                     "eventmonth": 2,
                     "eventmonthname": "February",
                     "eventday": 28,
                     "eventyear": 2021,
+                    "display": "1:00 AM February 28, 2021",
+                    "displaytime": "1:00 AM",
                     "eventdateid": 23
-                }
-            }
-        ]
-    },
-    {
-        "eventid": 34,
-        "title": "Fourth",
-        "description": "Test Event",
-        "length": 5.0,
-        "lengthdesc": "Five Hours",
-        "category": {
-            "categoryid": 28,
-            "name": "Literature"
-        },
-        "eventdates": []
-    },
-    {
-        "eventid": 35,
-        "title": "Fifth",
-        "description": "Test Event",
-        "length": 3.5,
-        "lengthdesc": "Three and a Half Hours",
-        "category": {
-            "categoryid": 29,
-            "name": "Gaming"
-        },
-        "eventdates": []
-    },
-    {
-        "eventid": 36,
-        "title": "Sixth Event",
-        "description": "Test Event",
-        "length": 2.5,
-        "lengthdesc": "Two and a Half Hours",
-        "category": {
-            "categoryid": 30,
-            "name": "Entertainment"
-        },
-        "eventdates": [
-            {
-                "datee": {
-                    "timeminute": 0,
-                    "timedigital": 2,
-                    "timeimperial": 2,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 6,
-                    "eventmonthname": "June",
-                    "eventday": 24,
-                    "eventyear": 2021,
-                    "eventdateid": 16
-                }
-            },
-            {
-                "datee": {
-                    "timeminute": 30,
-                    "timedigital": 20,
-                    "timeimperial": 8,
-                    "timeimperialsuffix": "PM",
-                    "eventmonth": 12,
-                    "eventmonthname": "December",
-                    "eventday": 4,
-                    "eventyear": 2020,
-                    "eventdateid": 18
-                }
-            },
-            {
-                "datee": {
-                    "timeminute": 0,
-                    "timedigital": 11,
-                    "timeimperial": 11,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 12,
-                    "eventmonthname": "December",
-                    "eventday": 14,
-                    "eventyear": 2020,
-                    "eventdateid": 19
-                }
-            },
-            {
-                "datee": {
-                    "timeminute": 30,
-                    "timedigital": 24,
-                    "timeimperial": 12,
-                    "timeimperialsuffix": "AM",
-                    "eventmonth": 9,
-                    "eventmonthname": "September",
-                    "eventday": 30,
-                    "eventyear": 2020,
-                    "eventdateid": 21
-                }
+                },
+                "eventinfo": "Uncategorized: Test Event 1:00 AM February 28, 2021",
+                "eventdateday": "February 28",
+                "duration": 0.5,
+                "user": null
             }
         ]
     }
 ]
+```   
+   
+
+</details>
+
+:arrow_forward: **List All Events By Dates --** https://eschoolinthecloud.herokuapp.com/events/dates    
+Example Output:
+
+<details> 
+<summary>https://eschoolinthecloud.herokuapp.com/events/dates</summary>
+
+```JSON
+[
+    {
+        "timeminute": 0,
+        "timedigital": 2,
+        "timeimperial": 2,
+        "timeimperialsuffix": "AM",
+        "timezone": "PDT",
+        "eventmonth": 6,
+        "eventmonthname": "June",
+        "eventday": 24,
+        "eventyear": 2021,
+        "display": "2:00 AM June 24, 2021",
+        "displaytime": "2:00 AM",
+        "events": [
+            {
+                "event": {
+                    "eventid": 31,
+                    "title": "First",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 1.5,
+                    "lengthdesc": "One and a Half Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": "Uncategorized: Test Event 2:00 AM June 24, 2021",
+                "eventdateday": "June 24",
+                "duration": 1.5,
+                "user": null
+            },
+            {
+                "event": {
+                    "eventid": 32,
+                    "title": "Second",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 3.0,
+                    "lengthdesc": "Three Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": "Uncategorized: Test Event 2:00 AM June 24, 2021",
+                "eventdateday": "June 24",
+                "duration": 3.0,
+                "user": null
+            },
+            {
+                "event": {
+                    "eventid": 36,
+                    "title": "Sixth Event",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 2.5,
+                    "lengthdesc": "Two and a Half Hours",
+                    "category": {
+                        "categoryid": 30,
+                        "name": "Entertainment"
+                    }
+                },
+                "eventinfo": "Entertainment: Test Event 2:00 AM June 24, 2021",
+                "eventdateday": "June 24",
+                "duration": 2.5,
+                "user": null
+            }
+        ],
+        "eventdateid": 16
+    },
+    {
+        "timeminute": 30,
+        "timedigital": 18,
+        "timeimperial": 6,
+        "timeimperialsuffix": "PM",
+        "timezone": "PDT",
+        "eventmonth": 10,
+        "eventmonthname": "October",
+        "eventday": 24,
+        "eventyear": 2020,
+        "display": "6:30 PM October 24, 2020",
+        "displaytime": "6:30 PM",
+        "events": [
+            {
+                "event": {
+                    "eventid": 36,
+                    "title": "Sixth Event",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 2.5,
+                    "lengthdesc": "Two and a Half Hours",
+                    "category": {
+                        "categoryid": 30,
+                        "name": "Entertainment"
+                    }
+                },
+                "eventinfo": "Entertainment: Test Event 6:30 PM October 24, 2020",
+                "eventdateday": "October 24",
+                "duration": 2.5,
+                "user": null
+            },
+            {
+                "event": {
+                    "eventid": 31,
+                    "title": "First",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 1.5,
+                    "lengthdesc": "One and a Half Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": null,
+                "eventdateday": null,
+                "duration": 0.0,
+                "user": {
+                    "userid": 37,
+                    "fname": "Zach",
+                    "lname": "Zach",
+                    "username": "zach",
+                    "primaryemail": "zach@z.c",
+                    "useremails": [],
+                    "hostedby": [
+                        {
+                            "event": {
+                                "eventid": 31,
+                                "title": "First",
+                                "description": "Test Event",
+                                "lengthchange": false,
+                                "length": 1.5,
+                                "lengthdesc": "One and a Half Hours",
+                                "category": {
+                                    "categoryid": 25,
+                                    "name": "Uncategorized"
+                                }
+                            },
+                            "datee": {
+                                "timeminute": 30,
+                                "timedigital": 18,
+                                "timeimperial": 6,
+                                "timeimperialsuffix": "PM",
+                                "timezone": "PDT",
+                                "eventmonth": 10,
+                                "eventmonthname": "October",
+                                "eventday": 24,
+                                "eventyear": 2020,
+                                "display": "6:30 PM October 24, 2020",
+                                "displaytime": "6:30 PM",
+                                "eventdateid": 17
+                            },
+                            "eventinfo": null,
+                            "eventdateday": null,
+                            "duration": 0.0
+                        }
+                    ],
+                    "roles": [],
+                    "events": [
+                        {
+                            "event": {
+                                "eventid": 31,
+                                "title": "First",
+                                "description": "Test Event",
+                                "lengthchange": false,
+                                "length": 1.5,
+                                "lengthdesc": "One and a Half Hours",
+                                "category": {
+                                    "categoryid": 25,
+                                    "name": "Uncategorized"
+                                }
+                            },
+                            "user": {
+                                "userid": 37,
+                                "fname": "Zach",
+                                "lname": "Zach",
+                                "username": "zach",
+                                "primaryemail": "zach@z.c",
+                                "useremails": [],
+                                "hostedby": [
+                                    {
+                                        "event": {
+                                            "eventid": 31,
+                                            "title": "First",
+                                            "description": "Test Event",
+                                            "lengthchange": false,
+                                            "length": 1.5,
+                                            "lengthdesc": "One and a Half Hours",
+                                            "category": {
+                                                "categoryid": 25,
+                                                "name": "Uncategorized"
+                                            }
+                                        },
+                                        "datee": {
+                                            "timeminute": 30,
+                                            "timedigital": 18,
+                                            "timeimperial": 6,
+                                            "timeimperialsuffix": "PM",
+                                            "timezone": "PDT",
+                                            "eventmonth": 10,
+                                            "eventmonthname": "October",
+                                            "eventday": 24,
+                                            "eventyear": 2020,
+                                            "display": "6:30 PM October 24, 2020",
+                                            "displaytime": "6:30 PM",
+                                            "eventdateid": 17
+                                        },
+                                        "eventinfo": null,
+                                        "eventdateday": null,
+                                        "duration": 0.0
+                                    }
+                                ],
+                                "roles": []
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "eventdateid": 17
+    },
+    {
+        "timeminute": 30,
+        "timedigital": 20,
+        "timeimperial": 8,
+        "timeimperialsuffix": "PM",
+        "timezone": "PDT",
+        "eventmonth": 12,
+        "eventmonthname": "December",
+        "eventday": 4,
+        "eventyear": 2020,
+        "display": "8:30 PM December 4, 2020",
+        "displaytime": "8:30 PM",
+        "events": [
+            {
+                "event": {
+                    "eventid": 36,
+                    "title": "Sixth Event",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 2.5,
+                    "lengthdesc": "Two and a Half Hours",
+                    "category": {
+                        "categoryid": 30,
+                        "name": "Entertainment"
+                    }
+                },
+                "eventinfo": "Entertainment: Test Event 8:30 PM December 4, 2020",
+                "eventdateday": "December 4",
+                "duration": 2.5,
+                "user": null
+            }
+        ],
+        "eventdateid": 18
+    },
+    {
+        "timeminute": 0,
+        "timedigital": 11,
+        "timeimperial": 11,
+        "timeimperialsuffix": "AM",
+        "timezone": "PDT",
+        "eventmonth": 12,
+        "eventmonthname": "December",
+        "eventday": 14,
+        "eventyear": 2020,
+        "display": "11:00 AM December 14, 2020",
+        "displaytime": "11:00 AM",
+        "events": [
+            {
+                "event": {
+                    "eventid": 31,
+                    "title": "First",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 1.5,
+                    "lengthdesc": "One and a Half Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": "Uncategorized: Test Event 11:00 AM December 14, 2020",
+                "eventdateday": "December 14",
+                "duration": 1.5,
+                "user": null
+            },
+            {
+                "event": {
+                    "eventid": 32,
+                    "title": "Second",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 3.0,
+                    "lengthdesc": "Three Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": "Uncategorized: Test Event 11:00 AM December 14, 2020",
+                "eventdateday": "December 14",
+                "duration": 3.0,
+                "user": null
+            },
+            {
+                "event": {
+                    "eventid": 36,
+                    "title": "Sixth Event",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 2.5,
+                    "lengthdesc": "Two and a Half Hours",
+                    "category": {
+                        "categoryid": 30,
+                        "name": "Entertainment"
+                    }
+                },
+                "eventinfo": "Entertainment: Test Event 11:00 AM December 14, 2020",
+                "eventdateday": "December 14",
+                "duration": 2.5,
+                "user": null
+            }
+        ],
+        "eventdateid": 19
+    },
+    {
+        "timeminute": 0,
+        "timedigital": 19,
+        "timeimperial": 7,
+        "timeimperialsuffix": "PM",
+        "timezone": "PDT",
+        "eventmonth": 11,
+        "eventmonthname": "November",
+        "eventday": 24,
+        "eventyear": 2020,
+        "display": "7:00 PM November 24, 2020",
+        "displaytime": "7:00 PM",
+        "events": [
+            {
+                "event": {
+                    "eventid": 32,
+                    "title": "Second",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 3.0,
+                    "lengthdesc": "Three Hours",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": "Uncategorized: Test Event 7:00 PM November 24, 2020",
+                "eventdateday": "November 24",
+                "duration": 3.0,
+                "user": null
+            }
+        ],
+        "eventdateid": 20
+    },
+    {
+        "timeminute": 30,
+        "timedigital": 24,
+        "timeimperial": 12,
+        "timeimperialsuffix": "AM",
+        "timezone": "PDT",
+        "eventmonth": 9,
+        "eventmonthname": "September",
+        "eventday": 30,
+        "eventyear": 2020,
+        "display": "12:30 AM September 30, 2020",
+        "displaytime": "12:30 AM",
+        "events": [
+            {
+                "event": {
+                    "eventid": 33,
+                    "title": "Third",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 0.5,
+                    "lengthdesc": "30 Minutes",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": "Uncategorized: Test Event 12:30 AM September 30, 2020",
+                "eventdateday": "September 30",
+                "duration": 0.5,
+                "user": null
+            },
+            {
+                "event": {
+                    "eventid": 36,
+                    "title": "Sixth Event",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 2.5,
+                    "lengthdesc": "Two and a Half Hours",
+                    "category": {
+                        "categoryid": 30,
+                        "name": "Entertainment"
+                    }
+                },
+                "eventinfo": "Entertainment: Test Event 12:30 AM September 30, 2020",
+                "eventdateday": "September 30",
+                "duration": 2.5,
+                "user": null
+            }
+        ],
+        "eventdateid": 21
+    },
+    {
+        "timeminute": 30,
+        "timedigital": 2,
+        "timeimperial": 2,
+        "timeimperialsuffix": "AM",
+        "timezone": "PDT",
+        "eventmonth": 6,
+        "eventmonthname": "June",
+        "eventday": 11,
+        "eventyear": 2021,
+        "display": "2:30 AM June 11, 2021",
+        "displaytime": "2:30 AM",
+        "events": [],
+        "eventdateid": 22
+    },
+    {
+        "timeminute": 0,
+        "timedigital": 1,
+        "timeimperial": 1,
+        "timeimperialsuffix": "AM",
+        "timezone": "PDT",
+        "eventmonth": 2,
+        "eventmonthname": "February",
+        "eventday": 28,
+        "eventyear": 2021,
+        "display": "1:00 AM February 28, 2021",
+        "displaytime": "1:00 AM",
+        "events": [
+            {
+                "event": {
+                    "eventid": 33,
+                    "title": "Third",
+                    "description": "Test Event",
+                    "lengthchange": false,
+                    "length": 0.5,
+                    "lengthdesc": "30 Minutes",
+                    "category": {
+                        "categoryid": 25,
+                        "name": "Uncategorized"
+                    }
+                },
+                "eventinfo": "Uncategorized: Test Event 1:00 AM February 28, 2021",
+                "eventdateday": "February 28",
+                "duration": 0.5,
+                "user": null
+            }
+        ],
+        "eventdateid": 23
+    },
+    {
+        "timeminute": 30,
+        "timedigital": 0,
+        "timeimperial": 12,
+        "timeimperialsuffix": "AM",
+        "timezone": "PDT",
+        "eventmonth": 3,
+        "eventmonthname": "March",
+        "eventday": 19,
+        "eventyear": 2021,
+        "display": "12:30 AM March 19, 2021",
+        "displaytime": "12:30 AM",
+        "events": [],
+        "eventdateid": 24
+    }
+]
 ```
+
+</details>   
+   
+:arrow_forward: **Find an Event By Date By ID --** https://eschoolinthecloud.herokuapp.com/events/date/{dateid}   
+Example Output:   
+
+<details>
+<summary>https://eschoolinthecloud.herokuapp.com/events/date/18</summary>
+   
+```JSON
+{
+    "timeminute": 30,
+    "timedigital": 20,
+    "timeimperial": 8,
+    "timeimperialsuffix": "PM",
+    "timezone": "PDT",
+    "eventmonth": 12,
+    "eventmonthname": "December",
+    "eventday": 4,
+    "eventyear": 2020,
+    "display": "8:30 PM December 4, 2020",
+    "displaytime": "8:30 PM",
+    "events": [
+        {
+            "event": {
+                "eventid": 36,
+                "title": "Sixth Event",
+                "description": "Test Event",
+                "lengthchange": false,
+                "length": 2.5,
+                "lengthdesc": "Two and a Half Hours",
+                "category": {
+                    "categoryid": 30,
+                    "name": "Entertainment"
+                }
+            },
+            "eventinfo": "Entertainment: Test Event 8:30 PM December 4, 2020",
+            "eventdateday": "December 4",
+            "duration": 2.5,
+            "user": null
+        }
+    ],
+    "eventdateid": 18
+}
+```   
 
 </details>
 
@@ -1629,6 +2510,15 @@ Location: https://eschoolinthecloud.herokuapp.com/events/category/39
 </details>   
 
 :arrow_forward: **Add A New Attendee --** https://eschoolinthecloud.herokuapp.com/events/dates/users/attendee   
+   
+## CATEGORY TABLE
+   
+Name | Data Type (min, max)
+------------ | -------------
+**Event**| **Event**
+**User** | **User**
+
+
    
 <details>
 <summary>Minimum Body</summary>

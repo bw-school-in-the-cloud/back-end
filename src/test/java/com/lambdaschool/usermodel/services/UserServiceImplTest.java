@@ -67,15 +67,15 @@ public class UserServiceImplTest
     @Test
     public void C_findAll()
     {
-        assertEquals(5, userService.findAll()
+        assertEquals(8, userService.findAll()
                 .size());
     }
 
     @Test
     public void D_delete()
     {
-        userService.delete(13);
-        assertEquals(4, userService.findAll()
+        userService.delete(4);
+        assertEquals(7, userService.findAll()
                 .size());
     }
 
@@ -90,8 +90,8 @@ public class UserServiceImplTest
     @Test
     public void E_findByUsername()
     {
-        assertEquals("admin", userService.findByName("admin")
-                .getUsername());
+        assertEquals("volunteer", userService.findByName("volunteer").getUsername().toLowerCase()
+                );
     }
 
     @Test(expected = ResourceNotFoundException.class)
@@ -104,7 +104,7 @@ public class UserServiceImplTest
     @Test
     public void AB_findByNameContaining()
     {
-        assertEquals(4, userService.findByNameContaining("a")
+        assertEquals(2, userService.findByNameContaining("a")
                 .size());
     }
 
@@ -131,22 +131,18 @@ public class UserServiceImplTest
     }
 
     @Transactional
-    @WithUserDetails("cinnamon")
+    @WithUserDetails("student")
     @Test
     public void G_update()
     {
         Role r2 = new Role("user");
         r2.setRoleid(2);
 
-        User u2 = new User("cinnamon", "password", "cinnamon@school.lambda");
+        User u2 = new User("student", "student", "student@lambdaschool.local");
         u2.getRoles().add(new UserRoles(u2, r2));
 
         u2.getUseremails()
-                .add(new Useremail(u2, "cinnamon@mymail.thump"));
-        u2.getUseremails()
-                .add(new Useremail(u2, "hops@mymail.thump"));
-        u2.getUseremails()
-                .add(new Useremail(u2, "bunny@email.thump"));
+                .add(new Useremail(u2, "student@ymail.local"));
 
         User updatedu2 = userService.update(u2, 7);
 
@@ -156,38 +152,9 @@ public class UserServiceImplTest
 
         int checking = updatedu2.getUseremails()
                 .size() - 1;
-        assertEquals("bunny@email.thump", updatedu2.getUseremails()
+        assertEquals("student@ymail.local", updatedu2.getUseremails()
                 .get(checking)
                 .getUseremail());
     }
 
-    @Transactional
-    @WithUserDetails("cinnamon")
-    @Test(expected = ResourceNotFoundException.class)
-    public void GB_updateNotCurrentUserNorAdmin()
-    {
-        Role r2 = new Role("user");
-        r2.setRoleid(2);
-
-        User u2 = new User("cinnamon", "password", "cinnamon@school.lambda");
-        u2.getRoles().add(new UserRoles(u2, r2));
-        u2.getUseremails()
-                .add(new Useremail(u2, "cinnamon@mymail.thump"));
-        u2.getUseremails()
-                .add(new Useremail(u2, "hops@mymail.thump"));
-        u2.getUseremails()
-                .add(new Useremail(u2, "bunny@email.thump"));
-
-        User updatedu2 = userService.update(u2, 8);
-
-        System.out.println("*** DATA ***");
-        System.out.println(updatedu2);
-        System.out.println("*** DATA ***");
-
-        int checking = updatedu2.getUseremails()
-                .size() - 1;
-        assertEquals("bunny@email.thump", updatedu2.getUseremails()
-                .get(checking)
-                .getUseremail());
-    }
 }
