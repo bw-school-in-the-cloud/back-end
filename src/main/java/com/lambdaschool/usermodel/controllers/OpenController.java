@@ -67,9 +67,11 @@ public class OpenController
         // Create the user
         User newuser = new User();
 
-        if  (newuser.getFname() == null)
+        if  (newminuser.getFname() == null)
         {
             newuser.setFname("Guest");
+        }else {
+            newuser.setFname(newminuser.getFname());
         }
 
         int max = 5000;
@@ -80,9 +82,11 @@ public class OpenController
         String rand = String.valueOf(((int) (Math.random() * range) + min));
 
         // Output is different everytime this code is executed
-        if (newuser.getLname() == null)
+        if (newminuser.getLname() == null)
         {
             newuser.setLname(rand);
+        }else {
+            newuser.setLname(newminuser.getLname());
         }
 
         newuser.setUsername(newminuser.getUsername());

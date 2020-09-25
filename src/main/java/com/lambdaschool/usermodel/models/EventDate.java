@@ -40,8 +40,8 @@ public class EventDate implements Serializable
         String eventinfo,
         String eventdateday)
     {
-        this.eventinfo = eventinfo;
-        this.eventdateday = eventdateday;
+        this.eventinfo = this.getEvent().getCategory().getName() + ": " + this.getEvent().getDescription() + " " + this.getdatee().getDisplay();
+        this.eventdateday = this.getdatee().getEventmonthname() + " " + this.getdatee().getEventday();
     }
 
     public EventDate(

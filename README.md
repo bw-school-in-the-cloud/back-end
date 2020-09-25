@@ -15,9 +15,9 @@ https://eschoolinthecloud.herokuapp.com/
 ## Signing Up A New User
 
 ### POST
-https://eschoolinthecloud.herokuapp.com/createnewuser
+https://eschoolinthecloud.herokuapp.com/createnewuser   
 
-Required Fields in **BOLD**   
+:small_orange_diamond: Required Fields in **BOLD**   
 
 ## USER TABLE
 
@@ -27,8 +27,8 @@ Name | Data Type (min, max)
 **Password** | **String**
 **Primaryemail** | **Email**   
    
-**Role Type will default to Volunteer**   
-Role Type can be set with nested Role ID or Role Type Name in String Format
+:small_orange_diamond: **Role Type will default to Volunteer**   
+:small_orange_diamond: Role Type can be set with nested Role ID or Role Type Name in String Format
 
 ```JSON
 {
@@ -52,17 +52,17 @@ Role Type can be set with nested Role ID or Role Type Name in String Format
 }
 ```   
    
-   
 ## Terms Of Service Requests
+
 <details>
 <summary> :arrow_down: </summary>
 
 ### GET REQs
-Note: *Data for React I MVP Only*   
+:small_orange_diamond: Note: *Data for React I MVP Only*   
 
 
 :arrow_forward: **List Terms Of Service --** http://eschoolinthecloud.herokuapp.com/terms/terms   
-Example Output:
+Example Output:   
 
 <details> 
 <summary>http://eschoolinthecloud.herokuapp.com/terms/terms</summary>
@@ -92,21 +92,21 @@ Example Output:
 ]
 ```
     
-
-Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
+:small_orange_diamond: Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
 
 </details>
 
 </details>
 
 ## User Requests
+
 <details>
 <summary> :arrow_down: </summary>
 
 ### GET REQs
 
 :arrow_forward: **List All Users --** https://eschoolinthecloud.herokuapp.com/users/users   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/users</summary>
@@ -444,8 +444,8 @@ Example Output:
     }
 ]
 ```
-</details>
 
+</details>
 
 :arrow_forward: **Find Current User --** https://eschoolinthecloud.herokuapp.com/users/getuserinfo   
 Examle Output:   
@@ -494,10 +494,11 @@ Examle Output:
     ]
 }
 ```
+
 </details>
 
 :arrow_forward: **Find User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
-Example Output: 
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/4</summary>
@@ -546,7 +547,7 @@ Example Output:
 </details>
 
 :arrow_forward: **Find User By Username --** https://eschoolinthecloud.herokuapp.com/users/user/name/{username}    
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/name/admin</summary>
@@ -594,10 +595,10 @@ Example Output:
 ```
 </details>
 
-:arrow_forward: **Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
-
-Note: *Finds usernames containing the string*     
-Example Output: 
+:arrow_forward: **Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}   
+Example Output:   
+   
+:small_orange_diamond: Note: *Finds usernames containing the string*
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/name/like/vol</summary>
@@ -631,8 +632,7 @@ Example Output:
 ```
 </details>
 
-### POST REQs
-*Sign up and/or Admin access only*
+### POST REQs   
 
 :arrow_forward: **Add New User --** https://eschoolinthecloud.herokuapp.com/users/user    
    
@@ -645,7 +645,9 @@ Lname | String
 **Username**| **String**
 **Password** | **String**
 **Primaryemail** | **Email**
-Role | Role
+Role | Role   
+   
+:small_orange_diamond: *First Name will default to Guest, and Last Name will default to a random Number between 1 - 5000 if not set*   
 
 <details>
 <summary>Minimum Body</summary>
@@ -667,7 +669,6 @@ Role | Role
 
 **OR**
 
-
 ```JSON
 {
     "username": "add-user",
@@ -683,8 +684,7 @@ Role | Role
 }
 ```
      
-
-Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
+:small_orange_diamond: Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*   
 
 </details>
 
@@ -697,7 +697,6 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 </details>
 
 ### PUT REQs
-*Admin access only*
 
 :arrow_forward: **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
@@ -722,13 +721,12 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 <details>
 <summary>Http Status</summary>    
-
+   
 *Status: 200 Okay*
 
 </details>
 
 ### PATCH REQs
-*Admin access only*
 
 :arrow_forward: **Update User --** https://eschoolinthecloud.herokuapp.com/users/user/15    
 
@@ -745,20 +743,19 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 
 <details>
 <summary>Http Status</summary>    
-
+   
 *Status: 200 Okay*
 
 </details>
 
 ### DELETE REqs
-*Admin access only*
 
 :arrow_forward: **Delete User By ID --** https://eschoolinthecloud.herokuapp.com/users/user/{id}    
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/users/user/15</summary>     
 
-*Status: 200 Okay*
+*Status: 200 Okay*   
 
 </details>
 
@@ -772,7 +769,7 @@ Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}
 ### GET REQs  
 
 :arrow_forward: **List All Events --** https://eschoolinthecloud.herokuapp.com/events/events   
-Example Output:
+Example Output:   
 
 <details> 
 <summary>https://eschoolinthecloud.herokuapp.com/events/events</summary>
@@ -1226,7 +1223,7 @@ Example Output:
 </details>
 
 :arrow_forward: **Find Event By Title --** https://eschoolinthecloud.herokuapp.com/events/event/name/{title}   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/event/name/Second</summary>
@@ -1306,7 +1303,8 @@ Example Output:
         }
     ]
 }
-```
+```   
+
 </details>   
    
 :arrow_forward: **List Events with Titles Containing --** https://eschoolinthecloud.herokuapp.com/events/event/name/like/{searchterms}   
@@ -1374,11 +1372,10 @@ Example Output:
 ]
 ```   
    
-
 </details>
 
 :arrow_forward: **List All Events By Dates --** https://eschoolinthecloud.herokuapp.com/events/dates    
-Example Output:
+Example Output:   
 
 <details> 
 <summary>https://eschoolinthecloud.herokuapp.com/events/dates</summary>
@@ -1911,7 +1908,7 @@ Example Output:
 </details>
 
 :arrow_forward: **List All Events By Categories --** https://eschoolinthecloud.herokuapp.com/events/categories   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/categories</summary>
@@ -2157,7 +2154,7 @@ Example Output:
 ```
 </details>
 
-:arrow_forward: **List Events By Category Name --** https://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}
+:arrow_forward: **List Events By Category Name --** https://eschoolinthecloud.herokuapp.com/events/category/name/{categoryname}   
 Example Output:   
 
 <details>
@@ -2224,7 +2221,7 @@ Example Output:
 </details>
 
 :arrow_forward: **List Events By Category By ID --** https://eschoolinthecloud.herokuapp.com/events/category/id/{categoryid}   
-Example Output:
+Example Output:   
 
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/category/id/25</summary>
@@ -2261,6 +2258,7 @@ Example Output:
     ]
 }
 ```
+
 </details>
 
 :arrow_forward: **List Events By Users Attending --** https://eschoolinthecloud.herokuapp.com/events/dates/users/events   
@@ -2443,6 +2441,8 @@ Length | double
 Length Description | String
 Category | Category
 Event Dates | Set<EventDates>   
+   
+:small_orange_diamond: *Length should be incremented in values of 0.5 to represent 30 minutes increments of time, different decimal point values will be added in the future.* 
 
 
 ## DATE TABLE
@@ -2453,11 +2453,17 @@ Name | Data Type (min, max)
 **Hours** | **int (0, 24)**
 Hours (Analog Clock) | int (1, 12)
 AM / PM | String
+Timezone | String
 **Month** | **int (1, 12)**
 Month Name | String
 **Day** | **int (1, 31)**
 **Year** | **int**
-Events | Set<EventDates>
+Display Date & Time | String
+Display Time | String
+Events | Set<EventDates>   
+   
+:small_orange_diamond: *The system will automatically set Analog Clock hours, AM/PM, Month Name, Display Date & Time, as well as Display Time automatically based off of system input*   
+:small_orange_diamond: *Timezone is currently defaulting to PDT, different timezones will be added in the future.*
 
 
 ## CATEGORY TABLE
@@ -2465,7 +2471,7 @@ Events | Set<EventDates>
 Name | Data Type (min, max)
 ------------ | -------------
 **Name**| **String**
-[ Events ] | Set<EventDates>
+[ Events ] | Set<EventDates>   
   
 
 <details>
@@ -2484,8 +2490,8 @@ Name | Data Type (min, max)
 <details>
 <summary>Postman Results</summary>    
 
-Location: https://eschoolinthecloud.herokuapp.com/events/event/38
-*Status: 200 Okay*
+Location: https://eschoolinthecloud.herokuapp.com/events/event/38   
+*Status: 201 Created*   
 
 </details>   
 
@@ -2504,20 +2510,21 @@ Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 <details>
 <summary>Postman Results</summary>
 
-Location: https://eschoolinthecloud.herokuapp.com/events/category/39
-*Status: 201 Created*
+Location: https://eschoolinthecloud.herokuapp.com/events/category/39   
+*Status: 201 Created*   
 
 </details>   
 
 :arrow_forward: **Add A New Attendee --** https://eschoolinthecloud.herokuapp.com/events/dates/users/attendee   
    
-## CATEGORY TABLE
+## ATTENDEE TABLE
    
 Name | Data Type (min, max)
 ------------ | -------------
 **Event**| **Event**
-**User** | **User**
-
+**User** | **User**   
+   
+:small_orange_diamond: Note: *Event and User should already be in the system when trying to add attendee's*
 
    
 <details>
@@ -2581,7 +2588,7 @@ Location: https://eschoolinthecloud.herokuapp.com/events/dates/users/attendee/4
 <details>
 <summary>Postman Results</summary>    
 
-Location: https://eschoolinthecloud.herokuapp.com/events/event/38
+Location: https://eschoolinthecloud.herokuapp.com/events/event/38   
 *Status: 200 Okay*
 
 </details>
@@ -2593,7 +2600,7 @@ Location: https://eschoolinthecloud.herokuapp.com/events/event/38
 <details>
 <summary>https://eschoolinthecloud.herokuapp.com/events/event/38</summary>
 
-*Status: 200 Okay*
+*Status: 200 Okay*   
 
 </details>
 

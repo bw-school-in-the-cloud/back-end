@@ -8,6 +8,9 @@ import javax.validation.constraints.Email;
  */
 public class UserMinimum
 {
+
+    private String fname;
+    private String lname;
     /**
      * The username (String)
      */
@@ -83,5 +86,25 @@ public class UserMinimum
     public void setPrimaryemail(String primaryemail)
     {
         this.primaryemail = primaryemail;
+    }
+
+    public String getFname()
+    {
+        return fname;
+    }
+
+    public void setFname(String fname)
+    {
+        this.fname = fname;
+    }
+
+    public String getLname()
+    {
+        return lname;
+    }
+
+    public void setLname(String lname)
+    {
+        this.lname = lname;
     }
 }
