@@ -10,7 +10,7 @@ public interface EventService
 
     List<Event> findAll();
 
-    Event findEventById(Long eventId);
+    Event findById(Long eventId);
 
     Event findEventByName(String eventName);
 
@@ -20,5 +20,6 @@ public interface EventService
 
     void delete(long id);
 
-//    List<Event> findByNameContaining(String eventName);
+    List<Event> findByNameContaining(String eventName);
+
 }

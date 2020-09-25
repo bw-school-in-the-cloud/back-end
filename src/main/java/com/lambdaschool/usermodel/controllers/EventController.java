@@ -52,7 +52,7 @@ public class EventController
         @PathVariable
             Long eventId)
     {
-        Event e = eventService.findEventById(eventId);
+        Event e = eventService.findById(eventId);
         return new ResponseEntity<>(e,
             HttpStatus.OK);
     }
@@ -76,24 +76,24 @@ public class EventController
             HttpStatus.OK);
     }
 
-//    /**
-//     * Returns a list of users whose username contains the given substring
-//     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/users/user/name/like/da">https://eschoolinthecloud.herokuapp.com/users/user/name/like/da</a>
-//     *
-//     * @param eventName Substring of the username for which you seek
-//     * @return A JSON list of users you seek
-//     * @see UserService#findByEventNameContaining(String) UserService.findByNameContaining(String)
-//     */
-//    @GetMapping(value = "/event/name/like/{eventName}",
-//        produces = "application/json")
-//    public ResponseEntity<?> getEventLikeName(
-//        @PathVariable
-//            String eventName)
-//    {
-//        List<Event> e = eventService.findByNameContaining(eventName);
-//        return new ResponseEntity<>(e,
-//            HttpStatus.OK);
-//    }
+    /**
+     * Returns a list of users whose username contains the given substring
+     * <br>Example: <a href="https://eschoolinthecloud.herokuapp.com/users/user/name/like/da">https://eschoolinthecloud.herokuapp.com/users/user/name/like/da</a>
+     *
+     * @param eventName Substring of the username for which you seek
+     * @return A JSON list of users you seek
+     * @see EventService#findByNameContaining(String) EventService.findByNameContaining(String)
+     */
+    @GetMapping(value = "/event/name/like/{eventName}",
+        produces = "application/json")
+    public ResponseEntity<?> getEventLikeName(
+        @PathVariable
+            String eventName)
+    {
+        List<Event> e = eventService.findByNameContaining(eventName);
+        return new ResponseEntity<>(e,
+            HttpStatus.OK);
+    }
 
     /**
      * Given a complete Event Object, create a new Event record.

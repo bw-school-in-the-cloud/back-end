@@ -46,7 +46,7 @@ public class EventServiceImpl implements EventService
     }
 
     @Override
-    public Event findEventById(Long eventId)
+    public Event findById(Long eventId)
     {
         return eventRepository.findById(eventId)
             .orElseThrow(() -> new ResourceNotFoundException("Event ID:" + eventId + " not found!"));
@@ -177,8 +177,9 @@ public class EventServiceImpl implements EventService
             for (EventDate ed : addEvent.getEventdates())
             {
                 String ei = ed.getEvent().getCategory().getName() + ": " + ed.getEvent().getDescription();
-
+                String e2 = ed.getdatee().getEventmonthname() + " " + ed.getdatee().getEventday();
                 ed.setDuration(ed.getEvent().getLength());
+                ed.setEventdateday(e2);
                 ed.setEventinfo(ei);
             }
         }
@@ -187,11 +188,11 @@ public class EventServiceImpl implements EventService
 
 
 
-//    @Override
-//    public List<Event> findByNameContaining(String eventName)
-//    {
-//        return eventRepository.findByNameContainingIgnoreCase(eventName.toLowerCase());
-//    }
+    @Override
+    public List<Event> findByNameContaining(String eventName)
+    {
+        return eventRepository.findByTitleContainingIgnoreCase(eventName.toLowerCase());
+    }
 
     @Transactional
     @Override
@@ -199,7 +200,7 @@ public class EventServiceImpl implements EventService
         Event updateEvent,
         long id)
     {
-        Event currentEvent = findEventById(id);
+        Event currentEvent = findById(id);
 
         if (updateEvent.getTitle() != null)
         {

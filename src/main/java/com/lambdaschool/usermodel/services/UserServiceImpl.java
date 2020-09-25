@@ -1,5 +1,6 @@
 package com.lambdaschool.usermodel.services;
 
+import com.lambdaschool.usermodel.exceptions.ResourceFoundException;
 import com.lambdaschool.usermodel.exceptions.ResourceNotFoundException;
 import com.lambdaschool.usermodel.models.*;
 import com.lambdaschool.usermodel.repository.UserRepository;
@@ -80,6 +81,17 @@ public class UserServiceImpl
             throw new ResourceNotFoundException("User name " + name + " not found!");
         }
         return uu;
+    }
+
+    @Override
+    public User findByPrimaryemail(String primaryEmail)
+    {
+        User u = userrepos.findByPrimaryemail(primaryEmail);
+        if (u == null)
+        {
+            throw new ResourceFoundException("User name with email " + primaryEmail + " could not be found!");
+        }
+        return u;
     }
 
     @Transactional
