@@ -27,8 +27,8 @@ Name | Data Type (min, max)
 **Password** | **String**
 **Primaryemail** | **Email**   
    
-:small_red_triangle_down: **Role Type will default to Volunteer**   
-:small_red_triangle_down: Role Type can be set with nested Role ID or Role Type Name in String Format
+:small_orange_diamond: **Role Type will default to Volunteer**   
+:small_orange_diamond: Role Type can be set with nested Role ID or Role Type Name in String Format
 
 ```JSON
 {
@@ -58,7 +58,7 @@ Name | Data Type (min, max)
 <summary> :arrow_down: </summary>
 
 ### GET REQs
-:small_red_triangle_down: Note: *Data for React I MVP Only*   
+:small_orange_diamond: Note: *Data for React I MVP Only*   
 
 
 :arrow_forward: **List Terms Of Service --** http://eschoolinthecloud.herokuapp.com/terms/terms   
@@ -93,7 +93,7 @@ Example Output:
 ```
     
 
-:small_red_triangle_down: Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
+:small_orange_diamond: Note: *This data can be requested **WITHOUT** either **AUTHENTICATION** and / or **AUTHORIZATION** for React I MVP purposes only* 
 
 </details>
 
@@ -596,7 +596,7 @@ Example Output:
 
 :arrow_forward: **Find User By Username Containing (Similar) --** https://eschoolinthecloud.herokuapp.com/users/user/name/like/{string}    
 
-:small_red_triangle_down: Note: *Finds usernames containing the string*     
+:small_orange_diamond: Note: *Finds usernames containing the string*     
 Example Output: 
 
 <details>
@@ -645,7 +645,7 @@ Lname | String
 **Password** | **String**
 **Primaryemail** | **Email**
 Role | Role   
-:small_red_triangle_down: *First Name will default to Guest, and Last Name will default to a random Number between 1 - 5000 if not set*
+:small_orange_diamond: *First Name will default to Guest, and Last Name will default to a random Number between 1 - 5000 if not set*
 
 <details>
 <summary>Minimum Body</summary>
@@ -684,7 +684,7 @@ Role | Role
 ```
      
 
-:small_red_triangle_down: Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
+:small_orange_diamond: Note: *Role ID's can be sent as numbers or strings [{1, "Admin"}, {2, "Student"}, {3, "Volunteer"}*
 
 </details>
 
@@ -2440,7 +2440,7 @@ Length | double
 Length Description | String
 Category | Category
 Event Dates | Set<EventDates>   
-:small_red_triangle_down: *Length should be incremented in values of 0.5 to represent 30 minutes increments of time, different decimal point values will be added in the future.* 
+:small_orange_diamond: *Length should be incremented in values of 0.5 to represent 30 minutes increments of time, different decimal point values will be added in the future.* 
 
 
 ## DATE TABLE
@@ -2459,8 +2459,8 @@ Month Name | String
 Display Date & Time | String
 Display Time | String
 Events | Set<EventDates>   
-:small_red_triangle_down: *The system will automatically set Analog Clock hours, AM/PM, Month Name, Display Date & Time, as well as Display Time automatically based off of system input*   
-:small_red_triangle_down: *Timezone is currently defaulting to PDT, different timezones will be add in the future.*
+:small_orange_diamond: *The system will automatically set Analog Clock hours, AM/PM, Month Name, Display Date & Time, as well as Display Time automatically based off of system input*   
+:small_orange_diamond: *Timezone is currently defaulting to PDT, different timezones will be add in the future.*
 
 
 ## CATEGORY TABLE
@@ -2519,8 +2519,8 @@ Location: https://eschoolinthecloud.herokuapp.com/events/category/39
 Name | Data Type (min, max)
 ------------ | -------------
 **Event**| **Event**
-**User** | **User**
-
+**User** | **User**   
+:small_orange_diamond: Note: *Event and User should already be in the system when trying to add attendee's*
 
    
 <details>
