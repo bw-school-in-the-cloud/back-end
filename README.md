@@ -2511,7 +2511,7 @@ Location: https://eschoolinthecloud.herokuapp.com/events/category/39
 
 :arrow_forward: **Add A New Attendee --** https://eschoolinthecloud.herokuapp.com/events/dates/users/attendee   
    
-## CATEGORY TABLE
+## ATTENDEE TABLE
    
 Name | Data Type (min, max)
 ------------ | -------------
