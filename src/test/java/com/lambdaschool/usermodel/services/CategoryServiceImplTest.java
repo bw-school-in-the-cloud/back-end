@@ -41,7 +41,7 @@ public class CategoryServiceImplTest
     @Test
     public void a_findAll()
     {
-        assertEquals(6, categoryService.findAll().size());
+        assertEquals(8, categoryService.findAll().size());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class CategoryServiceImplTest
         Category testSave = new Category("Tester");
         testSave = categoryService.save(testSave);
 
-        assertEquals(7, categoryService.findAll().size());
+        assertEquals(9, categoryService.findAll().size());
     }
 
 }

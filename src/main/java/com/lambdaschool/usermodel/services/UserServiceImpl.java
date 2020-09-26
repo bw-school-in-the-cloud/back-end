@@ -200,6 +200,16 @@ public class UserServiceImpl
     {
         User currentUser = findUserById(id);
 
+        if (user.getFname() != null)
+        {
+            currentUser.setFname(user.getFname());
+        }
+
+        if (user.getLname() != null)
+        {
+            currentUser.setLname(user.getLname());
+        }
+
         if (helperFunctions.isAuthorizedToMakeChange(currentUser.getUsername()))
         {
             if (user.getUsername() != null)

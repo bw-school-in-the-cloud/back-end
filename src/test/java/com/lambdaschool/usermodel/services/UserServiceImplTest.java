@@ -37,6 +37,9 @@ public class UserServiceImplTest
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RoleService roleService;
+
     @Before
     public void setUp() throws
             Exception
@@ -67,7 +70,7 @@ public class UserServiceImplTest
     @Test
     public void C_findAll()
     {
-        assertEquals(8, userService.findAll()
+        assertEquals(11, userService.findAll()
                 .size());
     }
 
@@ -75,7 +78,7 @@ public class UserServiceImplTest
     public void D_delete()
     {
         userService.delete(4);
-        assertEquals(7, userService.findAll()
+        assertEquals(10, userService.findAll()
                 .size());
     }
 
@@ -112,7 +115,9 @@ public class UserServiceImplTest
     public void F_save()
     {
         Role r2 = new Role("user");
-        r2.setRoleid(2);
+        r2.setRoleid(0);
+
+        r2 = roleService.save(r2);
 
         User u2 = new User("tiger", "ILuvMath!", "tiger@school.lambda");
         u2.getRoles().add(new UserRoles(u2, r2));
@@ -136,7 +141,9 @@ public class UserServiceImplTest
     public void G_update()
     {
         Role r2 = new Role("user");
-        r2.setRoleid(2);
+        r2.setRoleid(0);
+
+        r2 = roleService.save(r2);
 
         User u2 = new User("student", "student", "student@lambdaschool.local");
         u2.getRoles().add(new UserRoles(u2, r2));
